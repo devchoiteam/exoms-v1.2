@@ -72,18 +72,18 @@ window.templateName = document.documentElement.getAttribute('data-template');
 if (typeof TemplateCustomizer !== 'undefined') {
   window.templateCustomizer = new TemplateCustomizer({
     displayCustomizer: true,
-    lang: localStorage.getItem('templateCustomizer-' + templateName + '--Lang') || 'en', // Set default language here
-    // defaultPrimaryColor: '#D11BB4',
-    // defaultSkin: 1,
-    // defaultTheme: 'system',
-    // defaultSemiDark: true,
-    // defaultContentLayout: 'wide',
-    // defaultHeaderType: 'static',
-    // defaultMenuCollapsed: true,
-    // defaultNavbarType: 'static',
-    // defaultTextDir: 'rtl',
-    // defaultFooterFixed: false,
-    // defaultShowDropdownOnHover: false,
+    lang: localStorage.getItem('templateCustomizer-' + templateName + '--Lang') || 'fr', // Set default language here
+    defaultPrimaryColor: '#2092EC',
+    defaultSkin: 1,
+    defaultTheme: 'light',
+    defaultSemiDark: false,
+    defaultContentLayout: 'wide',
+    defaultHeaderType: 'static',
+    defaultMenuCollapsed: true,
+    defaultNavbarType: 'sticky',
+    defaultTextDir: 'rtl',
+    defaultFooterFixed: true,
+    defaultShowDropdownOnHover: true,
     controls: [
       'color',
       'theme',

@@ -366,7 +366,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Auto update layout based on screen size
-  window.Helpers.setAutoUpdate(true);
+  window.Helpers.setAutoUpdate(false); // 자동 업데이트 중지
 
   // Toggle Password Visibility
   window.Helpers.initPasswordToggle();
