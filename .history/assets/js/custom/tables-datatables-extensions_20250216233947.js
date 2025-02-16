@@ -15,18 +15,19 @@ document.addEventListener('DOMContentLoaded', function (e) {
     dt_scrollableTable = new DataTable(dt_scrollable_table, {
       ajax: assetsPath + 'json/table-datatable.json',
       columns: [
-        { data: 'full_name' },
-        { data: 'post' },
-        { data: 'email' },
+        { data: 'No' },
+        { data: 'shopping_cart' },
+        { data: 'packing_no' },
         { data: 'city' },
-        { data: 'start_date' },
-        { data: 'salary' },
-        { data: 'age' },
-        { data: 'experience' },
-        { data: '' },
-        { data: '' },
-        { data: '' },
-        { data: '' }
+        { data: 'order_date' },
+        { data: 'product_name' },
+        { data: 'product_name_kr' },
+        { data: 'option_code' },
+        { data: 'option_info' },
+        { data: 'currency' },
+        { data: 'quantity' },
+        { data: 'total_selling_price' },
+        { data: 'product_code' }
       ],
       columnDefs: [
         {
@@ -131,13 +132,19 @@ document.addEventListener('DOMContentLoaded', function (e) {
       columns: [
         { data: '' },
         { data: 'id', orderable: false, render: DataTable.render.select() },
-        { data: 'id' },
-        { data: 'full_name' },
-        { data: 'email' },
-        { data: 'start_date' },
-        { data: 'salary' },
-        { data: 'status' },
-        { data: '' }
+        { data: 'No' },
+        { data: 'shopping_cart' },
+        { data: 'packing_no' },
+        { data: 'city' },
+        { data: 'order_date' },
+        { data: 'product_name' },
+        { data: 'product_name_kr' },
+        { data: 'option_code' },
+        { data: 'option_info' },
+        { data: 'currency' },
+        { data: 'quantity' },
+        { data: 'total_selling_price' },
+        { data: 'product_code' }
       ],
       columnDefs: [
         {

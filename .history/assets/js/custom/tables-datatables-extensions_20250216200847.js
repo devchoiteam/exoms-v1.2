@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
     dt_scrollableTable = new DataTable(dt_scrollable_table, {
       ajax: assetsPath + 'json/table-datatable.json',
       columns: [
-        { data: 'full_name' },
+        { data: 'No' },
         { data: 'post' },
         { data: 'email' },
         { data: 'city' },
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
         { data: '' },
         { data: 'id', orderable: false, render: DataTable.render.select() },
         { data: 'id' },
-        { data: 'full_name' },
+        { data: 'No' },
         { data: 'email' },
         { data: 'start_date' },
         { data: 'salary' },
@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
           targets: 3,
           render: function (data, type, full, meta) {
             const userImg = full.avatar;
-            const name = full.full_name;
+            const name = full.No;
             const post = full.post;
             let output;
 
@@ -304,7 +304,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
           display: DataTable.Responsive.display.modal({
             header: function (row) {
               var data = row.data();
-              return 'Details of ' + data['full_name'];
+              return 'Details of ' + data['No'];
             }
           }),
           type: 'column',
@@ -370,7 +370,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
     dt_fixedcolumns = new DataTable(dt_fixedcolumns_table, {
       ajax: assetsPath + 'json/table-datatable.json',
       columns: [
-        { data: 'full_name' },
+        { data: 'No' },
         { data: 'post' },
         { data: 'email' },
         { data: 'city' },
@@ -488,7 +488,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
       ajax: assetsPath + 'json/table-datatable.json',
       columns: [
         { data: 'id', orderable: false, render: DataTable.render.select() },
-        { data: 'full_name' },
+        { data: 'No' },
         { data: 'post' },
         { data: 'email' },
         { data: 'city' },

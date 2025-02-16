@@ -24,8 +24,6 @@ document.addEventListener('DOMContentLoaded', function (e) {
         { data: 'age' },
         { data: 'experience' },
         { data: '' },
-        { data: '' },
-        { data: '' },
         { data: '' }
       ],
       columnDefs: [

@@ -15,44 +15,21 @@ document.addEventListener('DOMContentLoaded', function (e) {
     dt_scrollableTable = new DataTable(dt_scrollable_table, {
       ajax: assetsPath + 'json/table-datatable.json',
       columns: [
-        { data: 'full_name' },
-        { data: 'post' },
-        { data: 'email' },
+        { data: 'No' },
+        { data: 'shopping_cart' },
+        { data: 'packing_no' },
         { data: 'city' },
-        { data: 'start_date' },
-        { data: 'salary' },
-        { data: 'age' },
-        { data: 'experience' },
-        { data: '' },
-        { data: '' },
-        { data: '' },
-        { data: '' }
+        { data: 'order_date' },
+        { data: 'product_name' },
+        { data: 'product_name_kr' },
+        { data: 'option_code' },
+        { data: 'option_info' },
+        { data: 'currency' },
+        { data: 'quantity' },
+        { data: 'total_selling_price' },
+        { data: 'product_code' }
       ],
       columnDefs: [
-        {
-          // Label
-          targets: -2,
-          render: function (data, type, full, meta) {
-            const statusNumber = full.status;
-            const statuses = {
-              1: { title: 'Current', class: 'bg-label-primary' },
-              2: { title: 'Professional', class: 'bg-label-success' },
-              3: { title: 'Rejected', class: 'bg-label-danger' },
-              4: { title: 'Resigned', class: 'bg-label-warning' },
-              5: { title: 'Applied', class: 'bg-label-info' }
-            };
-
-            if (typeof statuses[statusNumber] === 'undefined') {
-              return data;
-            }
-
-            return `
-              <span class="badge ${statuses[statusNumber].class}">
-                ${statuses[statusNumber].title}
-              </span>
-            `;
-          }
-        },
         {
           // Actions
           targets: -1,
@@ -129,15 +106,18 @@ document.addEventListener('DOMContentLoaded', function (e) {
     dt_fixedheader = new DataTable(dt_fixedheader_table, {
       ajax: assetsPath + 'json/table-datatable.json',
       columns: [
-        { data: '' },
-        { data: 'id', orderable: false, render: DataTable.render.select() },
-        { data: 'id' },
-        { data: 'full_name' },
-        { data: 'email' },
-        { data: 'start_date' },
-        { data: 'salary' },
-        { data: 'status' },
-        { data: '' }
+        { data: 'No' },
+        { data: 'shopping_cart' },
+        { data: 'packing_no' },
+        { data: 'city' },
+        { data: 'order_date' },
+        { data: 'product_name' },
+        { data: 'product_name_kr' },
+        { data: 'option_code' },
+        { data: 'option_info' },
+        { data: 'currency' },
+        { data: 'quantity' },
+        { data: 'total_selling_price' }
       ],
       columnDefs: [
         {
@@ -166,12 +146,12 @@ document.addEventListener('DOMContentLoaded', function (e) {
           visible: false
         },
         {
-          // Avatar image/badge, Name and post
+          // Avatar image/badge, Name and shopping_cart
           targets: 3,
           render: function (data, type, full, meta) {
             const userImg = full.avatar;
-            const name = full.full_name;
-            const post = full.post;
+            const name = full.No;
+            const shopping_cart = full.shopping_cart;
             let output;
 
             if (userImg) {
@@ -196,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
                 </div>
                 <div class="d-flex flex-column">
                   <span class="emp_name text-truncate">${name}</span>
-                  <small class="emp_post text-truncate text-body-secondary">${post}</small>
+                  <small class="emp_shopping_cart text-truncate text-body-secondary">${shopping_cart}</small>
                 </div>
               </div>
             `;
@@ -214,30 +194,6 @@ document.addEventListener('DOMContentLoaded', function (e) {
           targets: 6
         },
 
-        {
-          // Label
-          targets: -2,
-          render: function (data, type, full, meta) {
-            const statusNumber = full.status;
-            const statuses = {
-              1: { title: 'Current', class: 'bg-label-primary' },
-              2: { title: 'Professional', class: 'bg-label-success' },
-              3: { title: 'Rejected', class: 'bg-label-danger' },
-              4: { title: 'Resigned', class: 'bg-label-warning' },
-              5: { title: 'Applied', class: 'bg-label-info' }
-            };
-
-            if (typeof statuses[statusNumber] === 'undefined') {
-              return data;
-            }
-
-            return `
-              <span class="badge ${statuses[statusNumber].class}">
-                ${statuses[statusNumber].title}
-              </span>
-            `;
-          }
-        },
         {
           // Actions
           targets: -1,
@@ -304,7 +260,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
           display: DataTable.Responsive.display.modal({
             header: function (row) {
               var data = row.data();
-              return 'Details of ' + data['full_name'];
+              return 'Details of ' + data['No'];
             }
           }),
           type: 'column',
@@ -370,42 +326,20 @@ document.addEventListener('DOMContentLoaded', function (e) {
     dt_fixedcolumns = new DataTable(dt_fixedcolumns_table, {
       ajax: assetsPath + 'json/table-datatable.json',
       columns: [
-        { data: 'full_name' },
-        { data: 'post' },
-        { data: 'email' },
+        { data: 'No' },
+        { data: 'shopping_cart' },
+        { data: 'packing_no' },
         { data: 'city' },
-        { data: 'start_date' },
-        { data: 'salary' },
-        { data: 'age' },
-        { data: 'experience' },
-        { data: 'status' },
-        { data: 'id' }
+        { data: 'order_date' },
+        { data: 'product_name' },
+        { data: 'product_name_kr' },
+        { data: 'option_code' },
+        { data: 'option_info' },
+        { data: 'currency' },
+        { data: 'quantity' },
+        { data: 'total_selling_price' }
       ],
       columnDefs: [
-        {
-          // Label
-          targets: -2,
-          render: function (data, type, full, meta) {
-            const statusNumber = full.status;
-            const statuses = {
-              1: { title: 'Current', class: 'bg-label-primary' },
-              2: { title: 'Professional', class: 'bg-label-success' },
-              3: { title: 'Rejected', class: 'bg-label-danger' },
-              4: { title: 'Resigned', class: 'bg-label-warning' },
-              5: { title: 'Applied', class: 'bg-label-info' }
-            };
-
-            if (typeof statuses[statusNumber] === 'undefined') {
-              return data;
-            }
-
-            return `
-              <span class="badge ${statuses[statusNumber].class}">
-                ${statuses[statusNumber].title}
-              </span>
-            `;
-          }
-        },
         {
           // Actions
           targets: -1,
@@ -488,13 +422,19 @@ document.addEventListener('DOMContentLoaded', function (e) {
       ajax: assetsPath + 'json/table-datatable.json',
       columns: [
         { data: 'id', orderable: false, render: DataTable.render.select() },
-        { data: 'full_name' },
-        { data: 'post' },
-        { data: 'email' },
+        { data: 'No' },
+        { data: 'shopping_cart' },
+        { data: 'packing_no' },
         { data: 'city' },
-        { data: 'start_date' },
-        { data: 'salary' },
-        { data: 'status' }
+        { data: 'order_date' },
+        { data: 'product_name' },
+        { data: 'product_name_kr' },
+        { data: 'option_code' },
+        { data: 'option_info' },
+        { data: 'currency' },
+        { data: 'quantity' },
+        { data: 'total_selling_price' },
+        { data: 'product_code' }
       ],
       columnDefs: [
         {
@@ -509,33 +449,8 @@ document.addEventListener('DOMContentLoaded', function (e) {
             selectRow: true,
             selectAllRender: '<input type="checkbox" class="form-check-input">'
           }
-        },
-        {
-          // Label
-          targets: -1,
-          render: function (data, type, full, meta) {
-            const statusNumber = full.status;
-            const statuses = {
-              1: { title: 'Current', class: 'bg-label-primary' },
-              2: { title: 'Professional', class: 'bg-label-success' },
-              3: { title: 'Rejected', class: 'bg-label-danger' },
-              4: { title: 'Resigned', class: 'bg-label-warning' },
-              5: { title: 'Applied', class: 'bg-label-info' }
-            };
-
-            if (typeof statuses[statusNumber] === 'undefined') {
-              return data;
-            }
-
-            return `
-              <span class="badge ${statuses[statusNumber].class}">
-                ${statuses[statusNumber].title}
-              </span>
-            `;
-          }
         }
       ],
-      order: [[1, 'desc']],
       layout: {
         topStart: {
           rowClass: 'row mx-3 my-0 justify-content-between',
@@ -568,10 +483,6 @@ document.addEventListener('DOMContentLoaded', function (e) {
           next: '<i class="icon-base bx bx-chevron-right scaleX-n1-rtl icon-sm"></i>',
           previous: '<i class="icon-base bx bx-chevron-left scaleX-n1-rtl icon-sm"></i>'
         }
-      },
-      select: {
-        // Select style
-        style: 'multi'
       }
     });
   }

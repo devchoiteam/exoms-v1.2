@@ -14,20 +14,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
   if (dt_scrollable_table) {
     dt_scrollableTable = new DataTable(dt_scrollable_table, {
       ajax: assetsPath + 'json/table-datatable.json',
-      columns: [
-        { data: 'full_name' },
-        { data: 'post' },
-        { data: 'email' },
-        { data: 'city' },
-        { data: 'start_date' },
-        { data: 'salary' },
-        { data: 'age' },
-        { data: 'experience' },
-        { data: '' },
-        { data: '' },
-        { data: '' },
-        { data: '' }
-      ],
+      columns: [{ data: 'full_name' }, { data: 'post' }, { data: 'email' }, { data: 'city' }],
       columnDefs: [
         {
           // Label

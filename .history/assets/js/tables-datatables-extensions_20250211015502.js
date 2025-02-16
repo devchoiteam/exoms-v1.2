@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
         }
       ],
       // Scroll options
-      scrollY: '300px',
+      scrollY: '1300px',
       scrollX: true,
       layout: {
         topStart: {
