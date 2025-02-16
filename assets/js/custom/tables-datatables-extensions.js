@@ -52,7 +52,13 @@ document.addEventListener('DOMContentLoaded', function (e) {
                 ${statuses[statusNumber].title}
               </span>
             `;
-          }
+          },
+          columnDefs: [
+            {
+              defaultContent: '-',
+              targets: '_all'
+            }
+          ]
         },
         {
           // Actions
@@ -549,6 +555,10 @@ document.addEventListener('DOMContentLoaded', function (e) {
               </span>
             `;
           }
+        },
+        {
+          defaultContent: '-',
+          targets: '_all'
         }
       ],
       order: [[1, 'desc']],
