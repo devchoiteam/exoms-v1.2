@@ -111,3 +111,32 @@
   text-align: center;
   margin-top: 1rem;
 }
+
+/* 테이블 커스텀 CSS */
+.card-datatable .btn-group > .btn:not(:last-child):not(.dropdown-toggle),
+.card-datatable .btn-group > .btn.dropdown-toggle-split:first-child,
+.card-datatable .btn-group > .btn-group:not(:last-child) > .btn,
+.card-datatable .btn-group:not(.btn-group-vertical) > .btn:nth-child(n + 3),
+.card-datatable .btn-group:not(.btn-group-vertical) > :not(.btn-check) + .btn,
+.card-datatable .btn-group:not(.btn-group-vertical) > .btn-group:not(:first-child) > .btn {
+  --bs-btn-border-radius: var(--bs-border-radius) !important;
+  border-end-end-radius: var(--bs-border-radius) !important;
+  border-start-end-radius: var(--bs-border-radius) !important;
+  border-radius: var(--bs-border-radius) !important;
+  margin-left: 0.5rem;
+}
+.card-datatable .btn-group .btn-outline-primary {
+  --bs-btn-color: #696cff;
+  --bs-btn-border-color: #696cff;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #696cff;
+  --bs-btn-hover-border-color: #696cff;
+  --bs-btn-focus-shadow-rgb: 105, 108, 255;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #696cff;
+  --bs-btn-active-border-color: #696cff;
+  --bs-btn-active-shadow: none;
+  --bs-btn-disabled-color: #696cff;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #696cff;
+}

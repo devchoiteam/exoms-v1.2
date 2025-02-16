@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
       scrollY: '300px',
       scrollX: true,
       layout: {
-        topStart: {
+        bottomStart: {
           rowClass: 'row mx-3 my-0 justify-content-between',
           features: [
             {
@@ -100,10 +100,10 @@ document.addEventListener('DOMContentLoaded', function (e) {
         },
         topEnd: {
           search: {
-            placeholder: ''
+            placeholder: '검색어를 입력해주세요.'
           }
         },
-        bottomStart: {
+        toptart: {
           rowClass: 'row mx-3 justify-content-between',
           features: ['info']
         },
@@ -292,7 +292,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
         },
         topEnd: {
           search: {
-            placeholder: ''
+            placeholder: '-'
           }
         },
         bottomStart: {
@@ -452,7 +452,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
         },
         topEnd: {
           search: {
-            placeholder: ''
+            placeholder: '--'
           }
         },
         bottomStart: {
@@ -496,7 +496,9 @@ document.addEventListener('DOMContentLoaded', function (e) {
   // Select
   // --------------------------------------------------------------------
 
-  const dt_select_table = document.querySelector('.dt-select-table');
+  const dt_select_table = document.querySelector(
+    '.dt-select-table:not(.dt-shipping-register-hand, .dt-shipping-register-auto)'
+  );
   let dt_select;
 
   if (dt_select_table) {
@@ -515,8 +517,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
         { data: 'option_info' },
         { data: 'currency' },
         { data: 'quantity' },
-        { data: 'total_selling_price' },
-        { data: 'product_code' }
+        { data: 'total_selling_price' }
       ],
       columnDefs: [
         {
@@ -531,30 +532,30 @@ document.addEventListener('DOMContentLoaded', function (e) {
             selectRow: true,
             selectAllRender: '<input type="checkbox" class="form-check-input">'
           }
-        },
-        {
-          // Label
-          targets: -1,
-          render: function (data, type, full, meta) {
-            const statusNumber = full.status;
-            const statuses = {
-              1: { title: 'Current', class: 'bg-label-primary' },
-              2: { title: 'Professional', class: 'bg-label-success' },
-              3: { title: 'Rejected', class: 'bg-label-danger' },
-              4: { title: 'Resigned', class: 'bg-label-warning' },
-              5: { title: 'Applied', class: 'bg-label-info' }
-            };
+          // },
+          // {
+          //   // Label
+          //   targets: -1,
+          //   render: function (data, type, full, meta) {
+          //     const statusNumber = full.status;
+          //     const statuses = {
+          //       1: { title: 'Current', class: 'bg-label-primary' },
+          //       2: { title: 'Professional', class: 'bg-label-success' },
+          //       3: { title: 'Rejected', class: 'bg-label-danger' },
+          //       4: { title: 'Resigned', class: 'bg-label-warning' },
+          //       5: { title: 'Applied', class: 'bg-label-info' }
+          //     };
 
-            if (typeof statuses[statusNumber] === 'undefined') {
-              return data;
-            }
+          //     if (typeof statuses[statusNumber] === 'undefined') {
+          //       return data;
+          //     }
 
-            return `
-              <span class="badge ${statuses[statusNumber].class}">
-                ${statuses[statusNumber].title}
-              </span>
-            `;
-          }
+          //     return `
+          //       <span class="badge ${statuses[statusNumber].class}">
+          //         ${statuses[statusNumber].title}
+          //       </span>
+          //     `;
+          //   }
         },
         {
           defaultContent: '-',
@@ -563,25 +564,143 @@ document.addEventListener('DOMContentLoaded', function (e) {
       ],
       order: [[1, 'desc']],
       layout: {
-        topStart: {
+        bottomStart: {
           rowClass: 'row mx-3 my-0 justify-content-between',
           features: [
             {
               pageLength: {
-                menu: [7, 10, 25, 50, 100],
-                text: 'Show_MENU_entries'
+                menu: [10, 25, 50, 100],
+                text: '_MENU_개씩 보기'
               }
             }
           ]
         },
         topEnd: {
           search: {
-            placeholder: ''
+            placeholder: '검색어를 입력해주세요.',
+            text: '_INPUT_'
+          },
+          buttons: [
+            { text: '저장', name: 'primary', className: 'btn btn-outline-primary' },
+            { text: '삭제', className: 'btn btn-outline-danger' },
+            { text: '다운로드', className: 'btn btn-outline-success' }
+          ]
+        },
+        topStart: {
+          info: {
+            text: '검색 건수: _TOTAL_건'
           }
         },
+        bottomEnd: {
+          paging: {
+            firstLast: false
+          }
+        }
+      },
+      language: {
+        paginate: {
+          next: '<i class="icon-base bx bx-chevron-right scaleX-n1-rtl icon-sm"></i>',
+          previous: '<i class="icon-base bx bx-chevron-left scaleX-n1-rtl icon-sm"></i>'
+        }
+      },
+      select: {
+        // Select style
+        style: 'multi'
+      }
+    });
+  }
+  const dt_shipping_register_hand_table = document.querySelector('.dt-shipping-register-hand');
+  let dt_shipping_register_hand;
+
+  if (dt_shipping_register_hand_table) {
+    dt_shipping_register_hand = new DataTable(dt_shipping_register_hand_table, {
+      ajax: assetsPath + 'json/table-datatable.json',
+      columns: [
+        { data: 'id', orderable: false, render: DataTable.render.select() },
+        { data: 'No' },
+        { data: 'shopping_cart' },
+        { data: 'packing_no' },
+        { data: 'city' },
+        { data: 'order_date' },
+        { data: 'product_name' },
+        { data: 'product_name_kr' },
+        { data: 'option_code' },
+        { data: 'option_info' },
+        { data: 'currency' },
+        { data: 'quantity' },
+        { data: 'total_selling_price' }
+      ],
+      columnDefs: [
+        {
+          // For Checkboxes
+          targets: 0,
+          searchable: false,
+          orderable: false,
+          render: function () {
+            return '<input type="checkbox" class="dt-checkboxes form-check-input">';
+          },
+          checkboxes: {
+            selectRow: true,
+            selectAllRender: '<input type="checkbox" class="form-check-input">'
+          }
+          // },
+          // {
+          //   // Label
+          //   targets: -1,
+          //   render: function (data, type, full, meta) {
+          //     const statusNumber = full.status;
+          //     const statuses = {
+          //       1: { title: 'Current', class: 'bg-label-primary' },
+          //       2: { title: 'Professional', class: 'bg-label-success' },
+          //       3: { title: 'Rejected', class: 'bg-label-danger' },
+          //       4: { title: 'Resigned', class: 'bg-label-warning' },
+          //       5: { title: 'Applied', class: 'bg-label-info' }
+          //     };
+
+          //     if (typeof statuses[statusNumber] === 'undefined') {
+          //       return data;
+          //     }
+
+          //     return `
+          //       <span class="badge ${statuses[statusNumber].class}">
+          //         ${statuses[statusNumber].title}
+          //       </span>
+          //     `;
+          //   }
+        },
+        {
+          defaultContent: '-',
+          targets: '_all'
+        }
+      ],
+      order: [[1, 'desc']],
+      layout: {
         bottomStart: {
-          rowClass: 'row mx-3 justify-content-between',
-          features: ['info']
+          rowClass: 'row mx-3 my-0 justify-content-between',
+          features: [
+            {
+              pageLength: {
+                menu: [10, 25, 50, 100],
+                text: '_MENU_개씩 보기'
+              }
+            }
+          ]
+        },
+        topEnd: {
+          search: {
+            placeholder: '검색어를 입력해주세요.',
+            text: '_INPUT_'
+          },
+          buttons: [
+            { text: '저장', name: 'primary', className: 'btn btn-outline-primary' },
+            { text: '삭제', className: 'btn btn-outline-danger' },
+            { text: '다운로드', className: 'btn btn-outline-success' }
+          ]
+        },
+        topStart: {
+          info: {
+            text: '검색 건수: _TOTAL_건'
+          }
         },
         bottomEnd: {
           paging: {
@@ -602,6 +721,117 @@ document.addEventListener('DOMContentLoaded', function (e) {
     });
   }
 
+  const dt_shipping_register_auto_table = document.querySelector('.dt-shipping-register-auto');
+  let dt_shipping_register_auto;
+
+  if (dt_shipping_register_auto_table) {
+    dt_shipping_register_auto = new DataTable(dt_shipping_register_auto_table, {
+      ajax: assetsPath + 'json/table-datatable.json',
+      columns: [
+        { data: 'id', orderable: false, render: DataTable.render.select() },
+        { data: 'No' },
+        { data: 'shopping_cart' },
+        { data: 'packing_no' },
+        { data: 'city' },
+        { data: 'order_date' },
+        { data: 'product_name' },
+        { data: 'product_name_kr' },
+        { data: 'option_code' },
+        { data: 'option_info' },
+        { data: 'currency' },
+        { data: 'quantity' },
+        { data: 'total_selling_price' }
+      ],
+      columnDefs: [
+        {
+          // For Checkboxes
+          targets: 0,
+          searchable: false,
+          orderable: false,
+          render: function () {
+            return '<input type="checkbox" class="dt-checkboxes form-check-input">';
+          },
+          checkboxes: {
+            selectRow: true,
+            selectAllRender: '<input type="checkbox" class="form-check-input">'
+          }
+          // },
+          // {
+          //   // Label
+          //   targets: -1,
+          //   render: function (data, type, full, meta) {
+          //     const statusNumber = full.status;
+          //     const statuses = {
+          //       1: { title: 'Current', class: 'bg-label-primary' },
+          //       2: { title: 'Professional', class: 'bg-label-success' },
+          //       3: { title: 'Rejected', class: 'bg-label-danger' },
+          //       4: { title: 'Resigned', class: 'bg-label-warning' },
+          //       5: { title: 'Applied', class: 'bg-label-info' }
+          //     };
+
+          //     if (typeof statuses[statusNumber] === 'undefined') {
+          //       return data;
+          //     }
+
+          //     return `
+          //       <span class="badge ${statuses[statusNumber].class}">
+          //         ${statuses[statusNumber].title}
+          //       </span>
+          //     `;
+          //   }
+        },
+        {
+          defaultContent: '-',
+          targets: '_all'
+        }
+      ],
+      order: [[1, 'desc']],
+      layout: {
+        bottomStart: {
+          rowClass: 'row mx-3 my-0 justify-content-between',
+          features: [
+            {
+              pageLength: {
+                menu: [10, 25, 50, 100],
+                text: '_MENU_개씩 보기'
+              }
+            }
+          ]
+        },
+        topEnd: {
+          search: {
+            placeholder: '검색어를 입력해주세요.',
+            text: '_INPUT_'
+          },
+          buttons: [
+            { text: '저장', name: 'primary', className: 'btn btn-outline-primary' },
+            { text: '삭제', className: 'btn btn-outline-danger' },
+            { text: '다운로드', className: 'btn btn-outline-success' }
+          ]
+        },
+        topStart: {
+          info: {
+            text: '검색 건수: _TOTAL_건'
+          }
+        },
+        bottomEnd: {
+          paging: {
+            firstLast: false
+          }
+        }
+      },
+      language: {
+        paginate: {
+          next: '<i class="icon-base bx bx-chevron-right scaleX-n1-rtl icon-sm"></i>',
+          previous: '<i class="icon-base bx bx-chevron-left scaleX-n1-rtl icon-sm"></i>'
+        }
+      },
+      select: {
+        // Select style
+        style: 'multi'
+      }
+    });
+  }
   // Filter form control to default size
   // ? setTimeout used for multilingual table initialization
   setTimeout(() => {
