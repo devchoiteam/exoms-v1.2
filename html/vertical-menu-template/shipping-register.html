@@ -14,7 +14,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>exOMS Sample Website</title>
+    <title>exOMS</title>
 
     <meta name="description" content="" />
 
@@ -57,7 +57,7 @@
     <!-- <script src="../../assets/vendor/js/template-customizer.js"></script> -->
 
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-
+    <link rel="stylesheet" href="../../assets/css/demo.css" />
     <script src="../../assets/js/config.js"></script>
   </head>
 
@@ -461,371 +461,33 @@
                         </form>
                         <div class="row">
                           <div class="col-12">
-                            <div class="card" style="background: none; box-shadow: none">
-                              <div class="card-datatable dataTable_select text-nowrap">
-                                <div id="DataTables_Table_3_wrapper" class="dt-container dt-bootstrap5 dt-empty-footer">
-                                  <div class="row">
-                                    <div class="col-12 col-md-2 d-md-flex align-items-center dt-layout-start col-md-auto me-auto text-start">
-                                      <div class="dt-length mb-2 ms-2 ms-md-0 text-start">검색 건수: <span class="fw-bold">3건</span></div>
-                                    </div>
-                                    <div class="col-12 col-md-10 col-autoalign-items-center dt-layout-end col-md-auto ms-auto mt-0 text-start text-md-end">
-                                      <div class="dt-search d-inline-block mb-2 mt-2 mt-md-2">
-                                        <input
-                                          type="search"
-                                          class="form-control"
-                                          id="dt-search-3"
-                                          placeholder="검색어를 입력해주세요"
-                                          aria-controls="DataTables_Table_3" />
-                                      </div>
-                                      <div class="d-block d-sm-inline-block ms-2 ms-sm-0 mb-2 mb-sm-0">
-                                        <button class="btn btn-outline-primary">검색</button>
-                                        <button class="btn btn-outline-danger">삭제</button>
-                                        <button class="btn btn-outline-success">다운로드</button>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="dt-layout-table mt-0">
-                                    <div
-                                      class="d-md-flex align-items-center col-12 dt-layout-full col-md"
-                                      style="overflow: scroll">
-                                      <table
-                                        class="dt-select-table table table-bordered table-responsive dataTable"
-                                        id="DataTables_Table_3"
-                                        aria-describedby="DataTables_Table_3_info"
-                                        style="width: 100%; background: white">
-                                        <colgroup>
-                                          <col data-dt-column="0" style="width: 66px" />
-                                          <col data-dt-column="1" style="width: 198.188px" />
-                                          <col data-dt-column="2" style="width: 271.797px" />
-                                          <col data-dt-column="3" style="width: 274.125px" />
-                                          <col data-dt-column="4" style="width: 209.031px" />
-                                          <col data-dt-column="5" style="width: 117.359px" />
-                                          <col data-dt-column="6" style="width: 112.578px" />
-                                          <col data-dt-column="7" style="width: 135.734px" />
-                                          <col data-dt-column="8" style="width: 209.031px" />
-                                          <col data-dt-column="9" style="width: 117.359px" />
-                                          <col data-dt-column="10" style="width: 112.578px" />
-                                          <col data-dt-column="11" style="width: 135.734px" />
-                                          <col data-dt-column="12" style="width: 135.734px" />
-                                        </colgroup>
-                                        <thead>
-                                          <tr>
-                                            <th
-                                              data-dt-column="0"
-                                              rowspan="1"
-                                              colspan="1"
-                                              class="dt-select dt-orderable-none"
-                                              aria-label="">
-                                              <span class="dt-column-title"></span><span class="dt-column-order"></span
-                                              ><input
-                                                class="form-check-input"
-                                                type="checkbox" id="table-hands-checkbox-all"
-                                                aria-label="Select all rows" />
-                                            </th>
-                                            <th
-                                              data-dt-column="1"
-                                              rowspan="1"
-                                              colspan="1"
-                                              class="dt-orderable-asc dt-orderable-desc dt-ordering-desc"
-                                              aria-sort="descending"
-                                              aria-label="Name: Activate to remove sorting"
-                                              tabindex="0">
-                                              <span class="dt-column-title" role="button">No.</span
-                                              ><span class="dt-column-order"></span>
-                                            </th>
-                                            <th
-                                              data-dt-column="2"
-                                              rowspan="1"
-                                              colspan="1"
-                                              class="dt-orderable-asc dt-orderable-desc"
-                                              aria-label="Position: Activate to sort"
-                                              tabindex="0">
-                                              <span class="dt-column-title" role="button">장바구니 번호</span
-                                              ><span class="dt-column-order"></span>
-                                            </th>
-                                            <th
-                                              data-dt-column="3"
-                                              rowspan="1"
-                                              colspan="1"
-                                              class="dt-orderable-asc dt-orderable-desc"
-                                              aria-label="Email: Activate to sort"
-                                              tabindex="0">
-                                              <span class="dt-column-title" role="button">패킹번호</span
-                                              ><span class="dt-column-order"></span>
-                                            </th>
-                                            <th
-                                              data-dt-column="4"
-                                              rowspan="1"
-                                              colspan="1"
-                                              class="dt-orderable-asc dt-orderable-desc"
-                                              aria-label="City: Activate to sort"
-                                              tabindex="0">
-                                              <span class="dt-column-title" role="button">주문 등록일</span
-                                              ><span class="dt-column-order"></span>
-                                            </th>
-                                            <th
-                                              data-dt-column="5"
-                                              rowspan="1"
-                                              colspan="1"
-                                              class="dt-orderable-asc dt-orderable-desc"
-                                              aria-label="Date: Activate to sort"
-                                              tabindex="0">
-                                              <span class="dt-column-title" role="button">상품명</span
-                                              ><span class="dt-column-order"></span>
-                                            </th>
-                                            <th
-                                              data-dt-column="6"
-                                              rowspan="1"
-                                              colspan="1"
-                                              class="dt-orderable-asc dt-orderable-desc dt-type-numeric"
-                                              aria-label="Salary: Activate to sort"
-                                              tabindex="0">
-                                              <span class="dt-column-title" role="button">상품명(KR)</span
-                                              ><span class="dt-column-order"></span>
-                                            </th>
-                                            <th
-                                              data-dt-column="7"
-                                              rowspan="1"
-                                              colspan="1"
-                                              class="dt-orderable-asc dt-orderable-desc"
-                                              aria-label="Status: Activate to sort"
-                                              tabindex="0">
-                                              <span class="dt-column-title" role="button">옵션코드</span
-                                              ><span class="dt-column-order"></span>
-                                            </th>
-                                            <th
-                                              data-dt-column="8"
-                                              rowspan="1"
-                                              colspan="1"
-                                              class="dt-orderable-asc dt-orderable-desc"
-                                              aria-label="Status: Activate to sort"
-                                              tabindex="0">
-                                              <span class="dt-column-title" role="button">옵션정보</span
-                                              ><span class="dt-column-order"></span>
-                                            </th>
-                                            <th
-                                              data-dt-column="9"
-                                              rowspan="1"
-                                              colspan="1"
-                                              class="dt-orderable-asc dt-orderable-desc"
-                                              aria-label="Status: Activate to sort"
-                                              tabindex="0">
-                                              <span class="dt-column-title" role="button">통화</span
-                                              ><span class="dt-column-order"></span>
-                                            </th>
-                                            <th
-                                              data-dt-column="10"
-                                              rowspan="1"
-                                              colspan="1"
-                                              class="dt-orderable-asc dt-orderable-desc"
-                                              aria-label="Status: Activate to sort"
-                                              tabindex="0">
-                                              <span class="dt-column-title" role="button">수량</span
-                                              ><span class="dt-column-order"></span>
-                                            </th>
-                                            <th
-                                              data-dt-column="11"
-                                              rowspan="1"
-                                              colspan="1"
-                                              class="dt-orderable-asc dt-orderable-desc"
-                                              aria-label="Status: Activate to sort"
-                                              tabindex="0">
-                                              <span class="dt-column-title" role="button">총판매가</span
-                                              ><span class="dt-column-order"></span>
-                                            </th>
-                                            <th
-                                              data-dt-column="12"
-                                              rowspan="1"
-                                              colspan="1"
-                                              class="dt-orderable-asc dt-orderable-desc"
-                                              aria-label="Status: Activate to sort"
-                                              tabindex="0">
-                                              <span class="dt-column-title" role="button">상품코드</span
-                                              ><span class="dt-column-order"></span>
-                                            </th>
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                          <tr class="selected">
-                                            <td class="dt-select">
-                                              <input aria-label="Select row" class="form-check-input" type="checkbox" />
-                                            </td>
-                                            <td class="sorting_1">2022-03-07</td>
-                                            <td>03월</td>
-                                            <td>TR</td>
-                                            <td>스쿠트 항공 점퍼</td>
-                                            <td>업로드</td>
-                                            <td class="dt-type-numeric">102</td>
-                                            <td>KRW</td>
-                                            <td>1,021,023</td>
-                                            <td>1,000,000</td>
-                                            <td>이혜영</td>
-                                            <td>TR_20230307</td>
-                                            <td>TR_20230307</td>
-                                          </tr>
-                                          <tr class="selected">
-                                            <td class="dt-select">
-                                              <input aria-label="Select row" class="form-check-input" type="checkbox" />
-                                            </td>
-                                            <td class="sorting_1">2022-03-07</td>
-                                            <td>03월</td>
-                                            <td>TR</td>
-                                            <td>스쿠트 항공 점퍼</td>
-                                            <td>업로드</td>
-                                            <td class="dt-type-numeric">102</td>
-                                            <td>KRW</td>
-                                            <td>1,021,023</td>
-                                            <td>1,000,000</td>
-                                            <td>이혜영</td>
-                                            <td>TR_20230307</td>
-                                            <td>TR_20230307</td>
-                                          </tr>
-                                          <tr class="selected">
-                                            <td class="dt-select">
-                                              <input aria-label="Select row" class="form-check-input" type="checkbox" />
-                                            </td>
-                                            <td class="sorting_1">2022-03-07</td>
-                                            <td>03월</td>
-                                            <td>TR</td>
-                                            <td>스쿠트 항공 점퍼</td>
-                                            <td>업로드</td>
-                                            <td class="dt-type-numeric">102</td>
-                                            <td>KRW</td>
-                                            <td>1,021,023</td>
-                                            <td>1,000,000</td>
-                                            <td>이혜영</td>
-                                            <td>TR_20230307</td>
-                                            <td>TR_20230307</td>
-                                          </tr>
-                                        </tbody>
-                                        <tfoot></tfoot>
-                                      </table>
-                                    </div>
-                                  </div>
-                                  <div class="row">
-                                    <div class="d-md-flex align-items-center mt-1">
-                                      <div class="dt-paging mt-3">
-                                        <nav aria-label="pagination">
-                                          <ul class="pagination">
-                                            <li class="dt-paging-button page-item disabled">
-                                              <button
-                                                class="page-link previous"
-                                                role="link"
-                                                type="button"
-                                                aria-controls="DataTables_Table_3"
-                                                aria-disabled="true"
-                                                aria-label="Previous"
-                                                data-dt-idx="previous"
-                                                tabindex="-1">
-                                                <i class="icon-base bx bx-chevron-left scaleX-n1-rtl icon-sm"></i>
-                                              </button>
-                                            </li>
-                                            <li class="dt-paging-button page-item active">
-                                              <button
-                                                class="page-link"
-                                                role="link"
-                                                type="button"
-                                                aria-controls="DataTables_Table_3"
-                                                aria-current="page"
-                                                data-dt-idx="0">
-                                                1
-                                              </button>
-                                            </li>
-                                            <li class="dt-paging-button page-item">
-                                              <button
-                                                class="page-link"
-                                                role="link"
-                                                type="button"
-                                                aria-controls="DataTables_Table_3"
-                                                data-dt-idx="1">
-                                                2
-                                              </button>
-                                            </li>
-                                            <li class="dt-paging-button page-item">
-                                              <button
-                                                class="page-link"
-                                                role="link"
-                                                type="button"
-                                                aria-controls="DataTables_Table_3"
-                                                data-dt-idx="2">
-                                                3
-                                              </button>
-                                            </li>
-                                            <li class="dt-paging-button page-item">
-                                              <button
-                                                class="page-link"
-                                                role="link"
-                                                type="button"
-                                                aria-controls="DataTables_Table_3"
-                                                data-dt-idx="3">
-                                                4
-                                              </button>
-                                            </li>
-                                            <li class="dt-paging-button page-item">
-                                              <button
-                                                class="page-link"
-                                                role="link"
-                                                type="button"
-                                                aria-controls="DataTables_Table_3"
-                                                data-dt-idx="4">
-                                                5
-                                              </button>
-                                            </li>
-                                            <li class="dt-paging-button page-item disabled">
-                                              <button
-                                                class="page-link ellipsis"
-                                                role="link"
-                                                type="button"
-                                                aria-controls="DataTables_Table_3"
-                                                aria-disabled="true"
-                                                data-dt-idx="ellipsis"
-                                                tabindex="-1">
-                                                …
-                                              </button>
-                                            </li>
-                                            <li class="dt-paging-button page-item">
-                                              <button
-                                                class="page-link"
-                                                role="link"
-                                                type="button"
-                                                aria-controls="DataTables_Table_3"
-                                                data-dt-idx="9">
-                                                10
-                                              </button>
-                                            </li>
-                                            <li class="dt-paging-button page-item">
-                                              <button
-                                                class="page-link next"
-                                                role="link"
-                                                type="button"
-                                                aria-controls="DataTables_Table_3"
-                                                aria-label="Next"
-                                                data-dt-idx="next">
-                                                <i class="icon-base bx bx-chevron-right scaleX-n1-rtl icon-sm"></i>
-                                              </button>
-                                            </li>
-                                          </ul>
-                                        </nav>
-                                      </div>
-                                      <div>
-                                        <label for="dt-length-2" class="ms-4 mt-3 d-none d-md-inline-block"
-                                          ><select
-                                            name="DataTables_Table_3_length"
-                                            aria-controls="DataTables_Table_3"
-                                            class="form-select"
-                                            id="dt-length-2">
-                                            <option value="10">10</option>
-                                            <option value="25">25</option>
-                                            <option value="50">50</option>
-                                            <option value="100">100</option>
-                                          </select></label
-                                        >
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                                          <!-- Select -->
+              <div class="card">
+                <!-- <h5 class="card-header pb-0 text-md-start text-center">배송등록</h5> -->
+
+                <div class="card-datatable dataTable_select text-nowrap">
+                  <table class="dt-select-table dt-shipping-register-hand table table-bordered table-responsive">
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th>No.</th>
+                        <th>장바구니 번호</th>
+                        <th>패킹번호</th>
+                        <th>주문 등록일</th>
+                        <th>상품명</th>
+                        <th>상품명(KR)</th>
+                        <th>옵션코드</th>
+                        <th>옵션정보</th>
+                        <th>통화</th>
+                        <th>수량</th>
+                        <th>총판매가</th>
+                        <th>상품코드</th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+              </div>
+              <!--/ Select -->
                           </div>
                         </div>
                       </div>
@@ -937,374 +599,34 @@
                             </div>
                           </div>
                         </form>
+                        
                         <div class="row">
                           <div class="col-12">
-                            <div class="card" style="background: none; box-shadow: none">
-                              <!-- <h5 class="card-header pb-0 text-md-start text-center">Select</h5> -->
-                              <div class="card-datatable dataTable_select text-nowrap">
-                                <div id="DataTables_Table_3_wrapper" class="dt-container dt-bootstrap5 dt-empty-footer">
-                                  <div class="row">
-                                    <div class="d-md-flex align-items-center dt-layout-start col-md-auto me-auto">
-                                      <div class="dt-length mb-2">검색 건수: <span class="fw-bold">3건</span></div>
-                                    </div>
-                                    <div class="col-autoalign-items-center dt-layout-end col-md-auto ms-auto mt-0">
-                                      <div class="dt-search d-inline-block mb-2">
-                                        <input
-                                          type="search"
-                                          class="form-control"
-                                          id="dt-search-3"
-                                          placeholder="검색어를 입력해주세요"
-                                          aria-controls="DataTables_Table_3" />
-                                      </div>
-                                      <div class="d-inline-block">
-                                        <button class="btn btn-outline-primary">검색</button>
-                                        <button class="btn btn-outline-danger">삭제</button>
-                                        <button class="btn btn-outline-success">다운로드</button>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="dt-layout-table mt-0">
-                                    <div
-                                      class="d-md-flex align-items-center col-12 dt-layout-full col-md"
-                                      style="overflow: scroll">
-                                      <table
-                                        class="dt-select-table table table-bordered table-responsive dataTable"
-                                        id="DataTables_Table_3"
-                                        aria-describedby="DataTables_Table_3_info"
-                                        style="width: 100%; background: white">
-                                        <colgroup>
-                                          <col data-dt-column="0" style="width: 66px" />
-                                          <col data-dt-column="1" style="width: 198.188px" />
-                                          <col data-dt-column="2" style="width: 271.797px" />
-                                          <col data-dt-column="3" style="width: 274.125px" />
-                                          <col data-dt-column="4" style="width: 209.031px" />
-                                          <col data-dt-column="5" style="width: 117.359px" />
-                                          <col data-dt-column="6" style="width: 112.578px" />
-                                          <col data-dt-column="7" style="width: 135.734px" />
-                                          <col data-dt-column="8" style="width: 209.031px" />
-                                          <col data-dt-column="9" style="width: 117.359px" />
-                                          <col data-dt-column="10" style="width: 112.578px" />
-                                          <col data-dt-column="11" style="width: 135.734px" />
-                                          <col data-dt-column="12" style="width: 135.734px" />
-                                        </colgroup>
-                                        <thead>
-                                          <tr>
-                                            <th
-                                              data-dt-column="0"
-                                              rowspan="1"
-                                              colspan="1"
-                                              class="dt-select dt-orderable-none"
-                                              aria-label="">
-                                              <span class="dt-column-title"></span><span class="dt-column-order"></span
-                                              ><input
-                                                class="form-check-input"
-                                                type="checkbox"
-                                                aria-label="Select all rows" />
-                                            </th>
-                                            <th
-                                              data-dt-column="1"
-                                              rowspan="1"
-                                              colspan="1"
-                                              class="dt-orderable-asc dt-orderable-desc dt-ordering-desc"
-                                              aria-sort="descending"
-                                              aria-label="Name: Activate to remove sorting"
-                                              tabindex="0">
-                                              <span class="dt-column-title" role="button">No.</span
-                                              ><span class="dt-column-order"></span>
-                                            </th>
-                                            <th
-                                              data-dt-column="2"
-                                              rowspan="1"
-                                              colspan="1"
-                                              class="dt-orderable-asc dt-orderable-desc"
-                                              aria-label="Position: Activate to sort"
-                                              tabindex="0">
-                                              <span class="dt-column-title" role="button">장바구니 번호</span
-                                              ><span class="dt-column-order"></span>
-                                            </th>
-                                            <th
-                                              data-dt-column="3"
-                                              rowspan="1"
-                                              colspan="1"
-                                              class="dt-orderable-asc dt-orderable-desc"
-                                              aria-label="Email: Activate to sort"
-                                              tabindex="0">
-                                              <span class="dt-column-title" role="button">패킹번호</span
-                                              ><span class="dt-column-order"></span>
-                                            </th>
-                                            <th
-                                              data-dt-column="4"
-                                              rowspan="1"
-                                              colspan="1"
-                                              class="dt-orderable-asc dt-orderable-desc"
-                                              aria-label="City: Activate to sort"
-                                              tabindex="0">
-                                              <span class="dt-column-title" role="button">주문 등록일</span
-                                              ><span class="dt-column-order"></span>
-                                            </th>
-                                            <th
-                                              data-dt-column="5"
-                                              rowspan="1"
-                                              colspan="1"
-                                              class="dt-orderable-asc dt-orderable-desc"
-                                              aria-label="Date: Activate to sort"
-                                              tabindex="0">
-                                              <span class="dt-column-title" role="button">상품명</span
-                                              ><span class="dt-column-order"></span>
-                                            </th>
-                                            <th
-                                              data-dt-column="6"
-                                              rowspan="1"
-                                              colspan="1"
-                                              class="dt-orderable-asc dt-orderable-desc dt-type-numeric"
-                                              aria-label="Salary: Activate to sort"
-                                              tabindex="0">
-                                              <span class="dt-column-title" role="button">상품명(KR)</span
-                                              ><span class="dt-column-order"></span>
-                                            </th>
-                                            <th
-                                              data-dt-column="7"
-                                              rowspan="1"
-                                              colspan="1"
-                                              class="dt-orderable-asc dt-orderable-desc"
-                                              aria-label="Status: Activate to sort"
-                                              tabindex="0">
-                                              <span class="dt-column-title" role="button">옵션코드</span
-                                              ><span class="dt-column-order"></span>
-                                            </th>
-                                            <th
-                                              data-dt-column="8"
-                                              rowspan="1"
-                                              colspan="1"
-                                              class="dt-orderable-asc dt-orderable-desc"
-                                              aria-label="Status: Activate to sort"
-                                              tabindex="0">
-                                              <span class="dt-column-title" role="button">옵션정보</span
-                                              ><span class="dt-column-order"></span>
-                                            </th>
-                                            <th
-                                              data-dt-column="9"
-                                              rowspan="1"
-                                              colspan="1"
-                                              class="dt-orderable-asc dt-orderable-desc"
-                                              aria-label="Status: Activate to sort"
-                                              tabindex="0">
-                                              <span class="dt-column-title" role="button">통화</span
-                                              ><span class="dt-column-order"></span>
-                                            </th>
-                                            <th
-                                              data-dt-column="10"
-                                              rowspan="1"
-                                              colspan="1"
-                                              class="dt-orderable-asc dt-orderable-desc"
-                                              aria-label="Status: Activate to sort"
-                                              tabindex="0">
-                                              <span class="dt-column-title" role="button">수량</span
-                                              ><span class="dt-column-order"></span>
-                                            </th>
-                                            <th
-                                              data-dt-column="11"
-                                              rowspan="1"
-                                              colspan="1"
-                                              class="dt-orderable-asc dt-orderable-desc"
-                                              aria-label="Status: Activate to sort"
-                                              tabindex="0">
-                                              <span class="dt-column-title" role="button">총판매가</span
-                                              ><span class="dt-column-order"></span>
-                                            </th>
-                                            <th
-                                              data-dt-column="12"
-                                              rowspan="1"
-                                              colspan="1"
-                                              class="dt-orderable-asc dt-orderable-desc"
-                                              aria-label="Status: Activate to sort"
-                                              tabindex="0">
-                                              <span class="dt-column-title" role="button">상품코드</span
-                                              ><span class="dt-column-order"></span>
-                                            </th>
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                          <tr class="selected">
-                                            <td class="dt-select">
-                                              <input aria-label="Select row" class="form-check-input" type="checkbox" />
-                                            </td>
-                                            <td class="sorting_1">2022-03-07</td>
-                                            <td>03월</td>
-                                            <td>TR</td>
-                                            <td>스쿠트 항공 점퍼</td>
-                                            <td>업로드</td>
-                                            <td class="dt-type-numeric">102</td>
-                                            <td>KRW</td>
-                                            <td>1,021,023</td>
-                                            <td>1,000,000</td>
-                                            <td>이혜영</td>
-                                            <td>TR_20230307</td>
-                                            <td>TR_20230307</td>
-                                          </tr>
-                                          <tr class="selected">
-                                            <td class="dt-select">
-                                              <input aria-label="Select row" class="form-check-input" type="checkbox" />
-                                            </td>
-                                            <td class="sorting_1">2022-03-07</td>
-                                            <td>03월</td>
-                                            <td>TR</td>
-                                            <td>스쿠트 항공 점퍼</td>
-                                            <td>업로드</td>
-                                            <td class="dt-type-numeric">102</td>
-                                            <td>KRW</td>
-                                            <td>1,021,023</td>
-                                            <td>1,000,000</td>
-                                            <td>이혜영</td>
-                                            <td>TR_20230307</td>
-                                            <td>TR_20230307</td>
-                                          </tr>
-                                          <tr class="selected">
-                                            <td class="dt-select">
-                                              <input aria-label="Select row" class="form-check-input" type="checkbox" />
-                                            </td>
-                                            <td class="sorting_1">2022-03-07</td>
-                                            <td>03월</td>
-                                            <td>TR</td>
-                                            <td>스쿠트 항공 점퍼</td>
-                                            <td>업로드</td>
-                                            <td class="dt-type-numeric">102</td>
-                                            <td>KRW</td>
-                                            <td>1,021,023</td>
-                                            <td>1,000,000</td>
-                                            <td>이혜영</td>
-                                            <td>TR_20230307</td>
-                                            <td>TR_20230307</td>
-                                          </tr>
-                                        </tbody>
-                                        <tfoot></tfoot>
-                                      </table>
-                                    </div>
-                                  </div>
-                                  <div class="row">
-                                    <div class="d-md-flex align-items-center mt-1">
-                                      <div class="dt-paging mt-3">
-                                        <nav aria-label="pagination">
-                                          <ul class="pagination">
-                                            <li class="dt-paging-button page-item disabled">
-                                              <button
-                                                class="page-link previous"
-                                                role="link"
-                                                type="button"
-                                                aria-controls="DataTables_Table_3"
-                                                aria-disabled="true"
-                                                aria-label="Previous"
-                                                data-dt-idx="previous"
-                                                tabindex="-1">
-                                                <i class="icon-base bx bx-chevron-left scaleX-n1-rtl icon-sm"></i>
-                                              </button>
-                                            </li>
-                                            <li class="dt-paging-button page-item active">
-                                              <button
-                                                class="page-link"
-                                                role="link"
-                                                type="button"
-                                                aria-controls="DataTables_Table_3"
-                                                aria-current="page"
-                                                data-dt-idx="0">
-                                                1
-                                              </button>
-                                            </li>
-                                            <li class="dt-paging-button page-item">
-                                              <button
-                                                class="page-link"
-                                                role="link"
-                                                type="button"
-                                                aria-controls="DataTables_Table_3"
-                                                data-dt-idx="1">
-                                                2
-                                              </button>
-                                            </li>
-                                            <li class="dt-paging-button page-item">
-                                              <button
-                                                class="page-link"
-                                                role="link"
-                                                type="button"
-                                                aria-controls="DataTables_Table_3"
-                                                data-dt-idx="2">
-                                                3
-                                              </button>
-                                            </li>
-                                            <li class="dt-paging-button page-item">
-                                              <button
-                                                class="page-link"
-                                                role="link"
-                                                type="button"
-                                                aria-controls="DataTables_Table_3"
-                                                data-dt-idx="3">
-                                                4
-                                              </button>
-                                            </li>
-                                            <li class="dt-paging-button page-item">
-                                              <button
-                                                class="page-link"
-                                                role="link"
-                                                type="button"
-                                                aria-controls="DataTables_Table_3"
-                                                data-dt-idx="4">
-                                                5
-                                              </button>
-                                            </li>
-                                            <li class="dt-paging-button page-item disabled">
-                                              <button
-                                                class="page-link ellipsis"
-                                                role="link"
-                                                type="button"
-                                                aria-controls="DataTables_Table_3"
-                                                aria-disabled="true"
-                                                data-dt-idx="ellipsis"
-                                                tabindex="-1">
-                                                …
-                                              </button>
-                                            </li>
-                                            <li class="dt-paging-button page-item">
-                                              <button
-                                                class="page-link"
-                                                role="link"
-                                                type="button"
-                                                aria-controls="DataTables_Table_3"
-                                                data-dt-idx="9">
-                                                10
-                                              </button>
-                                            </li>
-                                            <li class="dt-paging-button page-item">
-                                              <button
-                                                class="page-link next"
-                                                role="link"
-                                                type="button"
-                                                aria-controls="DataTables_Table_3"
-                                                aria-label="Next"
-                                                data-dt-idx="next">
-                                                <i class="icon-base bx bx-chevron-right scaleX-n1-rtl icon-sm"></i>
-                                              </button>
-                                            </li>
-                                          </ul>
-                                        </nav>
-                                      </div>
-                                      <div>
-                                        <label for="dt-length-2" class="ms-4 mt-3"
-                                          ><select
-                                            name="DataTables_Table_3_length"
-                                            aria-controls="DataTables_Table_3"
-                                            class="form-select"
-                                            id="dt-length-2">
-                                            <option value="10">10</option>
-                                            <option value="25">25</option>
-                                            <option value="50">50</option>
-                                            <option value="100">100</option>
-                                          </select></label
-                                        >
-                                      </div>
-                                    </div>
-                                  </div>
+                            <div class="card">
+                                <!-- <h5 class="card-header pb-0 text-md-start text-center">배송등록</h5> -->
+                
+                                <div class="card-datatable dataTable_select text-nowrap">
+                                  <table class="dt-select-table dt-shipping-register-auto table table-bordered table-responsive">
+                                    <thead>
+                                      <tr>
+                                        <th></th>
+                                        <th>No.</th>
+                                        <th>장바구니 번호</th>
+                                        <th>패킹번호</th>
+                                        <th>주문 등록일</th>
+                                        <th>상품명</th>
+                                        <th>상품명(KR)</th>
+                                        <th>옵션코드</th>
+                                        <th>옵션정보</th>
+                                        <th>통화</th>
+                                        <th>수량</th>
+                                        <th>총판매가</th>
+                                        <th>상품코드</th>
+                                      </tr>
+                                    </thead>
+                                  </table>
                                 </div>
                               </div>
-                            </div>
                           </div>
                         </div>
                       </div>
@@ -1422,6 +744,6 @@
     <script src="../../assets/js/main.js"></script>
 
     <!-- Page JS -->
-    <script src="../../assets/js/tables-datatables-extensions.js"></script>
+    <script src="../../assets/js/custom/tables-datatables-extensions.js"></script>
   </body>
 </html>
