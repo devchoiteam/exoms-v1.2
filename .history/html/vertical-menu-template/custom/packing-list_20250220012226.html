@@ -393,7 +393,7 @@
                     <div class="tab-pane fade active show" id="form-tabs-personal" role="tabpanel">
                       <form>
                         <div class="row" style="background: white; border-radius: 0.375rem">
-                          <div class="col-2 col-md-2 col-lg-1 col-xl-1 py-3">
+                          <div class="col-8 col-md-4 col-lg-3 col-xl-2 py-3">
                             <div class="position-relative">
                               <select id="select2Basic" class="select2 form-select select2-hidden-accessible"
                                 data-allow-clear="true" data-select2-id="select2Basic" tabindex="-1" aria-hidden="true">
@@ -413,7 +413,7 @@
                                   aria-hidden="true"></span></span>
                             </div>
                           </div>
-                          <div class="col-2 col-md-2 col-lg-1 col-xl-1 py-3">
+                          <div class="col-8 col-md-4 col-lg-3 col-xl-2 py-3">
                             <select id="select2Basic" class="select2 form-select select2-hidden-accessible"
                               data-allow-clear="true" data-select2-id="select2Basic" tabindex="-1" aria-hidden="true">
                               <option value="reg_date" data-select2-id="2">등록일</option>
@@ -422,30 +422,11 @@
                             </select>
                           </div>
 
-
-
-
-                          <div class="col-1 py-3">
-                            <input type="button" class="form-control" id="year-button" value="1년">
-                            </input>
-                          </div>
-                          <div class="col-1 py-3">
-                            <input type="button" class="form-control" id="month-ago-button" value="전월">
-                            </input>
-                          </div>
-                          <div class="col-1 py-3">
-                            <input type="button" class="form-control" id="month-button" value="당월">
-                            </input>
-                          </div>
-                          <div class="col-1 py-3">
-                            <input type="button" class="form-control" id="today-button" value="오늘">
-                            </input>
-                          </div>
-                          <div class="col-1 py-3">
+                          <div class="col-2 py-3">
                             <input type="date" id="formtabs-startdate" class="form-control" placeholder="시작일"
                               data-placeholder="시작일" aria-required="true" />
                           </div>
-                          <div class="col-1 py-3">
+                          <div class="col-2 py-3">
                             <input type="date" id="formtabs-enddate" class="form-control" placeholder="종료일"
                               aria-label="" />
                           </div>
@@ -457,382 +438,381 @@
                             <input type="text" id="formtabs" class="form-control" placeholder="입력 후 엔터" aria-label="" />
                           </div>
 
-                          <div class="col-1 py-3">
+                          <class="col-1 py-1">
                             <input type="checkbox" id="formtabs-pakking-no" aria-label="복수검색">
                             복수검색
                             </input>
-                          </div>
-
-
                         </div>
-                      </form>
-                      <div class="row">
-                        <div class="col-12">
-                          <!-- Select -->
-                          <div class="card">
-                            <!-- <h5 class="card-header pb-0 text-md-start text-center">배송등록</h5> -->
 
-                            <div class="card-datatable dataTable_select text-nowrap">
-                              <table
-                                class="dt-select-table dt-shipping-register-hand table table-bordered table-responsive">
-                                <thead>
-                                  <tr>
-                                    <th></th>
-                                    <th>No.</th>
-                                    <th>장바구니 번호</th>
-                                    <th>패킹번호</th>
-                                    <th>주문 등록일</th>
-                                    <th>상품명</th>
-                                    <th>상품명(KR)</th>
-                                    <th>옵션코드</th>
-                                    <th>옵션정보</th>
-                                    <th>통화</th>
-                                    <th>수량</th>
-                                    <th>총판매가</th>
-                                    <th>상품코드</th>
-                                  </tr>
-                                </thead>
-                              </table>
-                            </div>
+
+                    </div>
+                    </form>
+                    <div class="row">
+                      <div class="col-12">
+                        <!-- Select -->
+                        <div class="card">
+                          <!-- <h5 class="card-header pb-0 text-md-start text-center">배송등록</h5> -->
+
+                          <div class="card-datatable dataTable_select text-nowrap">
+                            <table
+                              class="dt-select-table dt-shipping-register-hand table table-bordered table-responsive">
+                              <thead>
+                                <tr>
+                                  <th></th>
+                                  <th>No.</th>
+                                  <th>장바구니 번호</th>
+                                  <th>패킹번호</th>
+                                  <th>주문 등록일</th>
+                                  <th>상품명</th>
+                                  <th>상품명(KR)</th>
+                                  <th>옵션코드</th>
+                                  <th>옵션정보</th>
+                                  <th>통화</th>
+                                  <th>수량</th>
+                                  <th>총판매가</th>
+                                  <th>상품코드</th>
+                                </tr>
+                              </thead>
+                            </table>
                           </div>
-                          <!--/ Select -->
                         </div>
+                        <!--/ Select -->
                       </div>
                     </div>
-                    <div class="tab-pane fade" id="form-tabs-account" role="tabpanel">
-                      <form>
-                        <div class="row" style="background: white; border-radius: 0.375rem">
-                          <div class="col-2 py-3">
-                            <div class="position-relative">
-                              <select id="select2Basic" class="select2 form-select select2-hidden-accessible"
-                                data-allow-clear="true" data-select2-id="select2Basic" tabindex="-1" aria-hidden="true">
-                                <option value="AK" data-select2-id="2">Alaska</option>
-                                <option value="HI">Hawaii</option>
-                                <option value="CA">California</option>
-                                <option value="NV">Nevada</option>
-                                <option value="OR">Oregon</option>
-                                <option value="WA">Washington</option>
-                                <option value="AZ">Arizona</option>
-                              </select><span class="select2 select2-container select2-container--default" dir="ltr"
-                                data-select2-id="1" style="width: 560.8px"><span class="selection"><span
-                                    class="select2-selection select2-selection--single" role="combobox"
-                                    aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false"
-                                    aria-labelledby="select2-select2Basic-container"><span
-                                      class="select2-selection__arrow" role="presentation"><b
-                                        role="presentation"></b></span></span></span><span class="dropdown-wrapper"
-                                  aria-hidden="true"></span></span>
-                            </div>
-                            <div><span class="mx-4" style="display: none">|</span></div>
+                  </div>
+                  <div class="tab-pane fade" id="form-tabs-account" role="tabpanel">
+                    <form>
+                      <div class="row" style="background: white; border-radius: 0.375rem">
+                        <div class="col-2 py-3">
+                          <div class="position-relative">
+                            <select id="select2Basic" class="select2 form-select select2-hidden-accessible"
+                              data-allow-clear="true" data-select2-id="select2Basic" tabindex="-1" aria-hidden="true">
+                              <option value="AK" data-select2-id="2">Alaska</option>
+                              <option value="HI">Hawaii</option>
+                              <option value="CA">California</option>
+                              <option value="NV">Nevada</option>
+                              <option value="OR">Oregon</option>
+                              <option value="WA">Washington</option>
+                              <option value="AZ">Arizona</option>
+                            </select><span class="select2 select2-container select2-container--default" dir="ltr"
+                              data-select2-id="1" style="width: 560.8px"><span class="selection"><span
+                                  class="select2-selection select2-selection--single" role="combobox"
+                                  aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false"
+                                  aria-labelledby="select2-select2Basic-container"><span
+                                    class="select2-selection__arrow" role="presentation"><b
+                                      role="presentation"></b></span></span></span><span class="dropdown-wrapper"
+                                aria-hidden="true"></span></span>
                           </div>
-                          <div class="col-2 py-3">
-                            <div class="position-relative">
-                              <select id="formtabs-country" class="select2 form-select select2-hidden-accessible"
-                                data-allow-clear="true" data-select2-id="formtabs-country" tabindex="-1"
-                                aria-hidden="true">
-                                <option value="" disabled selected>날짜 유형</option>
-                                <option value="Australia">배송현황</option>
-                                <option value="Bangladesh">배송 대기중</option>
-                                <option value="Belarus">ALL</option>
-                              </select><span class="select2 select2-container select2-container--default" dir="ltr"
-                                data-select2-id="10" style="width: 560.8px"><span class="selection"><span
-                                    class="select2-selection select2-selection--single" role="combobox"
-                                    aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false"
-                                    aria-labelledby="select2-formtabs-country-container"><span
-                                      class="select2-selection__rendered" id="select2-formtabs-country-container"
-                                      role="textbox" aria-readonly="true"></span><span class="select2-selection__arrow"
-                                      role="presentation"><b role="presentation"></b></span></span></span><span
-                                  class="dropdown-wrapper" aria-hidden="true"></span></span>
-                            </div>
-                          </div>
-                          <div class="col-2 py-3">
-                            <input type="date" id="formtabs-startdate" class="form-control" placeholder="시작일"
-                              data-placeholder="시작일" aria-required="true" />
-                          </div>
-                          <div class="col-2 py-3">
-                            <input type="date" id="formtabs-enddate" class="form-control" placeholder="종료일"
-                              aria-label="" />
-                          </div>
-                          <div class="col-2 py-3">
-                            <a href="/" class="text-danger fw-bold"
-                              style="text-decoration: underline; vertical-align: bottom; line-height: 2.3rem">! <span
-                                id="shop-name"></span>주문수집 API 이용안내</a>
-                          </div>
-                          <div class="col-2 py-3" style="text-align: right">
-                            <button type="submit" class="btn btn-primary">등록주문 수집</button>
+                          <div><span class="mx-4" style="display: none">|</span></div>
+                        </div>
+                        <div class="col-2 py-3">
+                          <div class="position-relative">
+                            <select id="formtabs-country" class="select2 form-select select2-hidden-accessible"
+                              data-allow-clear="true" data-select2-id="formtabs-country" tabindex="-1"
+                              aria-hidden="true">
+                              <option value="" disabled selected>날짜 유형</option>
+                              <option value="Australia">배송현황</option>
+                              <option value="Bangladesh">배송 대기중</option>
+                              <option value="Belarus">ALL</option>
+                            </select><span class="select2 select2-container select2-container--default" dir="ltr"
+                              data-select2-id="10" style="width: 560.8px"><span class="selection"><span
+                                  class="select2-selection select2-selection--single" role="combobox"
+                                  aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false"
+                                  aria-labelledby="select2-formtabs-country-container"><span
+                                    class="select2-selection__rendered" id="select2-formtabs-country-container"
+                                    role="textbox" aria-readonly="true"></span><span class="select2-selection__arrow"
+                                    role="presentation"><b role="presentation"></b></span></span></span><span
+                                class="dropdown-wrapper" aria-hidden="true"></span></span>
                           </div>
                         </div>
-                      </form>
-
-                      <div class="row">
-                        <div class="col-12">
-                          <div class="card">
-                            <!-- <h5 class="card-header pb-0 text-md-start text-center">배송등록</h5> -->
-
-                            <div class="card-datatable dataTable_select text-nowrap">
-                              <table
-                                class="dt-select-table dt-shipping-register-auto table table-bordered table-responsive">
-                                <thead>
-                                  <tr>
-                                    <th></th>
-                                    <th>No.</th>
-                                    <th>장바구니 번호</th>
-                                    <th>패킹번호</th>
-                                    <th>주문 등록일</th>
-                                    <th>상품명</th>
-                                    <th>상품명(KR)</th>
-                                    <th>옵션코드</th>
-                                    <th>옵션정보</th>
-                                    <th>통화</th>
-                                    <th>수량</th>
-                                    <th>총판매가</th>
-                                    <th>상품코드</th>
-                                  </tr>
-                                </thead>
-                              </table>
-                            </div>
-                          </div>
+                        <div class="col-2 py-3">
+                          <input type="date" id="formtabs-startdate" class="form-control" placeholder="시작일"
+                            data-placeholder="시작일" aria-required="true" />
+                        </div>
+                        <div class="col-2 py-3">
+                          <input type="date" id="formtabs-enddate" class="form-control" placeholder="종료일"
+                            aria-label="" />
+                        </div>
+                        <div class="col-2 py-3">
+                          <a href="/" class="text-danger fw-bold"
+                            style="text-decoration: underline; vertical-align: bottom; line-height: 2.3rem">! <span
+                              id="shop-name"></span>주문수집 API 이용안내</a>
+                        </div>
+                        <div class="col-2 py-3" style="text-align: right">
+                          <button type="submit" class="btn btn-primary">등록주문 수집</button>
                         </div>
                       </div>
-                    </div>
-                    <div class="tab-pane fade" id="form-tabs-delete" role="tabpanel">
-                      <form>
-                        <div class="row" style="background: white; border-radius: 0.375rem">
-                          <div class="col-2 py-3">
-                            <div class="position-relative">
-                              <select id="select2Basic" class="select2 form-select select2-hidden-accessible"
-                                data-allow-clear="true" data-select2-id="select2Basic" tabindex="-1" aria-hidden="true">
-                                <option value="AK" data-select2-id="2">Alaska</option>
-                                <option value="HI">Hawaii</option>
-                                <option value="CA">California</option>
-                                <option value="NV">Nevada</option>
-                                <option value="OR">Oregon</option>
-                                <option value="WA">Washington</option>
-                                <option value="AZ">Arizona</option>
-                              </select><span class="select2 select2-container select2-container--default" dir="ltr"
-                                data-select2-id="1" style="width: 560.8px"><span class="selection"><span
-                                    class="select2-selection select2-selection--single" role="combobox"
-                                    aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false"
-                                    aria-labelledby="select2-select2Basic-container"><span
-                                      class="select2-selection__arrow" role="presentation"><b
-                                        role="presentation"></b></span></span></span><span class="dropdown-wrapper"
-                                  aria-hidden="true"></span></span>
-                            </div>
-                            <div><span class="mx-4" style="display: none">|</span></div>
-                          </div>
-                          <div class="col-2 py-3">
-                            <div class="position-relative">
-                              <select id="formtabs-country" class="select2 form-select select2-hidden-accessible"
-                                data-allow-clear="true" data-select2-id="formtabs-country" tabindex="-1"
-                                aria-hidden="true">
-                                <option value="" disabled selected>날짜 유형</option>
-                                <option value="Australia">배송현황</option>
-                                <option value="Bangladesh">배송 대기중</option>
-                                <option value="Belarus">ALL</option>
-                              </select><span class="select2 select2-container select2-container--default" dir="ltr"
-                                data-select2-id="10" style="width: 560.8px"><span class="selection"><span
-                                    class="select2-selection select2-selection--single" role="combobox"
-                                    aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false"
-                                    aria-labelledby="select2-formtabs-country-container"><span
-                                      class="select2-selection__rendered" id="select2-formtabs-country-container"
-                                      role="textbox" aria-readonly="true"></span><span class="select2-selection__arrow"
-                                      role="presentation"><b role="presentation"></b></span></span></span><span
-                                  class="dropdown-wrapper" aria-hidden="true"></span></span>
-                            </div>
-                          </div>
-                          <div class="col-2 py-3">
-                            <input type="date" id="formtabs-startdate" class="form-control" placeholder="시작일"
-                              data-placeholder="시작일" aria-required="true" />
-                          </div>
-                          <div class="col-2 py-3">
-                            <input type="date" id="formtabs-enddate" class="form-control" placeholder="종료일"
-                              aria-label="" />
-                          </div>
-                          <div class="col-2 py-3">
-                            <a href="/" class="text-danger fw-bold"
-                              style="text-decoration: underline; vertical-align: bottom; line-height: 2.3rem">! <span
-                                id="shop-name"></span>주문수집 API 이용안내</a>
-                          </div>
-                          <div class="col-2 py-3" style="text-align: right">
-                            <button type="submit" class="btn btn-primary">등록주문 수집</button>
-                          </div>
-                        </div>
-                      </form>
+                    </form>
 
-                      <div class="row">
-                        <div class="col-12">
-                          <div class="card">
-                            <!-- <h5 class="card-header pb-0 text-md-start text-center">배송등록</h5> -->
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="card">
+                          <!-- <h5 class="card-header pb-0 text-md-start text-center">배송등록</h5> -->
 
-                            <div class="card-datatable dataTable_select text-nowrap">
-                              <table
-                                class="dt-select-table dt-shipping-register-auto table table-bordered table-responsive">
-                                <thead>
-                                  <tr>
-                                    <th></th>
-                                    <th>No.</th>
-                                    <th>장바구니 번호</th>
-                                    <th>패킹번호</th>
-                                    <th>주문 등록일</th>
-                                    <th>상품명</th>
-                                    <th>상품명(KR)</th>
-                                    <th>옵션코드</th>
-                                    <th>옵션정보</th>
-                                    <th>통화</th>
-                                    <th>수량</th>
-                                    <th>총판매가</th>
-                                    <th>상품코드</th>
-                                  </tr>
-                                </thead>
-                              </table>
-                            </div>
+                          <div class="card-datatable dataTable_select text-nowrap">
+                            <table
+                              class="dt-select-table dt-shipping-register-auto table table-bordered table-responsive">
+                              <thead>
+                                <tr>
+                                  <th></th>
+                                  <th>No.</th>
+                                  <th>장바구니 번호</th>
+                                  <th>패킹번호</th>
+                                  <th>주문 등록일</th>
+                                  <th>상품명</th>
+                                  <th>상품명(KR)</th>
+                                  <th>옵션코드</th>
+                                  <th>옵션정보</th>
+                                  <th>통화</th>
+                                  <th>수량</th>
+                                  <th>총판매가</th>
+                                  <th>상품코드</th>
+                                </tr>
+                              </thead>
+                            </table>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="tab-pane fade" id="form-tabs-happozang" role="tabpanel">
-                      <form>
-                        <div class="row" style="background: white; border-radius: 0.375rem">
-                          <div class="col-2 py-3">
-                            <div class="position-relative">
-                              <select id="select2Basic" class="select2 form-select select2-hidden-accessible"
-                                data-allow-clear="true" data-select2-id="select2Basic" tabindex="-1" aria-hidden="true">
-                                <option value="AK" data-select2-id="2">Alaska</option>
-                                <option value="HI">Hawaii</option>
-                                <option value="CA">California</option>
-                                <option value="NV">Nevada</option>
-                                <option value="OR">Oregon</option>
-                                <option value="WA">Washington</option>
-                                <option value="AZ">Arizona</option>
-                              </select><span class="select2 select2-container select2-container--default" dir="ltr"
-                                data-select2-id="1" style="width: 560.8px"><span class="selection"><span
-                                    class="select2-selection select2-selection--single" role="combobox"
-                                    aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false"
-                                    aria-labelledby="select2-select2Basic-container"><span
-                                      class="select2-selection__arrow" role="presentation"><b
-                                        role="presentation"></b></span></span></span><span class="dropdown-wrapper"
-                                  aria-hidden="true"></span></span>
-                            </div>
-                            <div><span class="mx-4" style="display: none">|</span></div>
+                  </div>
+                  <div class="tab-pane fade" id="form-tabs-delete" role="tabpanel">
+                    <form>
+                      <div class="row" style="background: white; border-radius: 0.375rem">
+                        <div class="col-2 py-3">
+                          <div class="position-relative">
+                            <select id="select2Basic" class="select2 form-select select2-hidden-accessible"
+                              data-allow-clear="true" data-select2-id="select2Basic" tabindex="-1" aria-hidden="true">
+                              <option value="AK" data-select2-id="2">Alaska</option>
+                              <option value="HI">Hawaii</option>
+                              <option value="CA">California</option>
+                              <option value="NV">Nevada</option>
+                              <option value="OR">Oregon</option>
+                              <option value="WA">Washington</option>
+                              <option value="AZ">Arizona</option>
+                            </select><span class="select2 select2-container select2-container--default" dir="ltr"
+                              data-select2-id="1" style="width: 560.8px"><span class="selection"><span
+                                  class="select2-selection select2-selection--single" role="combobox"
+                                  aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false"
+                                  aria-labelledby="select2-select2Basic-container"><span
+                                    class="select2-selection__arrow" role="presentation"><b
+                                      role="presentation"></b></span></span></span><span class="dropdown-wrapper"
+                                aria-hidden="true"></span></span>
                           </div>
-                          <div class="col-2 py-3">
-                            <div class="position-relative">
-                              <select id="formtabs-country" class="select2 form-select select2-hidden-accessible"
-                                data-allow-clear="true" data-select2-id="formtabs-country" tabindex="-1"
-                                aria-hidden="true">
-                                <option value="" disabled selected>날짜 유형</option>
-                                <option value="Australia">배송현황</option>
-                                <option value="Bangladesh">배송 대기중</option>
-                                <option value="Belarus">ALL</option>
-                              </select><span class="select2 select2-container select2-container--default" dir="ltr"
-                                data-select2-id="10" style="width: 560.8px"><span class="selection"><span
-                                    class="select2-selection select2-selection--single" role="combobox"
-                                    aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false"
-                                    aria-labelledby="select2-formtabs-country-container"><span
-                                      class="select2-selection__rendered" id="select2-formtabs-country-container"
-                                      role="textbox" aria-readonly="true"></span><span class="select2-selection__arrow"
-                                      role="presentation"><b role="presentation"></b></span></span></span><span
-                                  class="dropdown-wrapper" aria-hidden="true"></span></span>
-                            </div>
-                          </div>
-                          <div class="col-2 py-3">
-                            <input type="date" id="formtabs-startdate" class="form-control" placeholder="시작일"
-                              data-placeholder="시작일" aria-required="true" />
-                          </div>
-                          <div class="col-2 py-3">
-                            <input type="date" id="formtabs-enddate" class="form-control" placeholder="종료일"
-                              aria-label="" />
-                          </div>
-                          <div class="col-2 py-3">
-                            <a href="/" class="text-danger fw-bold"
-                              style="text-decoration: underline; vertical-align: bottom; line-height: 2.3rem">! <span
-                                id="shop-name"></span>주문수집 API 이용안내</a>
-                          </div>
-                          <div class="col-2 py-3" style="text-align: right">
-                            <button type="submit" class="btn btn-primary">등록주문 수집</button>
+                          <div><span class="mx-4" style="display: none">|</span></div>
+                        </div>
+                        <div class="col-2 py-3">
+                          <div class="position-relative">
+                            <select id="formtabs-country" class="select2 form-select select2-hidden-accessible"
+                              data-allow-clear="true" data-select2-id="formtabs-country" tabindex="-1"
+                              aria-hidden="true">
+                              <option value="" disabled selected>날짜 유형</option>
+                              <option value="Australia">배송현황</option>
+                              <option value="Bangladesh">배송 대기중</option>
+                              <option value="Belarus">ALL</option>
+                            </select><span class="select2 select2-container select2-container--default" dir="ltr"
+                              data-select2-id="10" style="width: 560.8px"><span class="selection"><span
+                                  class="select2-selection select2-selection--single" role="combobox"
+                                  aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false"
+                                  aria-labelledby="select2-formtabs-country-container"><span
+                                    class="select2-selection__rendered" id="select2-formtabs-country-container"
+                                    role="textbox" aria-readonly="true"></span><span class="select2-selection__arrow"
+                                    role="presentation"><b role="presentation"></b></span></span></span><span
+                                class="dropdown-wrapper" aria-hidden="true"></span></span>
                           </div>
                         </div>
-                      </form>
+                        <div class="col-2 py-3">
+                          <input type="date" id="formtabs-startdate" class="form-control" placeholder="시작일"
+                            data-placeholder="시작일" aria-required="true" />
+                        </div>
+                        <div class="col-2 py-3">
+                          <input type="date" id="formtabs-enddate" class="form-control" placeholder="종료일"
+                            aria-label="" />
+                        </div>
+                        <div class="col-2 py-3">
+                          <a href="/" class="text-danger fw-bold"
+                            style="text-decoration: underline; vertical-align: bottom; line-height: 2.3rem">! <span
+                              id="shop-name"></span>주문수집 API 이용안내</a>
+                        </div>
+                        <div class="col-2 py-3" style="text-align: right">
+                          <button type="submit" class="btn btn-primary">등록주문 수집</button>
+                        </div>
+                      </div>
+                    </form>
 
-                      <div class="row">
-                        <div class="col-12">
-                          <div class="card">
-                            <!-- <h5 class="card-header pb-0 text-md-start text-center">배송등록</h5> -->
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="card">
+                          <!-- <h5 class="card-header pb-0 text-md-start text-center">배송등록</h5> -->
 
-                            <div class="card-datatable dataTable_select text-nowrap">
-                              <table
-                                class="dt-select-table dt-shipping-register-auto table table-bordered table-responsive">
-                                <thead>
-                                  <tr>
-                                    <th></th>
-                                    <th>No.</th>
-                                    <th>장바구니 번호</th>
-                                    <th>패킹번호</th>
-                                    <th>주문 등록일</th>
-                                    <th>상품명</th>
-                                    <th>상품명(KR)</th>
-                                    <th>옵션코드</th>
-                                    <th>옵션정보</th>
-                                    <th>통화</th>
-                                    <th>수량</th>
-                                    <th>총판매가</th>
-                                    <th>상품코드</th>
-                                  </tr>
-                                </thead>
-                              </table>
-                            </div>
+                          <div class="card-datatable dataTable_select text-nowrap">
+                            <table
+                              class="dt-select-table dt-shipping-register-auto table table-bordered table-responsive">
+                              <thead>
+                                <tr>
+                                  <th></th>
+                                  <th>No.</th>
+                                  <th>장바구니 번호</th>
+                                  <th>패킹번호</th>
+                                  <th>주문 등록일</th>
+                                  <th>상품명</th>
+                                  <th>상품명(KR)</th>
+                                  <th>옵션코드</th>
+                                  <th>옵션정보</th>
+                                  <th>통화</th>
+                                  <th>수량</th>
+                                  <th>총판매가</th>
+                                  <th>상품코드</th>
+                                </tr>
+                              </thead>
+                            </table>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="tab-pane fade" id="form-tabs-social" role="tabpanel">
-                      <div class="row">
-                        <div class="col-12 col-lg-6 col-xxl-4 mt-3 ">
-                          <a href="https://exm.exmate.net/seller/api/list">
-                            <div class="card h-100" style="background-image: url('../../../assets/img/customizer/banner-background.png');    background-repeat: no-repeat;
+                  </div>
+                  <div class="tab-pane fade" id="form-tabs-happozang" role="tabpanel">
+                    <form>
+                      <div class="row" style="background: white; border-radius: 0.375rem">
+                        <div class="col-2 py-3">
+                          <div class="position-relative">
+                            <select id="select2Basic" class="select2 form-select select2-hidden-accessible"
+                              data-allow-clear="true" data-select2-id="select2Basic" tabindex="-1" aria-hidden="true">
+                              <option value="AK" data-select2-id="2">Alaska</option>
+                              <option value="HI">Hawaii</option>
+                              <option value="CA">California</option>
+                              <option value="NV">Nevada</option>
+                              <option value="OR">Oregon</option>
+                              <option value="WA">Washington</option>
+                              <option value="AZ">Arizona</option>
+                            </select><span class="select2 select2-container select2-container--default" dir="ltr"
+                              data-select2-id="1" style="width: 560.8px"><span class="selection"><span
+                                  class="select2-selection select2-selection--single" role="combobox"
+                                  aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false"
+                                  aria-labelledby="select2-select2Basic-container"><span
+                                    class="select2-selection__arrow" role="presentation"><b
+                                      role="presentation"></b></span></span></span><span class="dropdown-wrapper"
+                                aria-hidden="true"></span></span>
+                          </div>
+                          <div><span class="mx-4" style="display: none">|</span></div>
+                        </div>
+                        <div class="col-2 py-3">
+                          <div class="position-relative">
+                            <select id="formtabs-country" class="select2 form-select select2-hidden-accessible"
+                              data-allow-clear="true" data-select2-id="formtabs-country" tabindex="-1"
+                              aria-hidden="true">
+                              <option value="" disabled selected>날짜 유형</option>
+                              <option value="Australia">배송현황</option>
+                              <option value="Bangladesh">배송 대기중</option>
+                              <option value="Belarus">ALL</option>
+                            </select><span class="select2 select2-container select2-container--default" dir="ltr"
+                              data-select2-id="10" style="width: 560.8px"><span class="selection"><span
+                                  class="select2-selection select2-selection--single" role="combobox"
+                                  aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false"
+                                  aria-labelledby="select2-formtabs-country-container"><span
+                                    class="select2-selection__rendered" id="select2-formtabs-country-container"
+                                    role="textbox" aria-readonly="true"></span><span class="select2-selection__arrow"
+                                    role="presentation"><b role="presentation"></b></span></span></span><span
+                                class="dropdown-wrapper" aria-hidden="true"></span></span>
+                          </div>
+                        </div>
+                        <div class="col-2 py-3">
+                          <input type="date" id="formtabs-startdate" class="form-control" placeholder="시작일"
+                            data-placeholder="시작일" aria-required="true" />
+                        </div>
+                        <div class="col-2 py-3">
+                          <input type="date" id="formtabs-enddate" class="form-control" placeholder="종료일"
+                            aria-label="" />
+                        </div>
+                        <div class="col-2 py-3">
+                          <a href="/" class="text-danger fw-bold"
+                            style="text-decoration: underline; vertical-align: bottom; line-height: 2.3rem">! <span
+                              id="shop-name"></span>주문수집 API 이용안내</a>
+                        </div>
+                        <div class="col-2 py-3" style="text-align: right">
+                          <button type="submit" class="btn btn-primary">등록주문 수집</button>
+                        </div>
+                      </div>
+                    </form>
+
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="card">
+                          <!-- <h5 class="card-header pb-0 text-md-start text-center">배송등록</h5> -->
+
+                          <div class="card-datatable dataTable_select text-nowrap">
+                            <table
+                              class="dt-select-table dt-shipping-register-auto table table-bordered table-responsive">
+                              <thead>
+                                <tr>
+                                  <th></th>
+                                  <th>No.</th>
+                                  <th>장바구니 번호</th>
+                                  <th>패킹번호</th>
+                                  <th>주문 등록일</th>
+                                  <th>상품명</th>
+                                  <th>상품명(KR)</th>
+                                  <th>옵션코드</th>
+                                  <th>옵션정보</th>
+                                  <th>통화</th>
+                                  <th>수량</th>
+                                  <th>총판매가</th>
+                                  <th>상품코드</th>
+                                </tr>
+                              </thead>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="form-tabs-social" role="tabpanel">
+                    <div class="row">
+                      <div class="col-12 col-lg-6 col-xxl-4 mt-3 ">
+                        <a href="https://exm.exmate.net/seller/api/list">
+                          <div class="card h-100" style="background-image: url('../../../assets/img/customizer/banner-background.png');    background-repeat: no-repeat;
                             background-size: cover;
                             background-position: center;">
-                              <div class="card-body">
-                                <h2 class="text-white pt-4 mt-4 text-end fw-bold"><i
-                                    class="icon-base bx bx-link icon-lg me-2 mb-2" style="font-size: 2.5rem !important;
+                            <div class="card-body">
+                              <h2 class="text-white pt-4 mt-4 text-end fw-bold"><i
+                                  class="icon-base bx bx-link icon-lg me-2 mb-2" style="font-size: 2.5rem !important;
                                 block-size: 2.5rem !important;
                                 inline-size: 2.5rem !important;
                             "></i>배송 등록 방법</h2>
-                              </div>
                             </div>
-                          </a>
-                        </div>
-                        <div class="col-12 col-lg-6 col-xxl-4 mt-3 ">
-                          <div class="card">
-                            <div class="card-body">
-                              <h6 class="fw-bold">[Qoo10 JP 주문수집 API 이용안내]</h6>
-                              <div>
-                                1.
-                                <a href="https://exm.exmate.net/seller/api/list">Mypage > API 연동 메뉴에서 Qoo10 정보 설정</a>
-                                <br />
-                                2. 오른쪽 화면에서 날짜설정후 [주문수집하기] 버튼 클릭 <br />
-                                3. 하단에 리스트 선택후 [저장] 버튼 눌러서 최종 등록
-                              </div>
-                            </div>
-
                           </div>
-                        </div>
-                        <div class=" col-12 col-lg-6 col-xxl-4 mt-3">
-
-                          <div class="card">
-                            <div class="card-body">
-                              <h6 class="fw-bold">[Rakuten 주문수집 API 이용안내]</h6>
-                              <div>
-                                1.
-                                <a href="https://exm.exmate.net/seller/api/list">
-                                  Mypage > API 연동 메뉴에서 Rakuten 정보 설정
-                                </a>
-                                <br />
-                                2. 오른쪽 화면에서 날짜설정후 [주문수집하기] 버튼 클릭 <br />
-                                3. 하단에 리스트 선택후 [저장] 버튼 눌러서 최종 등록
-                              </div>
+                        </a>
+                      </div>
+                      <div class="col-12 col-lg-6 col-xxl-4 mt-3 ">
+                        <div class="card">
+                          <div class="card-body">
+                            <h6 class="fw-bold">[Qoo10 JP 주문수집 API 이용안내]</h6>
+                            <div>
+                              1.
+                              <a href="https://exm.exmate.net/seller/api/list">Mypage > API 연동 메뉴에서 Qoo10 정보 설정</a>
+                              <br />
+                              2. 오른쪽 화면에서 날짜설정후 [주문수집하기] 버튼 클릭 <br />
+                              3. 하단에 리스트 선택후 [저장] 버튼 눌러서 최종 등록
                             </div>
-
                           </div>
+
+                        </div>
+                      </div>
+                      <div class=" col-12 col-lg-6 col-xxl-4 mt-3">
+
+                        <div class="card">
+                          <div class="card-body">
+                            <h6 class="fw-bold">[Rakuten 주문수집 API 이용안내]</h6>
+                            <div>
+                              1.
+                              <a href="https://exm.exmate.net/seller/api/list">
+                                Mypage > API 연동 메뉴에서 Rakuten 정보 설정
+                              </a>
+                              <br />
+                              2. 오른쪽 화면에서 날짜설정후 [주문수집하기] 버튼 클릭 <br />
+                              3. 하단에 리스트 선택후 [저장] 버튼 눌러서 최종 등록
+                            </div>
+                          </div>
+
                         </div>
                       </div>
                     </div>
@@ -843,27 +823,28 @@
           </div>
         </div>
       </div>
-      <!-- / Content -->
+    </div>
+    <!-- / Content -->
 
-      <!-- Footer -->
-      <footer class="content-footer footer bg-footer-theme" style="background: #d4ded6;    position: fixed;
+    <!-- Footer -->
+    <footer class="content-footer footer bg-footer-theme" style="background: #d4ded6;    position: fixed;
             bottom: 0;
             width: 100%;">
-        <div class="container-fluid">
-          <div class="footer-container d-flex align-items-center py-4 flex-md-row flex-column">
-            <div class="text-body w-100 text-center">
-              Copyright © 2023
-              <a href="https://exmate.net/" target="_blank" class="footer-link">eXmate.</a>
-              All rights reserved
-            </div>
+      <div class="container-fluid">
+        <div class="footer-container d-flex align-items-center py-4 flex-md-row flex-column">
+          <div class="text-body w-100 text-center">
+            Copyright © 2023
+            <a href="https://exmate.net/" target="_blank" class="footer-link">eXmate.</a>
+            All rights reserved
           </div>
         </div>
-      </footer>
-      <!-- / Footer -->
+      </div>
+    </footer>
+    <!-- / Footer -->
 
-      <div class="content-backdrop fade"></div>
-    </div>
-    <!-- Content wrapper -->
+    <div class="content-backdrop fade"></div>
+  </div>
+  <!-- Content wrapper -->
   </div>
   <!-- / Layout page -->
   </div>
