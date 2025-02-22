@@ -38,7 +38,7 @@ window.config = {
     dark: window.Helpers.getCssVar('dark-bg-subtle')
   },
   fontFamily: window.Helpers.getCssVar('font-family-base'),
-  enableMenuLocalStorage: true // Enable menu state with local storage support
+  enableMenuLocalStorage: true
 };
 
 window.assetsPath = document.documentElement.getAttribute('data-assets-path');
@@ -54,7 +54,7 @@ window.templateName = document.documentElement.getAttribute('data-template');
  * TemplateCustomizer settings
  * -------------------------------------------------------------------------------------
  * displayCustomizer: true(Show customizer), false(Hide customizer)
- * lang: To set default language, Add more languages and set default. Fallback language is 'en'
+ * lang: 'en', 'ko','jp'
  * defaultPrimaryColor: '#7367F0' | Set default primary color
  * defaultSkin: 0(Default), 1(Bordered)
  * defaultTheme: 'light', 'dark', 'system'
@@ -72,7 +72,7 @@ window.templateName = document.documentElement.getAttribute('data-template');
 if (typeof TemplateCustomizer !== 'undefined') {
   window.templateCustomizer = new TemplateCustomizer({
     displayCustomizer: false,
-    lang: localStorage.getItem('templateCustomizer-' + templateName + '--Lang') || 'fr', // Set default language here
+    lang: localStorage.getItem('templateCustomizer-' + templateName + '--Lang') || 'ko',
     defaultPrimaryColor: '#2092EC',
     defaultSkin: 1,
     defaultTheme: 'system',
@@ -92,8 +92,7 @@ if (typeof TemplateCustomizer !== 'undefined') {
       'layoutCollapsed',
       'layoutNavbarOptions',
       'headerType',
-      'contentLayout',
-      'rtl'
+      'contentLayout'
     ]
   });
 }

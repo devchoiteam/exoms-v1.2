@@ -112,7 +112,7 @@
   margin-top: 1rem;
 }
 
-/* 테이블 커스텀 CSS */
+/* 테이블 공통 */
 .card-datatable .btn-group > .btn:not(:last-child):not(.dropdown-toggle),
 .card-datatable .btn-group > .btn.dropdown-toggle-split:first-child,
 .card-datatable .btn-group > .btn-group:not(:last-child) > .btn,
@@ -139,4 +139,49 @@
   --bs-btn-disabled-color: #696cff;
   --bs-btn-disabled-bg: transparent;
   --bs-btn-disabled-border-color: #696cff;
+}
+
+/* 사이드바 */
+.main-sidebar .app-brand {
+  background: #223eac;
+}
+.main-sidebar .nav-tabs.nav-fill {
+  background: #001565;
+}
+.main-sidebar .nav-tabs .nav-link {
+  color: #ffffff;
+}
+.main-sidebar .nav-tabs .nav-link.active,
+.main-sidebar .nav-tabs .nav-link.active:hover,
+.main-sidebar .nav-tabs .nav-link.active:focus,
+.main-sidebar .nav-tabs .nav-item.show .nav-link,
+.main-sidebar .nav-tabs .nav-item.show .nav-link:hover,
+.main-sidebar .nav-tabs .nav-item.show .nav-link:focus {
+  box-shadow: 0 -4px 0 #ffffff inset;
+  color: #ffffff;
+}
+.main-sidebar .menu-link,
+.main-sidebar .menu-link label {
+  cursor: pointer;
+}
+.main-sidebar .fast-link {
+  padding: 0 0 0 1rem;
+  float: right;
+}
+.main-sidebar a:not([role='tab']) .bxs-star {
+  background-color: #d9d9d9;
+  vertical-align: text-bottom;
+  margin-right: 0;
+  cursor: pointer;
+  margin-bottom: 0.1rem;
+}
+.main-sidebar a[role='tab'] .bxs-star {
+  block-size: 1.2rem;
+  font-size: 1.2rem;
+  inline-size: 1.2rem;
+  margin-bottom: 0.1rem;
+}
+
+.main-sidebar .bxs-star.active {
+  background-color: gold !important;
 }

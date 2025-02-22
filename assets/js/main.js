@@ -109,9 +109,11 @@ document.addEventListener('DOMContentLoaded', function () {
     item.addEventListener('click', event => {
       event.preventDefault();
       window.Helpers.toggleCollapsed();
-      // Enable menu state with local storage support if enableMenuLocalStorage = true from config.js
+      console.log('is small: ' + Helpers.isSmallScreen());
+
       if (config.enableMenuLocalStorage && !window.Helpers.isSmallScreen()) {
         try {
+          console.log('window.Helpers.isCollapsed: ' + window.Helpers.isCollapsed());
           localStorage.setItem(
             'templateCustomizer-' + templateName + '--LayoutCollapsed',
             String(window.Helpers.isCollapsed())
@@ -760,3 +762,61 @@ document.addEventListener('keydown', event => {
 if (document.documentElement.querySelector('#autocomplete')) {
   loadSearchData();
 }
+
+// 전체화면 버튼
+const buttonFullscreen = document.getElementById('fullscreen-toggle');
+if (buttonFullscreen) {
+  buttonFullscreen.addEventListener('click', () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+      buttonFullscreen.textContent = '전체화면 종료';
+    } else if (document.exitFullscreen) {
+      document.exitFullscreen();
+      buttonFullscreen.textContent = '전체화면';
+    }
+  });
+  document.addEventListener('fullscreenchange', () => {
+    buttonFullscreen.textContent = document.fullscreenElement ? '전체화면 종료' : '전체화면';
+  });
+}
+
+// 즐겨찾기 버튼
+document.addEventListener('DOMContentLoaded', () => {
+  const checkboxes = document.querySelectorAll('.fast-link');
+
+  checkboxes.forEach(checkbox => {
+    const favorite = checkbox.getAttribute('data-favorite');
+    checkbox.checked = localStorage.getItem(`fast-link-${favorite}`) === 'true';
+
+    checkbox.addEventListener('change', () => {
+      localStorage.setItem(`fast-link-${favorite}`, checkbox.checked);
+    });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const links = document.querySelectorAll('.fast-link');
+
+  links.forEach(link => {
+    const favorite = link.getAttribute('data-favorite');
+    const icon = link.querySelector('.bx');
+    const isChecked = localStorage.getItem(`fast-link-${favorite}`) === 'true';
+    if (isChecked) {
+      icon.classList.add('active');
+      //   icon.classList.replace('bx-star', 'bxs-star');
+    }
+
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      const isActive = icon.classList.contains('active');
+      if (isActive) {
+        icon.classList.remove('active');
+        // icon.classList.replace('bxs-star', 'bx-star');
+      } else {
+        icon.classList.add('active');
+        // icon.classList.replace('bx-star', 'bxs-star');
+      }
+      localStorage.setItem(`fast-link-${favorite}`, !isActive);
+    });
+  });
+});
