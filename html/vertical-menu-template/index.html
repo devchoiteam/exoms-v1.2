@@ -23,6 +23,8 @@
         rel="stylesheet" />
 
     <link rel="stylesheet" href="../../assets/vendor/fonts/iconify-icons.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Prestand+JP&family=Prestand+EN&family=Prestand+KO&display=swap"
+        rel="stylesheet">
 
     <!-- Core CSS -->
     <!-- build:css assets/vendor/css/theme.css  -->
@@ -56,7 +58,7 @@
 </head>
 
 <body>
-    <div class="layout-wrapper layout-content-navbar">
+    <div class="layout-wrapper layout-content-navbar common-setting" data-lang="ko">
         <div class="layout-container">
             <!-- 사이드바 -->
             <aside id="layout-menu" class="layout-menu menu-vertical menu main-sidebar">
@@ -113,7 +115,7 @@
                         </li>
                         <li class="menu-item">
                             <a href="javascript:void(0);" class="menu-link menu-toggle">
-                                <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                                <i class="menu-icon tf-icons bx bx-task"></i>
                                 <div class="text-truncate">배송접수</div>
                             </a>
                             <ul class="menu-sub">
@@ -151,7 +153,7 @@
                         </li>
                         <li class="menu-item">
                             <a href="javascript:void(0);" class="menu-link menu-toggle">
-                                <i class="menu-icon tf-icons bx bx-layout"></i>
+                                <i class='menu-icon tf-icons bx bx-collection'></i>
                                 <div class="text-truncate">발송내역</div>
                             </a>
                             <ul class="menu-sub">
@@ -185,22 +187,13 @@
                                         </label>
                                     </a>
                                 </li>
-                                <li class="menu-item" style="display: none;">
-                                    <a href="export-declaration.html" class="menu-link" target="_blank">
-                                        <label class="list-group-item w-100">
-                                            <div class="text-truncate">수출신고
-                                                <span data-favorite="export" class="fast-link"><i
-                                                        class="menu-icon tf-icons bx bxs-star"></i></span>
-                                            </div>
-                                        </label>
-                                    </a>
-                                </li>
                                 <li class="menu-item">
                                     <a href="international-parcel-receiving.html" class="menu-link" target="_blank">
                                         <label class="list-group-item w-100">
-                                            <div class="text-truncate">해외배송 소포 수령중
+                                            <div class="text-truncate">해외소포
                                                 <span class="fast-link" data-favorite="international"><i
                                                         class="menu-icon tf-icons bx bxs-star"></i></span>
+                                            </div>
                                         </label>
                                     </a>
                                 </li>
@@ -226,14 +219,14 @@
                         </li>
                         <li class="menu-item">
                             <a href="javascript:void(0);" class="menu-link menu-toggle">
-                                <i class="menu-icon tf-icons bx bx-cube-alt"></i>
+                                <i class="menu-icon tf-icons bx bx-repeat"></i>
                                 <div class="text-truncate">재배송/회수</div>
                             </a>
                             <ul class="menu-sub">
                                 <li class="menu-item">
                                     <a href="returned-storage-list.html" class="menu-link">
                                         <label class="list-group-item w-100">
-                                            <div class="text-truncate w-100">반송 보관건 목록
+                                            <div class="text-truncate w-100">반송 보관건
                                                 <span data-favorite="returned" class="fast-link"><i
                                                         class="menu-icon tf-icons bx bxs-star"></i></span>
                                             </div>
@@ -255,7 +248,7 @@
                         <li class="menu-item">
                             <a href="javascript:void(0);" class="menu-link menu-toggle">
                                 <i class="menu-icon tf-icons bx bx-user"></i>
-                                <div class="text-truncate" data-i18n="Member Information Management">MyPage</div>
+                                <div class="text-truncate">MyPage</div>
                             </a>
                             <ul class="menu-sub">
                                 <li class="menu-item">
@@ -458,7 +451,7 @@
             </div>
             <!-- /사이드바 -->
 
-            <!-- 본 내용 -->
+            <!-- 사이드바 제외 본문(헤더포함) -->
             <div class="layout-page">
                 <!-- Navbar -->
                 <nav class="layout-navbar container-fluid navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
@@ -494,20 +487,20 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end">
                                     <li>
-                                        <a class="dropdown-item active" href="javascript:void(0);" data-language="jp"
-                                            id="btn-ja">
+                                        <a class="dropdown-item  font-button active" href="javascript:void(0);"
+                                            data-language="jp" id="btn-ja">
                                             <span>JP 일본어</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="javascript:void(0);" data-language="ko"
-                                            id="btn-ko">
+                                        <a class="dropdown-item" font-button href="javascript:void(0);"
+                                            data-language="kr" id="btn-ko">
                                             <span>KR 한국어</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="javascript:void(0);" data-language="en"
-                                            id="btn-en">
+                                        <a class="dropdown-item" font-button href="javascript:void(0);"
+                                            data-language="en" id="btn-en">
                                             <span>EN 영어</span>
                                         </a>
                                     </li>
@@ -829,12 +822,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- / Content -->
-                    <div id="content">
-                        <span data-key="hello">안녕하세요</span>
-                        <span data-key="goodbye">안녕히 가세요</span>
-                        <span data-key="thank_you">감사합니다</span>
-                    </div>
                     <!-- Footer -->
                     <footer class="content-footer footer bg-footer-theme" style="background:#D4DED6;">
                         <div class="container-fluid">
@@ -854,7 +841,7 @@
                 </div>
                 <!-- Content wrapper -->
             </div>
-            <!-- / Layout page -->
+            <!-- / 사이드바 제외 본문 -->
         </div>
 
         <!-- Overlay -->

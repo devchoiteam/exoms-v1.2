@@ -159,6 +159,7 @@
 .main-sidebar .nav-tabs .nav-item.show .nav-link:focus {
   box-shadow: 0 -4px 0 #ffffff inset;
   color: #ffffff;
+  height: 100%;
 }
 .main-sidebar .menu-link,
 .main-sidebar .menu-link label {
@@ -181,7 +182,14 @@
   inline-size: 1.2rem;
   margin-bottom: 0.1rem;
 }
-
 .main-sidebar .bxs-star.active {
   background-color: gold !important;
+}
+.main-sidebar #tabs-favorite .menu-item:not(:has(i.active)) {
+  display: none; /* active 클래스를 가진 <i> 태그가 없는 항목 숨김 */
+}
+
+/* 폰트 */
+body {
+  font-family: 'Prestand KO', 'Prestand JP', 'Prestand EN', sans-serif;
 }

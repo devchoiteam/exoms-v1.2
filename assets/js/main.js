@@ -769,31 +769,20 @@ if (buttonFullscreen) {
   buttonFullscreen.addEventListener('click', () => {
     if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen();
-      buttonFullscreen.textContent = '전체화면 종료';
+      buttonFullscreen.innerHTML = '<i class="icon-base bx bx-collapse me-1"></i>전체화면';
     } else if (document.exitFullscreen) {
       document.exitFullscreen();
-      buttonFullscreen.textContent = '전체화면';
+      buttonFullscreen.innerHTML = '<i class="icon-base bx bx-fullscreen me-1"></i>전체화면';
     }
   });
   document.addEventListener('fullscreenchange', () => {
-    buttonFullscreen.textContent = document.fullscreenElement ? '전체화면 종료' : '전체화면';
+    buttonFullscreen.innerHTML = document.fullscreenElement
+      ? '<i class="icon-base bx bx-collapse me-1"></i>전체화면'
+      : '<i class="icon-base bx bx-fullscreen me-1"></i>전체화면';
   });
 }
 
 // 즐겨찾기 버튼
-document.addEventListener('DOMContentLoaded', () => {
-  const checkboxes = document.querySelectorAll('.fast-link');
-
-  checkboxes.forEach(checkbox => {
-    const favorite = checkbox.getAttribute('data-favorite');
-    checkbox.checked = localStorage.getItem(`fast-link-${favorite}`) === 'true';
-
-    checkbox.addEventListener('change', () => {
-      localStorage.setItem(`fast-link-${favorite}`, checkbox.checked);
-    });
-  });
-});
-
 document.addEventListener('DOMContentLoaded', () => {
   const links = document.querySelectorAll('.fast-link');
 
@@ -803,20 +792,48 @@ document.addEventListener('DOMContentLoaded', () => {
     const isChecked = localStorage.getItem(`fast-link-${favorite}`) === 'true';
     if (isChecked) {
       icon.classList.add('active');
-      //   icon.classList.replace('bx-star', 'bxs-star');
     }
-
     link.addEventListener('click', event => {
       event.preventDefault();
       const isActive = icon.classList.contains('active');
-      if (isActive) {
-        icon.classList.remove('active');
-        // icon.classList.replace('bxs-star', 'bx-star');
-      } else {
-        icon.classList.add('active');
-        // icon.classList.replace('bx-star', 'bxs-star');
+      var targetIcons = document.querySelectorAll('.fast-link[data-favorite="' + favorite + '"] i');
+      if (targetIcons.length > 0) {
+        targetIcons.forEach(function (targetIcon) {
+          if (isActive) {
+            targetIcon.classList.remove('active');
+            icon.classList.remove('active');
+          } else {
+            targetIcon.classList.add('active');
+            icon.classList.add('active');
+          }
+        });
       }
       localStorage.setItem(`fast-link-${favorite}`, !isActive);
+    });
+  });
+});
+
+// 언어에 따른 폰트 적용
+document.addEventListener('DOMContentLoaded', () => {
+  const fontMap = {
+    kr: 'Prestand KO',
+    en: 'Prestand EN',
+    jp: 'Prestand JP'
+  };
+
+  const buttons = document.querySelectorAll('.font-button');
+  const savedFont = localStorage.getItem('selectedFont');
+  if (savedFont && fontMap[savedFont]) {
+    document.body.style.fontFamily = `'${fontMap[savedFont]}', sans-serif`;
+  }
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const fontKey = button.getAttribute('data-font');
+      if (fontMap[fontKey]) {
+        document.body.style.fontFamily = `'${fontMap[fontKey]}', sans-serif`;
+        localStorage.setItem('selectedFont', fontKey);
+      }
     });
   });
 });
