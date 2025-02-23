@@ -1026,3 +1026,34 @@ document.addEventListener('DOMContentLoaded', function () {
   // DataTables 등에서 동적 생생되기 때문에 0.5초 후 실행
   setTimeout(initCheckboxSelection, 500);
 });
+
+// 배송등록 화면 샘플 다운 기능 추가
+document.addEventListener('DOMContentLoaded', function () {
+  const shippingSampleCountrySelect = document.querySelector('.shipping-register-sample-country'); // select 요소 선택
+  const shippingSampleDownLink = document.getElementById('sampleDownloadLink'); // Sample 링크
+
+  if (shippingSampleDownLink) {
+    shippingSampleDownLink.addEventListener('click', function (event) {
+      event.preventDefault(); // 기본 링크 동작 막기
+
+      // 선택된 값 가져오기
+      const selectedValue = shippingSampleCountrySelect.value;
+      let fileUrl = '/assets/file/shipping-register-sample/sample-'; // 기본 파일 경로
+
+      if (selectedValue === 'none') {
+        alert('국가를 선택해주세요'); // 국가를 선택하지 않으면 경고 메시지 표시
+      } else {
+        // 선택된 값에 해당하는 파일 경로 설정
+        fileUrl += selectedValue + '.xlsx';
+
+        // 파일 다운로드 트리거
+        const link = document.createElement('a');
+        link.href = fileUrl;
+        link.download = fileUrl.split('/').pop(); // 파일 이름 추출
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+    });
+  }
+});
