@@ -837,3 +837,123 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// "추가" 버튼 클릭 시 새로운 행 추가
+document.getElementById('addRow').addEventListener('click', function () {
+  var tableBody = document.getElementById('tableBody');
+  var newRow = document.createElement('tr');
+
+  newRow.innerHTML = `
+      <td><input type="checkbox" class="selectRow"></td>
+      <td><input type="number" class="form-control" placeholder="Enter Count"></td>
+      <td><input type="text" class="form-control" placeholder="Enter value"></td>
+      <td><button type="button" class="btn btn-danger btn-sm deleteRow">삭제</button></td> <!-- 삭제 버튼 추가 -->
+    `;
+
+  tableBody.appendChild(newRow);
+
+  // 각 행에 삭제 버튼 기능을 추가
+  addDeleteButtonEvent();
+});
+
+// "전체 선택" 체크박스 기능 (선택된 모든 행의 체크박스 선택)
+document.getElementById('selectAll').addEventListener('change', function () {
+  var checkboxes = document.querySelectorAll('.selectRow');
+  checkboxes.forEach(function (checkbox) {
+    checkbox.checked = document.getElementById('selectAll').checked;
+  });
+});
+
+// 삭제 버튼 이벤트 추가 함수
+function addDeleteButtonEvent() {
+  var deleteButtons = document.querySelectorAll('.deleteRow');
+  deleteButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      var row = button.closest('tr'); // 버튼이 속한 행 찾기
+      row.remove(); // 행 삭제
+    });
+  });
+}
+
+// 초기 삭제 버튼 이벤트 추가
+addDeleteButtonEvent();
+
+// 회수 정보 수정 모달 > 검색 버튼
+document.getElementById('searchBtn').addEventListener('click', function () {
+  var exmNo = document.getElementById('exmNoInput').value || document.getElementById('exmNoSelect').value;
+
+  if (exmNo) {
+    // EXM No에 따른 택배번호 값 예제
+    var trackingData = {
+      EXM123: { tracking: 'TRACK123456', packing: 'PACK123' },
+      EXM456: { tracking: 'TRACK789101', packing: 'PACK456' }
+    };
+
+    if (trackingData[exmNo]) {
+      document.getElementById('trackingNumber').value = trackingData[exmNo].tracking;
+      document.getElementById('exmNoResult').value = exmNo;
+      document.getElementById('packingNo').value = trackingData[exmNo].packing;
+    } else {
+      alert('해당 EXM No의 정보가 없습니다.');
+    }
+  } else {
+    alert('EXM No를 입력하거나 선택하세요.');
+  }
+});
+const dropZone = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+const fileName = document.getElementById('fileName');
+const uploadButton = document.getElementById('uploadConfirm');
+const loadingDiv = document.getElementById('loading');
+
+// 드롭존 클릭 시 파일 선택창 열기
+dropZone.addEventListener('click', () => fileInput.click());
+
+// 파일 선택 시 파일명 표시
+fileInput.addEventListener('change', event => {
+  if (event.target.files.length > 0) {
+    fileName.value = event.target.files[0].name;
+  }
+});
+
+// 드래그 앤 드롭 기능
+dropZone.addEventListener('dragover', event => {
+  event.preventDefault();
+  dropZone.classList.add('bg-light');
+});
+
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('bg-light'));
+
+dropZone.addEventListener('drop', event => {
+  event.preventDefault();
+  dropZone.classList.remove('bg-light');
+
+  if (event.dataTransfer.files.length > 0) {
+    fileInput.files = event.dataTransfer.files;
+    fileName.value = event.dataTransfer.files[0].name;
+  }
+});
+
+// 파일 업로드 버튼 클릭 이벤트
+uploadButton.addEventListener('click', () => {
+  if (!fileInput.files.length) {
+    alert('📂 업로드할 파일을 선택하세요.');
+    return;
+  }
+
+  // 로딩 화면 표시
+  loadingDiv.classList.remove('d-none');
+
+  // 업로드 시뮬레이션 (2초 후 성공 모달 표시)
+  setTimeout(() => {
+    loadingDiv.classList.add('d-none'); // 로딩 숨김
+    var uploadModalEl = document.getElementById('uploadModal');
+    var uploadModalInstance = bootstrap.Modal.getInstance(uploadModalEl);
+    if (uploadModalInstance) {
+      uploadModalInstance.hide(); // 모달 닫기
+    }
+
+    var successModal = new bootstrap.Modal(document.getElementById('successModal'));
+    successModal.show(); // 성공 모달 표시
+  }, 2000);
+});

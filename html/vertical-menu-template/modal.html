@@ -1,0 +1,1094 @@
+<!doctype html>
+
+<html lang="en" class="layout-navbar-fixed layout-menu-fixed layout-compact" dir="ltr" data-skin="default"
+    data-assets-path="../../assets/" data-template="vertical-menu-template-starter" data-bs-theme="light">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>exOMS</title>
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="../../assets/vendor/fonts/iconify-icons.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Prestand+JP&family=Prestand+EN&family=Prestand+KO&display=swap"
+        rel="stylesheet">
+
+    <!-- Core CSS -->
+    <!-- build:css assets/vendor/css/theme.css  -->
+
+    <link rel="stylesheet" href="../../assets/vendor/libs/pickr/pickr-themes.css" />
+
+    <link rel="stylesheet" href="../../assets/vendor/css/core.css" />
+    <link rel="stylesheet" href="../../assets/css/demo.css" />
+
+    <!-- Vendors CSS -->
+
+    <link rel="stylesheet" href="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+
+    <!-- endbuild -->
+    <link rel="stylesheet" href="../../assets/vendor/libs/apex-charts/apex-charts.css" />
+    <link rel="stylesheet" href="../../assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css" />
+    <link rel="stylesheet" href="../../assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css" />
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="../../assets/vendor/css/pages/app-logistics-dashboard.css" />
+    <!-- Helpers -->
+    <script src="../../assets/vendor/js/helpers.js"></script>
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+
+    <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
+    <!-- <script src="../../assets/vendor/js/template-customizer.js"></script> -->
+
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+
+    <script src="../../assets/js/config.js"></script>
+</head>
+
+<body>
+    <div class="layout-wrapper layout-content-navbar common-setting" data-lang="ko">
+        <div class="layout-container">
+            <!-- 사이드바 -->
+            <aside id="layout-menu" class="layout-menu menu-vertical menu main-sidebar">
+                <div class="app-brand demo mt-0 py-12">
+                    <a href="index.html" class="app-brand-link app-brand-text fw-bold h1 text-white"
+                        style="margin: 0 auto;">
+                        exOMS
+                    </a>
+                    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms- d-none">
+                        <i class="icon-base bx bx-chevron-left"></i>
+                    </a>
+                </div>
+                <ul class="nav nav-tabs nav-fill" roll="tablist">
+                    <li class="nav-item" roll="presentation">
+                        <a class="nav-link active" aria-current="all" href="#" data-bs-toggle="tab"
+                            data-bs-target="#tabs-all-menu" role="tab" aria-selected="true"><i
+                                class='menu-icon tf-icons bx bx-list-ul'></i>전체메뉴</a>
+                    </li>
+                    <li class="nav-item" roll="presentation">
+                        <a class="nav-link" aria-current="favorite" href="#" data-bs-toggle="tab"
+                            data-bs-target="#tabs-favorite" role="tab" aria-selected="false"><i
+                                class='menu-icon tf-icons bx bxs-star'></i>즐겨찾기</a>
+                    </li>
+                </ul>
+                <div class="tab-content p-0">
+                    <ul class="menu-inner py-1 tab-pane fade active show" id="tabs-all-menu" role="tabpanel">
+                        <li class="menu-item">
+                            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                                <i class="menu-icon tf-icons bx bx-home-smile"></i>
+                                <div class="text-truncate">HOME</div>
+                            </a>
+                            <ul class="menu-sub">
+                                <li class="menu-item">
+                                    <a href="dashboard.html" class="menu-link">
+                                        <label class="list-group-item w-100">
+                                            <div class="text-truncate w-100 ">대시보드
+                                                <span class="fast-link" data-favorite="dashboard"><i
+                                                        class='menu-icon tf-icons bx bxs-star'></i></span>
+                                            </div>
+                                        </label>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="notice.html" class="menu-link">
+                                        <label class="list-group-item w-100">
+                                            <div class="text-truncate w-100">공지사항
+                                                <span class="fast-link" data-favorite="notice"><i
+                                                        class="menu-icon tf-icons bx bxs-star"></i></span>
+                                            </div>
+                                        </label>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                                <i class="menu-icon tf-icons bx bx-task"></i>
+                                <div class="text-truncate">배송접수</div>
+                            </a>
+                            <ul class="menu-sub">
+                                <li class="menu-item">
+                                    <a href="shipping-register.html" class="menu-link">
+                                        <label class="list-group-item w-100">
+                                            <div class="text-truncate">배송등록
+                                                <span class="fast-link" data-favorite="shipping"><i
+                                                        class="menu-icon tf-icons bx bxs-star"></i></span>
+                                            </div>
+                                        </label>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="packing-list.html" class="menu-link">
+                                        <label class="list-group-item w-100">
+                                            <div class="text-truncate">패킹리스트
+                                                <span data-favorite="packing" class="fast-link"><i
+                                                        class="menu-icon tf-icons bx bxs-star"></i></span>
+                                            </div>
+                                        </label>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="deleted-list.html" class="menu-link">
+                                        <label class="list-group-item w-100">
+                                            <div class="text-truncate">삭제목록
+                                                <span data-favorite="deleted" class="fast-link"><i
+                                                        class="menu-icon tf-icons bx bxs-star"></i></span>
+                                            </div>
+                                        </label>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                                <i class='menu-icon tf-icons bx bx-collection'></i>
+                                <div class="text-truncate">발송내역</div>
+                            </a>
+                            <ul class="menu-sub">
+                                <li class="menu-item">
+                                    <a href="daily-inbound.html" class="menu-link" target="_blank">
+                                        <label class="list-group-item w-100">
+                                            <div class="text-truncate">일별 입고 현황
+                                                <span data-favorite="daily" class="fast-link"><i
+                                                        class="menu-icon tf-icons bx bxs-star"></i></span>
+                                            </div>
+                                        </label>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="shipment-list.html" class="menu-link" target="_blank">
+                                        <label class="list-group-item w-100">
+                                            <div class="text-truncate">발송목록
+                                                <span data-favorite="shipment" class="fast-link"><i
+                                                        class="menu-icon tf-icons bx bxs-star"></i></span>
+                                            </div>
+                                        </label>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="shipping-status.html" class="menu-link" target="_blank">
+                                        <label class="list-group-item w-100">
+                                            <div class="text-truncate">배송현황
+                                                <span data-favorite="shipping" class="fast-link"><i
+                                                        class="menu-icon tf-icons bx bxs-star"></i></span>
+                                            </div>
+                                        </label>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="international-parcel-receiving.html" class="menu-link" target="_blank">
+                                        <label class="list-group-item w-100">
+                                            <div class="text-truncate">해외소포
+                                                <span class="fast-link" data-favorite="international"><i
+                                                        class="menu-icon tf-icons bx bxs-star"></i></span>
+                                            </div>
+                                        </label>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                                <i class="menu-icon tf-icons bx bx-cube-alt"></i>
+                                <div class="text-truncate">상품관리</div>
+                            </a>
+                            <ul class="menu-sub">
+                                <li class="menu-item">
+                                    <a href="gift.html" class="menu-link">
+                                        <label class="list-group-item w-100">
+                                            <div class="text-truncate">사은품관리
+                                                <span data-favorite="gift" class="fast-link"><i
+                                                        class="menu-icon tf-icons bx bxs-star"></i></span>
+                                            </div>
+                                        </label>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                                <i class="menu-icon tf-icons bx bx-repeat"></i>
+                                <div class="text-truncate">재배송/회수</div>
+                            </a>
+                            <ul class="menu-sub">
+                                <li class="menu-item">
+                                    <a href="returned-storage-list.html" class="menu-link">
+                                        <label class="list-group-item w-100">
+                                            <div class="text-truncate w-100">반송 보관건
+                                                <span data-favorite="returned" class="fast-link"><i
+                                                        class="menu-icon tf-icons bx bxs-star"></i></span>
+                                            </div>
+                                        </label>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="retrieval.html" class="menu-link">
+                                        <label class="list-group-item w-100">
+                                            <div class="text-truncate w-100">회수
+                                                <span data-favorite="retrieval" class="fast-link"><i
+                                                        class="menu-icon tf-icons bx bxs-star"></i></span>
+                                            </div>
+                                        </label>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                                <i class="menu-icon tf-icons bx bx-user"></i>
+                                <div class="text-truncate">MyPage</div>
+                            </a>
+                            <ul class="menu-sub">
+                                <li class="menu-item">
+                                    <a href="profile.html" class="menu-link">
+                                        <label class="list-group-item w-100">
+                                            <div class="text-truncate">내정보
+                                                <span data-favorite="profile" class="fast-link"><i
+                                                        class="menu-icon tf-icons bx bxs-star"></i></span>
+                                            </div>
+                                        </label>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="api-integratio.html" class="menu-link">
+                                        <label class="list-group-item w-100">
+                                            <div class="text-truncate">API 연동
+                                                <span data-favorite="api" class="fast-link"><i
+                                                        class="menu-icon tf-icons bx bxs-star"></i></span>
+                                            </div>
+                                        </label>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="menu-inner py-1 tab-pane fade" id="tabs-favorite" role="tabpanel">
+                        <li class="menu-item">
+                            <a href="dashboard.html" class="menu-link">
+                                <label class="list-group-item w-100">
+                                    <div class="text-truncate w-100">대시보드<span data-favorite="dashboard"
+                                            class="fast-link"><i class="menu-icon tf-icons bx bxs-star"></i></span>
+                                    </div>
+                                </label>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="notice.html" class="menu-link">
+                                <label class="list-group-item w-100">
+                                    <div class="text-truncate w-100">공지사항
+                                        <span data-favorite="notice" class="fast-link"><i
+                                                class="menu-icon tf-icons bx bxs-star"></i></span>
+                                    </div>
+
+                                </label>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="shipping-register.html" class="menu-link">
+                                <label class="list-group-item w-100">
+                                    <div class="text-truncate">배송등록
+                                        <span data-favorite="shipping" class="fast-link"><i
+                                                class="menu-icon tf-icons bx bxs-star"></i></span>
+                                    </div>
+
+                                </label>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="packing-list.html" class="menu-link">
+                                <label class="list-group-item w-100">
+                                    <div class="text-truncate">패킹리스트
+                                        <span data-favorite="packing" class="fast-link"><i
+                                                class="menu-icon tf-icons bx bxs-star"></i></span>
+                                    </div>
+
+                                </label>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="deleted-list.html" class="menu-link">
+                                <label class="list-group-item w-100">
+                                    <div class="text-truncate">삭제목록
+                                        <span data-favorite="deleted" class="fast-link"><i
+                                                class="menu-icon tf-icons bx bxs-star"></i></span>
+                                    </div>
+
+                                </label>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="daily-inbound.html" class="menu-link" target="_blank">
+                                <label class="list-group-item w-100">
+                                    <div class="text-truncate">일별 입고 현황
+                                        <span class="fast-link" data-favorite="daily"><i
+                                                class="menu-icon tf-icons bx bxs-star"></i></span>
+                                    </div>
+
+                                </label>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="shipment-list.html" class="menu-link" target="_blank">
+                                <label class="list-group-item w-100">
+                                    <div class="text-truncate">발송목록
+                                        <span data-favorite="shipment" class="fast-link"><i
+                                                class="menu-icon tf-icons bx bxs-star"></i></span>
+                                    </div>
+
+                                </label>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="shipping-status.html" class="menu-link" target="_blank">
+                                <label class="list-group-item w-100">
+                                    <div class="text-truncate">배송현황
+                                        <span data-favorite="shipping" class="fast-link"><i
+                                                class="menu-icon tf-icons bx bxs-star"></i></span>
+                                    </div>
+
+                                </label>
+                            </a>
+                        </li>
+                        <li class="menu-item" style="display: none;">
+                            <a href="export-declaration.html" class="menu-link" target="_blank">
+                                <label class="list-group-item w-100">
+                                    <div class="text-truncate">수출신고
+                                        <span data-favorite="export" class="fast-link"><i
+                                                class="menu-icon tf-icons bx bxs-star"></i></span>
+                                    </div>
+
+                                </label>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="international-parcel-receiving.html" class="menu-link" target="_blank">
+                                <label class="list-group-item w-100">
+                                    <div class="text-truncate">해외배송 소포 수령중
+                                        <span data-favorite="international" class="fast-link"><i
+                                                class="menu-icon tf-icons bx bxs-star"></i></span>
+                                    </div>
+
+                                </label>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="gift.html" class="menu-link">
+                                <label class="list-group-item w-100">
+                                    <div class="text-truncate">사은품관리
+                                        <span class="fast-link" data-favorite="gift"><i
+                                                class="menu-icon tf-icons bx bxs-star"></i></span>
+                                    </div>
+
+                                </label>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="returned-storage-list.html" class="menu-link">
+                                <label class="list-group-item w-100">
+                                    <div class="text-truncate w-100">반송 보관건 목록
+                                        <span data-favorite="returned" class="fast-link"><i
+                                                class="menu-icon tf-icons bx bxs-star"></i></span>
+                                    </div>
+
+                                </label>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="retrieval.html" class="menu-link">
+                                <label class="list-group-item w-100">
+                                    <div class="text-truncate w-100">회수
+                                        <span data-favorite="retrieval" class="fast-link"><i
+                                                class="menu-icon tf-icons bx bxs-star"></i></span>
+                                    </div>
+
+                                </label>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="profile.html" class="menu-link">
+                                <label class="list-group-item w-100">
+                                    <div class="text-truncate">내정보
+                                        <span data-favorite="profile" class="fast-link"><i
+                                                class="menu-icon tf-icons bx bxs-star"></i></span>
+                                    </div>
+
+                                </label>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="api-integratio.html" class="menu-link">
+                                <label class="list-group-item w-100">
+                                    <div class="text-truncate">API 연동
+                                        <span class="fast-link" data-favorite="api"><i
+                                                class="menu-icon tf-icons bx bxs-star"></i></span>
+                                    </div>
+
+                                </label>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="button-container"></div>
+            </aside>
+            <div class="menu-mobile-toggler d-xl-none rounded-1">
+                <a href="javascript:void(0);"
+                    class="layout-menu-toggle menu-link text-large text-bg-secondary p-2 rounded-1">
+                    <i class="bx bx-menu icon-base"></i>
+                    <i class="bx bx-chevron-right icon-base"></i>
+                </a>
+            </div>
+            <!-- /사이드바 -->
+
+            <!-- 사이드바 제외 본문(헤더포함) -->
+            <div class="layout-page">
+                <!-- Navbar -->
+                <nav class="layout-navbar container-fluid navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+                    id="layout-navbar">
+                    <div class="layout-menu-toggle navbar-nav align-items-xl-center me-4 me-xl-0 d-xl-none">
+                        <a class="nav-item nav-link px-0 me-xl-6" href="javascript:void(0)">
+                            <i class="bx bx-menu bx-md"></i>
+                        </a>
+                    </div>
+
+                    <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+                        <!-- 검색영역 -->
+                        <div class="navbar-nav align-items-center">
+                            <div class="nav-item d-flex align-items-center">
+                                <i class="bx bx-search bx-md"></i>
+                                <input type="text" class="form-control border-0 shadow-none ps-1 ps-sm-2"
+                                    placeholder="검색어를 입력해주세요" aria-label="검색어를 입력해주세요" />
+                            </div>
+                        </div>
+                        <!-- /검색영역 -->
+                        <ul class="navbar-nav flex-row align-items-center ms-auto">
+                            <div class="me-2 d-none d-lg-block"><button class="btn btn-outline-secondary btn-sm"
+                                    id="fullscreen-toggle"><i class="icon-base bx bx-fullscreen me-1"></i>전체화면</button>
+                            </div>
+                            <li><span class="d-none d-md-inline-block mx-2 text-secondary">|</span></li>
+                            <li><a class="text-black px-2" href="">가이드</a></li>
+                            <li><span class="d-none d-md-inline-block mx-2 text-secondary">|</span></li>
+                            <li class="nav-item dropdown-language dropdown">
+                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="icon-base bx bx-globe icon-md me-1"></i> <span
+                                        class="d-none d-sm-inline-block" data-i18n="Lang">KR 한국어</span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <a class="dropdown-item  font-button active" href="javascript:void(0);"
+                                            data-language="jp" id="btn-ja">
+                                            <span>JP 일본어</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" font-button href="javascript:void(0);"
+                                            data-language="kr" id="btn-ko">
+                                            <span>KR 한국어</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" font-button href="javascript:void(0);"
+                                            data-language="en" id="btn-en">
+                                            <span>EN 영어</span>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </li>
+                            <li><span class="d-none d-md-inline-block mx-2 text-secondary">|</span></li>
+                            <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
+                                    data-bs-toggle="dropdown">
+                                    홍길동(TS14215)
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 me-3">
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="mb-0">홍길동</h6>
+                                                    <small class="text-muted">TS14215</small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-divider my-1"></div>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="bx bx-md me-3"></i><span>내정보</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-divider my-1"></div>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="javascript:void(0);"><span>로그아웃</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><span class="d-none d-md-inline-block mx-2 text-secondary">|</span></li>
+                            <li class="d-none d-md-inline-block nav-item">
+                                <a href="javascript:void(0)" class="text-black ps-2">로그아웃
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <!-- / Navbar -->
+
+                <!-- Content wrapper -->
+                <div class="content-wrapper">
+                    <!-- Content -->
+                    <div class="container-fluid navbar-expand-xl flex-grow-1 container-p-y">
+
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#uploadSuccess">
+                            업로드 성공
+                        </button>
+                        <!-- 업로드 성공 팝업 -->
+                        <div class="modal fade" id="uploadSuccess" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog modal-sm modal-upload-success">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">팝업 업로드</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="text-center mb-6">
+                                            <p><span class="text-danger fw-bold">팝업 업로드</span>가 성공했습니다.</p>
+                                        </div>
+                                        <div class="d-flex justify-content-end">
+                                            <button type="submit" class="btn btn-primary me-sm-3 me-1">확인</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /업로드 성공 팝업 -->
+
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editUser">
+                            사은품 관리 - 등록 팝업
+                        </button>
+                        <!-- 사은품 관리 - 등록 팝업 -->
+                        <div class="modal fade" id="editUser" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog modal-md modal-simple modal-edit-user">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <h5 class="modal-title mb-4 fw-bold">사은품 관리</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                        <form class="row g-6" onsubmit="return false">
+                                            <div class="col-12">
+                                                <label class="form-label" for="modalEditUserFirstName">Title</label>
+                                                <input type="text" id="modalEditUserFirstName"
+                                                    name="modalEditUserFirstName" class="form-control"
+                                                    placeholder="타이틀을 입력하세요" />
+                                            </div>
+                                            <div class="col-12">
+                                                <label class="form-label" for="modalEditUserLastName">현지 상품명</label>
+                                                <input type="text" id="modalEditUserLastName"
+                                                    name="modalEditUserLastName" class="form-control" placeholder="" />
+                                            </div>
+                                            <div class="col-12">
+                                                <label class="form-label" for="modalEditUserName">영문 상품명</label>
+                                                <input type="text" id="modalEditUserName" name="modalEditUserName"
+                                                    class="form-control" placeholder="" />
+                                            </div>
+                                            <div class="col-12">
+                                                <label class="form-label" for="modalEditUserName">상품 URL</label>
+                                                <input type="text" id="modalEditUserName" name="modalEditUserName"
+                                                    class="form-control" placeholder="" />
+                                            </div>
+                                            <div class="col-12">
+                                                <label class="form-label" for="modalEditUserEmail">Email</label>
+                                                <input type="text" id="modalEditUserEmail" name="modalEditUserEmail"
+                                                    class="form-control" placeholder="example@domain.com" />
+                                            </div>
+                                            <div class="col-12 col-md-4">
+                                                <label class="form-label" for="modalEditUserStatus">1EA 상품가격 및
+                                                    환율</label>
+                                                <select id="modalEditUserStatus" name="modalEditUserStatus"
+                                                    class="select2 form-select" aria-label="Default select example">
+                                                    <option selected>환율</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12 col-md-8">
+                                                <label class="form-label me-1" for="modalEditTaxID"></label>
+                                                <input type="text" id="modalEditTaxID" name="modalEditTaxID"
+                                                    class="form-control modal-edit-tax-id" placeholder="숫자를 입력하세요" />
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-check form-switch my-2 ms-2">
+                                                    <input type="checkbox" class="form-check-input"
+                                                        id="editBillingAddress" checked />
+                                                    <label for="editBillingAddress" class="switch-label">사용여부
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 d-flex justify-content-end">
+                                                <button type="submit" class="btn btn-primary me-sm-3 me-1">등록</button>
+                                                <button type="reset" class="btn btn-label-secondary"
+                                                    data-bs-dismiss="modal" aria-label="Close">
+                                                    취소
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/ 사은품 관리 - 등록 팝업 -->
+
+                        <!-- 모달 버튼 -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#giftModal">
+                            사은품관리 - 사은품 적용
+                        </button>
+
+                        <!-- 모달 -->
+                        <div class="modal fade" id="giftModal" tabindex="-1" aria-labelledby="giftModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="giftModalLabel">사은품관리</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- 테이블 -->
+                                        <div class="table-responsive" style="max-height: 300px; overflow-y: auto;">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th><input type="checkbox" id="selectAll"></th>
+                                                        <th>Count</th>
+                                                        <th>상품명</th>
+                                                        <th>Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="tableBody">
+                                                    <tr>
+                                                        <td><input type="checkbox" class="selectRow"></td>
+                                                        <td><input type="number" class="form-control"
+                                                                placeholder="Enter Count"></td>
+                                                        <td><input type="text" class="form-control"
+                                                                placeholder="Enter value"></td>
+                                                        <td><button type="button"
+                                                                class="btn btn-danger btn-sm deleteRow">삭제</button></td>
+                                                        <!-- 삭제 버튼 -->
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <button id="addRow" class="btn btn-secondary">추가</button>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">취소</button>
+                                        <button type="button" class="btn btn-primary">등록</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 모달 버튼 -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#invoiceModal">
+                            운송장 출력
+                        </button>
+
+                        <!-- 모달 -->
+                        <div class="modal fade" id="invoiceModal" tabindex="-1" aria-labelledby="invoiceModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="invoiceModalLabel">운송장 출력</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- 용지 선택 -->
+                                        <div class="mb-3">
+                                            <label for="paperSize" class="form-label">용지 선택</label>
+                                            <select id="paperSize" class="form-select custom-select">
+                                                <option value="A4">A4</option>
+                                                <option value="B5">B5</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- 체크박스: 노출항목 -->
+                                        <div class="mb-3">
+                                            <label class="form-label">노출항목</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="상품코드"
+                                                    id="productCode">
+                                                <label class="form-check-label" for="productCode">
+                                                    상품코드
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="상품명"
+                                                    id="productName">
+                                                <label class="form-check-label" for="productName">
+                                                    상품명
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="옵션코드"
+                                                    id="optionCode">
+                                                <label class="form-check-label" for="optionCode">
+                                                    옵션코드
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="옵션명"
+                                                    id="optionName">
+                                                <label class="form-check-label" for="optionName">
+                                                    옵션명
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="판매자상품코드"
+                                                    id="sellerProductCode">
+                                                <label class="form-check-label" for="sellerProductCode">
+                                                    판매자 상품코드(한글상품명)
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <!-- 등록순서 선택 -->
+                                        <div class="mb-3">
+                                            <label for="registerOrder" class="form-label">등록순서</label>
+                                            <select id="registerOrder" class="form-select custom-select">
+                                                <option value="asc">오름차순</option>
+                                                <option value="desc">내림차순</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- 옵션명 순서 선택 -->
+                                        <div class="mb-3">
+                                            <label for="optionOrder" class="form-label">옵션명 순서</label>
+                                            <select id="optionOrder" class="form-select custom-select">
+                                                <option value="asc">오름차순</option>
+                                                <option value="desc">내림차순</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <!-- 버튼들 -->
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-success">Print</button>
+                                        <button type="button" class="btn btn-primary">Excel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 회수 정보 수정 모달 버튼 -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#returnModal">
+                            회수 정보 수정
+                        </button>
+
+                        <!-- 회수 정보 수정 모달 -->
+                        <div class="modal fade" id="returnModal" tabindex="-1" aria-labelledby="returnModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="returnModalLabel">회수 정보 수정</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- EXM No 검색 -->
+                                        <div class="mb-3 d-flex">
+                                            <label for="exmNoSelect" class="form-label me-2">EXM No</label>
+                                            <select id="exmNoSelect" class="form-select w-50">
+                                                <option value="">선택하세요</option>
+                                                <option value="EXM123">EXM123</option>
+                                                <option value="EXM456">EXM456</option>
+                                            </select>
+                                            <input type="text" id="exmNoInput" class="form-control ms-2 w-50"
+                                                placeholder="EXM No 입력">
+                                            <button class="btn btn-secondary ms-2" id="searchBtn">검색</button>
+                                        </div>
+
+                                        <!-- 검색 결과 -->
+                                        <div class="mb-3">
+                                            <label for="trackingNumber" class="form-label">택배번호</label>
+                                            <input type="text" id="trackingNumber" class="form-control" disabled>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label for="exmNoResult" class="form-label">EXM No</label>
+                                                <input type="text" id="exmNoResult" class="form-control" disabled>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="packingNo" class="form-label">Packing No</label>
+                                                <input type="text" id="packingNo" class="form-control" disabled>
+                                            </div>
+                                        </div>
+
+                                        <!-- 요청자 정보 -->
+                                        <div class="mb-3">
+                                            <label for="requesterName" class="form-label">요청자 이름</label>
+                                            <input type="text" id="requesterName" class="form-control">
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="contactNumber" class="form-label">연락처</label>
+                                            <input type="text" id="contactNumber" class="form-control">
+                                        </div>
+
+                                        <!-- 회수 희망일시 -->
+                                        <div class="mb-3">
+                                            <label for="desiredDate" class="form-label">회수 희망일시</label>
+                                            <input type="datetime-local" id="desiredDate" class="form-control">
+                                        </div>
+
+                                        <!-- 주소 입력 -->
+                                        <div class="mb-3">
+                                            <label for="postalCode" class="form-label">우편번호</label>
+                                            <input type="text" id="postalCode" class="form-control">
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="address" class="form-label">주소</label>
+                                            <input type="text" id="address" class="form-control">
+                                        </div>
+
+                                        <!-- 택배 부담 선택 -->
+                                        <div class="mb-3">
+                                            <label class="form-label">택배 부담</label>
+                                            <select id="shippingCost" class="form-select">
+                                                <option value="고객">고객 부담</option>
+                                                <option value="선불">선불</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- 메모 -->
+                                        <div class="mb-3">
+                                            <label for="memo" class="form-label">메모</label>
+                                            <textarea id="memo" class="form-control" rows="4"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">닫기</button>
+                                        <button type="button" class="btn btn-primary">등록</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 등록 모달 버튼 -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#registerModal">
+                            등록
+                        </button>
+
+                        <!-- 등록 모달 -->
+                        <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="registerModalLabel">등록</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- 선택 및 입력 -->
+                                        <div class="mb-3">
+                                            <label for="searchType" class="form-label">검색 유형</label>
+                                            <select id="searchType" class="form-select">
+                                                <option value="tracking">택배번호</option>
+                                                <option value="exmNo">EXM No</option>
+                                                <option value="packingNo">Packing No</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="searchInput" class="form-label">입력</label>
+                                            <input type="text" id="searchInput" class="form-control"
+                                                placeholder="번호를 입력하세요">
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">닫기</button>
+                                        <button type="button" class="btn btn-primary" id="searchBtn">조회</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 업로드 모달 버튼 -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#uploadModal">
+                            업로드
+                        </button>
+
+                        <!-- 업로드 모달 -->
+                        <div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="uploadModalLabel">업로드</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <!-- 선택 옵션 -->
+                                        <div class="mb-3">
+                                            <label for="uploadType" class="form-label">업로드 유형</label>
+                                            <select id="uploadType" class="form-select">
+                                                <option value="dropbox">Drop-box</option>
+                                                <option value="tr">TR</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- 파일 업로드 -->
+                                        <div class="mb-3">
+                                            <label class="form-label">파일 업로드</label>
+                                            <div id="dropZone" class="border border-primary rounded p-3 text-center"
+                                                style="cursor: pointer;">
+                                                파일을 여기에 드롭하거나 클릭하여 업로드
+                                            </div>
+                                            <input type="file" id="fileInput" class="form-control mt-2" hidden>
+                                            <input type="text" id="fileName" class="form-control mt-2"
+                                                placeholder="선택된 파일 없음" readonly>
+                                        </div>
+
+                                        <!-- 로딩 표시 (기본적으로 숨김) -->
+                                        <div id="loading" class="text-center mt-3 d-none">
+                                            <div class="spinner-border text-primary" role="status">
+                                                <span class="visually-hidden">Loading...</span>
+                                            </div>
+                                            <p class="mt-2">파일을 업로드하는 중...</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer d-flex justify-content-between">
+                                        <a href="/file/sample.xlsx" class="text-decoration-underline" download>샘플 파일
+                                            다운로드</a>
+                                        <button type="button" class="btn btn-primary" id="uploadConfirm">확인</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 업로드 성공 알림 모달 -->
+                        <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="successModalLabel">업로드 완료</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body text-center">
+                                        <p>📦 <strong>빌링 업로드가 성공했습니다.</strong></p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-success"
+                                            data-bs-dismiss="modal">확인</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Footer -->
+                        <footer class="content-footer footer bg-footer-theme" style="background:#D4DED6;">
+                            <div class="container-fluid">
+                                <div
+                                    class="footer-container d-flex align-items-center justify-content-between py-4 flex-md-row flex-column">
+                                    <div class="text-body w-100 text-center">
+                                        Copyright © 2023
+                                        <a href="https://exmate.net/" target="_blank" class="footer-link">eXmate.</a>
+                                        All rights reserved
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+                        <!-- / Footer -->
+
+                        <div class="content-backdrop fade"></div>
+                    </div>
+                    <!-- Content wrapper -->
+                </div>
+                <!-- / 사이드바 제외 본문 -->
+            </div>
+
+            <!-- Overlay -->
+            <div class="layout-overlay layout-menu-toggle"></div>
+
+            <!-- Drag Target Area To SlideIn Menu On Small Screens -->
+            <div class="drag-target"></div>
+        </div>
+
+        <!-- Core JS -->
+        <!-- build:js assets/vendor/js/theme.js  -->
+
+        <script src="../../assets/vendor/libs/jquery/jquery.js"></script>
+
+        <script src="../../assets/vendor/libs/popper/popper.js"></script>
+        <script src="../../assets/vendor/js/bootstrap.js"></script>
+        <script src="../../assets/vendor/libs/@algolia/autocomplete-js.js"></script>
+
+        <script src="../../assets/vendor/libs/pickr/pickr.js"></script>
+
+        <script src="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+        <script src="../../assets/vendor/libs/hammer/hammer.js"></script>
+        <script src="../../assets/vendor/libs/i18n/i18n.js"></script>
+        <script src="../../assets/vendor/js/menu.js"></script>
+
+        <!-- endbuild -->
+
+        <!-- Vendors JS -->
+        <script src="../../assets/vendor/libs/apex-charts/apexcharts.js"></script>
+        <script src="../../assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
+
+        <!-- Main JS -->
+
+        <script src="../../assets/js/main.js"></script>
+
+        <!-- Page JS -->
+        <script src="../../assets/js/app-logistics-dashboard.js"></script>
+</body>
+
+</html>
