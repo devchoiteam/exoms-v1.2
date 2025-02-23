@@ -1091,7 +1091,6 @@ document.addEventListener('DOMContentLoaded', function () {
       // 선택된 값 가져오기
       const selectedValue = shippingSampleCountrySelect.value;
       let fileUrl = '/assets/file/shipping-register-sample/sample-'; // 기본 파일 경로
-
       if (selectedValue === 'none') {
         alert('국가를 선택해주세요'); // 국가를 선택하지 않으면 경고 메시지 표시
       } else {
