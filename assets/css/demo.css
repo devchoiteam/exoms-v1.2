@@ -195,3 +195,56 @@ body {
 }
 
 /* 팝업/모달 */
+
+/* 배송 등ㄺ */
+
+/* h4와 ul을 한 줄에 배치 */
+.page-title-wrapper .card-header {
+  display: flex;
+  align-items: center; /* 세로 정렬을 중앙으로 */
+  justify-content: flex-start; /* 좌측 정렬 */
+  gap: 1rem; /* 요소들 사이 간격 */
+}
+
+/* 모바일 화면에서 각 요소를 세로로 배치 */
+@media (max-width: 768px) {
+  .page-title-wrapper .card-header {
+    flex-direction: column; /* 세로 배치 */
+    align-items: flex-start; /* 왼쪽 정렬 */
+  }
+
+  .page-title-wrapper .card-header h4 {
+    margin-bottom: 1rem; /* h4와 ul 사이에 공간을 추가 */
+  }
+}
+.page-title-wrapper .nav-tabs .nav-link.active,
+.page-title-wrapper .nav-tabs .nav-link.active:hover,
+.page-title-wrapper .nav-tabs .nav-link.active:focus,
+.page-title-wrapper .nav-tabs .nav-item.show .nav-link,
+.page-title-wrapper .nav-tabs .nav-item.show .nav-link:hover,
+.page-title-wrapper .nav-tabs .nav-item.show .nav-link:focus {
+  box-shadow: 0 -2px 0 #001565 inset;
+  color: black;
+  font-weight: bold;
+}
+.box-shape {
+  border-radius: 0.375rem;
+  box-shadow: var(--bs-box-shadow-sm);
+}
+
+.btn.btn-primary {
+}
+
+:root {
+  --bs-primary: #02a3ab;
+  --bs-success: #3196cd;
+  --bs-warning: #f18a00;
+}
+
+/* 1920 1024 360 */
+@media (max-width: 1024px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 360px) {
+}
