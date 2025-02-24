@@ -896,6 +896,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// 카카오 주소 API
+function searchAddress() {
+  new daum.Postcode({
+    oncomplete: function (data) {
+      // 사용자가 선택한 주소를 입력 필드에 설정
+      document.getElementById('addressInput').value = data.address;
+    }
+  }).open();
+}
+
 // "추가" 버튼 클릭 시 새로운 행
 let addRowInTable = document.getElementById('addRow');
 if (addRowInTable) {
