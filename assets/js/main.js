@@ -793,23 +793,75 @@ document.addEventListener('DOMContentLoaded', () => {
     if (isChecked) {
       icon.classList.add('active');
     }
-    link.addEventListener('click', event => {
-      event.preventDefault();
-      const isActive = icon.classList.contains('active');
-      var targetIcons = document.querySelectorAll('.fast-link[data-favorite="' + favorite + '"] i');
-      if (targetIcons.length > 0) {
-        targetIcons.forEach(function (targetIcon) {
-          if (isActive) {
-            targetIcon.classList.remove('active');
-            icon.classList.remove('active');
-          } else {
-            targetIcon.classList.add('active');
-            icon.classList.add('active');
+
+    // ⭐ favorite-btn-wrapper 안에 버튼 추가하는 로직
+    const favoriteWrapper = document.querySelector('.favorite-btn-wrapper');
+
+    if (favoriteWrapper) {
+      var favoriteBtn = favoriteWrapper.querySelector('.favorite-btn-' + favorite);
+      if (!favoriteBtn) {
+        const newButton = document.createElement('button');
+        newButton.type = 'button';
+        newButton.className = 'btn btn-outline-secondary me-2 d-none favorite-btn-' + favorite;
+        newButton.innerHTML =
+          '<span data-i18n="' + favorite + '"></span><span class="close ms-2 ps-4" style="font-size: 1.1rem">x</span>';
+
+        favoriteWrapper.appendChild(newButton);
+
+        newButton.querySelector('.close').addEventListener('click', event => {
+          event.preventDefault();
+          var targetIcons = document.querySelectorAll('.fast-link[data-favorite="' + favorite + '"] i');
+          if (targetIcons.length > 0) {
+            targetIcons.forEach(function (targetIcon) {
+              targetIcon.classList.remove('active');
+              icon.classList.remove('active');
+            });
           }
+          newButton.classList.add('d-none');
         });
+        if (isChecked) {
+          newButton.classList.remove('d-none');
+        }
+        favoriteBtn = newButton;
       }
-      localStorage.setItem(`fast-link-${favorite}`, !isActive);
-    });
+      link.addEventListener('click', event => {
+        event.preventDefault();
+        const isActive = icon.classList.contains('active');
+        var targetIcons = document.querySelectorAll('.fast-link[data-favorite="' + favorite + '"] i');
+        if (targetIcons.length > 0) {
+          targetIcons.forEach(function (targetIcon) {
+            if (isActive) {
+              targetIcon.classList.remove('active');
+              icon.classList.remove('active');
+              favoriteBtn.classList.add('d-none');
+            } else {
+              targetIcon.classList.add('active');
+              icon.classList.add('active');
+              favoriteBtn.classList.remove('d-none');
+            }
+          });
+        }
+        localStorage.setItem(`fast-link-${favorite}`, !isActive);
+      });
+    } else {
+      link.addEventListener('click', event => {
+        event.preventDefault();
+        const isActive = icon.classList.contains('active');
+        var targetIcons = document.querySelectorAll('.fast-link[data-favorite="' + favorite + '"] i');
+        if (targetIcons.length > 0) {
+          targetIcons.forEach(function (targetIcon) {
+            if (isActive) {
+              targetIcon.classList.remove('active');
+              icon.classList.remove('active');
+            } else {
+              targetIcon.classList.add('active');
+              icon.classList.add('active');
+            }
+          });
+        }
+        localStorage.setItem(`fast-link-${favorite}`, !isActive);
+      });
+    }
   });
 });
 
@@ -829,13 +881,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   buttons.forEach(button => {
     button.addEventListener('click', () => {
-      const fontKey = button.getAttribute('data-font');
+      const fontKey = button.getAttribute('data-language');
+      console.log(fontKey);
+
       if (fontMap[fontKey]) {
         document.body.style.fontFamily = `'${fontMap[fontKey]}', sans-serif`;
         localStorage.setItem('selectedFont', fontKey);
       }
     });
   });
+  console.log(savedFont);
+  if (savedFont && fontMap[savedFont]) {
+    document.querySelector('.font-button[data-language="' + savedFont + '"').click();
+  }
 });
 
 // "추가" 버튼 클릭 시 새로운 행
@@ -993,12 +1051,6 @@ document.addEventListener('DOMContentLoaded', function () {
   function initCheckboxSelection() {
     const checkboxes = document.querySelectorAll(".dt-select input[type='checkbox']");
 
-    // if (checkboxes.length === 0) {
-    //   console.warn('🚨 체크박스가 아직 로드되지 않았습니다. 재시도...');
-    //   setTimeout(initCheckboxSelection, 500); // 0.5초 후 재시도
-    //   return;
-    // }
-
     checkboxes.forEach(checkbox => {
       checkbox.addEventListener('click', function (e) {
         if (!lastChecked) {
@@ -1055,4 +1107,12 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelector('.show-sidebar').addEventListener('click', function (event) {
+    event.preventDefault(); // 기본 동작 방지
+    var sidebar = new bootstrap.Offcanvas(document.getElementById('sidebar'));
+    sidebar.show();
+  });
 });

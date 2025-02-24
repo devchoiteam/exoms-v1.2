@@ -500,7 +500,6 @@ document.addEventListener('DOMContentLoaded', function (e) {
     '.dt-select-table:not(.dt-shipping-register-hand, .dt-shipping-register-auto)'
   );
   let dt_select;
-
   if (dt_select_table) {
     dt_select = new DataTable(dt_select_table, {
       ajax: assetsPath + 'json/table-datatable.json',
@@ -694,7 +693,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
           buttons: [
             { text: '저장', name: 'primary', className: 'btn btn-outline-primary' },
             { text: '삭제', className: 'btn btn-outline-danger' },
-            { text: '다운로드', className: 'btn btn-outline-success' }
+            { text: '다운로드', className: 'btn btn-outline-success table-download-btn' }
           ]
         },
         topStart: {
