@@ -1,0 +1,913 @@
+<!doctype html>
+
+<html lang="en" class="layout-navbar-fixed layout-menu-fixed layout-compact" dir="ltr" data-skin="default"
+    data-assets-path="assets/" data-template="vertical-menu-template-starter" data-bs-theme="light">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>exOMS</title>
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon/favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="assets/vendor/fonts/iconify-icons.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Prestand+JP&family=Prestand+EN&family=Prestand+KO&display=swap"
+        rel="stylesheet">
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="assets/vendor/css/theme.css">
+    <link rel="stylesheet" href="assets/vendor/libs/apex-charts/apex-charts.css" />
+    <link rel="stylesheet" href="assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css" />
+    <link rel="stylesheet" href="assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css" />
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="assets/vendor/css/pages/app-logistics-dashboard.css" />
+
+    <!-- Helpers -->
+    <script src="assets/vendor/js/helpers.js"></script>
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+
+    <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
+    <!-- <script src="assets/vendor/js/template-customizer.js"></script> -->
+
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+
+    <script src="assets/js/config.js"></script>
+</head>
+
+<body>
+    <div class="layout-wrapper layout-content-navbar">
+        <div class="layout-container position-relative">
+            <!-- 사이드바 -->
+            <aside id="layout-menu" class="layout-menu menu-vertical menu main-sidebar">
+                <div class="app-brand demo mt-0 py-12">
+                    <a href="index.html" class="app-brand-link app-brand-text fw-bold h1 text-white"
+                        style="margin: 0 auto;">
+                        exOMS
+                    </a>
+                    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms- d-none">
+                        <i class="icon-base bx bx-chevron-left"></i>
+                    </a>
+                </div>
+                <ul class="nav nav-tabs nav-fill" roll="tablist">
+                    <li class="nav-item" roll="presentation">
+                        <a class="nav-link active" aria-current="all" href="#" data-bs-toggle="tab"
+                            data-bs-target="#tabs-all-menu" role="tab" aria-selected="true"><i
+                                class='menu-icon tf-icons bx bx-list-ul'></i>전체메뉴</a>
+                    </li>
+                    <li class="nav-item" roll="presentation">
+                        <a class="nav-link" aria-current="favorite" href="#" data-bs-toggle="tab"
+                            data-bs-target="#tabs-favorite" role="tab" aria-selected="false"><i
+                                class='menu-icon tf-icons bx bxs-star'></i>즐겨찾기</a>
+                    </li>
+                </ul>
+                <div class="tab-content p-0">
+                    <ul class="menu-inner py-1 tab-pane fade active show" id="tabs-all-menu" role="tabpanel">
+                        <li class="menu-item">
+                            <a href="/" class="menu-link menu-toggle">
+                                <i class="menu-icon tf-icons bx bx-home-smile"></i>
+                                <div class="text-truncate">HOME</div>
+                            </a>
+                            <ul class="menu-sub">
+                                <li class="menu-item">
+                                    <a href="/html/vertical-menu-template/dashboard.html" class="menu-link">
+                                        <label class="list-group-item w-100">
+                                            <div class="text-truncate w-100 "><span data-i18n="dashboard"></span>
+                                                <span class="fast-link" data-favorite="dashboard"><i
+                                                        class='menu-icon tf-icons bx bxs-star'></i></span>
+                                            </div>
+                                        </label>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/html/vertical-menu-template/notice.html" class="menu-link">
+                                        <label class="list-group-item w-100">
+                                            <div class="text-truncate w-100">공지사항
+                                                <span class="fast-link" data-favorite="notice"><i
+                                                        class="menu-icon tf-icons bx bxs-star"></i></span>
+                                            </div>
+                                        </label>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                                <i class="menu-icon tf-icons bx bx-task"></i>
+                                <div class="text-truncate">배송접수</div>
+                            </a>
+                            <ul class="menu-sub">
+                                <li class="menu-item">
+                                    <a href="/html/vertical-menu-template/shipping-register.html" class="menu-link">
+                                        <label class="list-group-item w-100">
+                                            <div class="text-truncate">배송등록
+                                                <span class="fast-link" data-favorite="shipping"><i
+                                                        class="menu-icon tf-icons bx bxs-star"></i></span>
+                                            </div>
+                                        </label>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/html/vertical-menu-template/packing-list.html" class="menu-link">
+                                        <label class="list-group-item w-100">
+                                            <div class="text-truncate">패킹리스트
+                                                <span data-favorite="packing" class="fast-link"><i
+                                                        class="menu-icon tf-icons bx bxs-star"></i></span>
+                                            </div>
+                                        </label>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/html/vertical-menu-template/deleted-list.html" class="menu-link">
+                                        <label class="list-group-item w-100">
+                                            <div class="text-truncate">삭제목록
+                                                <span data-favorite="deleted" class="fast-link"><i
+                                                        class="menu-icon tf-icons bx bxs-star"></i></span>
+                                            </div>
+                                        </label>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                                <i class='menu-icon tf-icons bx bx-collection'></i>
+                                <div class="text-truncate">발송내역</div>
+                            </a>
+                            <ul class="menu-sub">
+                                <li class="menu-item">
+                                    <a href="/html/vertical-menu-template/daily-inbound.html" class="menu-link"
+                                        target="_blank">
+                                        <label class="list-group-item w-100">
+                                            <div class="text-truncate">일별 입고 현황
+                                                <span data-favorite="daily" class="fast-link"><i
+                                                        class="menu-icon tf-icons bx bxs-star"></i></span>
+                                            </div>
+                                        </label>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/html/vertical-menu-template/shipment-list.html" class="menu-link"
+                                        target="_blank">
+                                        <label class="list-group-item w-100">
+                                            <div class="text-truncate">발송목록
+                                                <span data-favorite="shipment" class="fast-link"><i
+                                                        class="menu-icon tf-icons bx bxs-star"></i></span>
+                                            </div>
+                                        </label>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/html/vertical-menu-template/shipping-status.html" class="menu-link"
+                                        target="_blank">
+                                        <label class="list-group-item w-100">
+                                            <div class="text-truncate">배송현황
+                                                <span data-favorite="shipping" class="fast-link"><i
+                                                        class="menu-icon tf-icons bx bxs-star"></i></span>
+                                            </div>
+                                        </label>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/html/vertical-menu-template/international-parcel.html" class="menu-link"
+                                        target="_blank">
+                                        <label class="list-group-item w-100">
+                                            <div class="text-truncate">해외소포
+                                                <span class="fast-link" data-favorite="international"><i
+                                                        class="menu-icon tf-icons bx bxs-star"></i></span>
+                                            </div>
+                                        </label>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                                <i class="menu-icon tf-icons bx bx-cube-alt"></i>
+                                <div class="text-truncate">상품관리</div>
+                            </a>
+                            <ul class="menu-sub">
+                                <li class="menu-item">
+                                    <a href="/html/vertical-menu-template/gift.html" class="menu-link">
+                                        <label class="list-group-item w-100">
+                                            <div class="text-truncate">사은품관리
+                                                <span data-favorite="gift" class="fast-link"><i
+                                                        class="menu-icon tf-icons bx bxs-star"></i></span>
+                                            </div>
+                                        </label>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                                <i class="menu-icon tf-icons bx bx-repeat"></i>
+                                <div class="text-truncate">재배송/회수</div>
+                            </a>
+                            <ul class="menu-sub">
+                                <li class="menu-item">
+                                    <a href="/html/vertical-menu-template/returned-storage-list.html" class="menu-link">
+                                        <label class="list-group-item w-100">
+                                            <div class="text-truncate w-100">반송 보관건
+                                                <span data-favorite="returned" class="fast-link"><i
+                                                        class="menu-icon tf-icons bx bxs-star"></i></span>
+                                            </div>
+                                        </label>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/html/vertical-menu-template/retrieval.html" class="menu-link">
+                                        <label class="list-group-item w-100">
+                                            <div class="text-truncate w-100">회수
+                                                <span data-favorite="retrieval" class="fast-link"><i
+                                                        class="menu-icon tf-icons bx bxs-star"></i></span>
+                                            </div>
+                                        </label>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                                <i class="menu-icon tf-icons bx bx-user"></i>
+                                <div class="text-truncate">MyPage</div>
+                            </a>
+                            <ul class="menu-sub">
+                                <li class="menu-item">
+                                    <a href="/html/vertical-menu-template/profile.html" class="menu-link">
+                                        <label class="list-group-item w-100">
+                                            <div class="text-truncate">내정보
+                                                <span data-favorite="profile" class="fast-link"><i
+                                                        class="menu-icon tf-icons bx bxs-star"></i></span>
+                                            </div>
+                                        </label>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/html/vertical-menu-template/api-integratio.html" class="menu-link">
+                                        <label class="list-group-item w-100">
+                                            <div class="text-truncate">API 연동
+                                                <span data-favorite="api" class="fast-link"><i
+                                                        class="menu-icon tf-icons bx bxs-star"></i></span>
+                                            </div>
+                                        </label>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="menu-inner py-1 tab-pane fade" id="tabs-favorite" role="tabpanel">
+                        <li class="menu-item">
+                            <a href="/html/vertical-menu-template/dashboard.html" class="menu-link">
+                                <label class="list-group-item w-100">
+                                    <div class="text-truncate w-100">대시보드<span data-favorite="dashboard"
+                                            class="fast-link"><i class="menu-icon tf-icons bx bxs-star"></i></span>
+                                    </div>
+                                </label>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/html/vertical-menu-template/notice.html" class="menu-link">
+                                <label class="list-group-item w-100">
+                                    <div class="text-truncate w-100">공지사항
+                                        <span data-favorite="notice" class="fast-link"><i
+                                                class="menu-icon tf-icons bx bxs-star"></i></span>
+                                    </div>
+
+                                </label>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/html/vertical-menu-template/shipping-register.html" class="menu-link">
+                                <label class="list-group-item w-100">
+                                    <div class="text-truncate">배송등록
+                                        <span data-favorite="shipping" class="fast-link"><i
+                                                class="menu-icon tf-icons bx bxs-star"></i></span>
+                                    </div>
+
+                                </label>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/html/vertical-menu-template/packing-list.html" class="menu-link">
+                                <label class="list-group-item w-100">
+                                    <div class="text-truncate">패킹리스트
+                                        <span data-favorite="packing" class="fast-link"><i
+                                                class="menu-icon tf-icons bx bxs-star"></i></span>
+                                    </div>
+
+                                </label>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/html/vertical-menu-template/deleted-list.html" class="menu-link">
+                                <label class="list-group-item w-100">
+                                    <div class="text-truncate">삭제목록
+                                        <span data-favorite="deleted" class="fast-link"><i
+                                                class="menu-icon tf-icons bx bxs-star"></i></span>
+                                    </div>
+
+                                </label>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/html/vertical-menu-template/daily-inbound.html" class="menu-link" target="_blank">
+                                <label class="list-group-item w-100">
+                                    <div class="text-truncate">일별 입고 현황
+                                        <span class="fast-link" data-favorite="daily"><i
+                                                class="menu-icon tf-icons bx bxs-star"></i></span>
+                                    </div>
+
+                                </label>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/html/vertical-menu-template/shipment-list.html" class="menu-link" target="_blank">
+                                <label class="list-group-item w-100">
+                                    <div class="text-truncate">발송목록
+                                        <span data-favorite="shipment" class="fast-link"><i
+                                                class="menu-icon tf-icons bx bxs-star"></i></span>
+                                    </div>
+
+                                </label>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/html/vertical-menu-template/shipping-status.html" class="menu-link"
+                                target="_blank">
+                                <label class="list-group-item w-100">
+                                    <div class="text-truncate">배송현황
+                                        <span data-favorite="shipping" class="fast-link"><i
+                                                class="menu-icon tf-icons bx bxs-star"></i></span>
+                                    </div>
+
+                                </label>
+                            </a>
+                        </li>
+                        <li class="menu-item" style="display: none;">
+                            <a href="/html/vertical-menu-template/export-declaration.html" class="menu-link"
+                                target="_blank">
+                                <label class="list-group-item w-100">
+                                    <div class="text-truncate">수출신고
+                                        <span data-favorite="export" class="fast-link"><i
+                                                class="menu-icon tf-icons bx bxs-star"></i></span>
+                                    </div>
+
+                                </label>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/html/vertical-menu-template/international-parcel-receiving.html" class="menu-link"
+                                target="_blank">
+                                <label class="list-group-item w-100">
+                                    <div class="text-truncate">해외배송 소포 수령중
+                                        <span data-favorite="international" class="fast-link"><i
+                                                class="menu-icon tf-icons bx bxs-star"></i></span>
+                                    </div>
+
+                                </label>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/html/vertical-menu-template/gift.html" class="menu-link">
+                                <label class="list-group-item w-100">
+                                    <div class="text-truncate">사은품관리
+                                        <span class="fast-link" data-favorite="gift"><i
+                                                class="menu-icon tf-icons bx bxs-star"></i></span>
+                                    </div>
+
+                                </label>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/html/vertical-menu-template/returned-storage-list.html" class="menu-link">
+                                <label class="list-group-item w-100">
+                                    <div class="text-truncate w-100">반송 보관건 목록
+                                        <span data-favorite="returned" class="fast-link"><i
+                                                class="menu-icon tf-icons bx bxs-star"></i></span>
+                                    </div>
+
+                                </label>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/html/vertical-menu-template/retrieval.html" class="menu-link">
+                                <label class="list-group-item w-100">
+                                    <div class="text-truncate w-100">회수
+                                        <span data-favorite="retrieval" class="fast-link"><i
+                                                class="menu-icon tf-icons bx bxs-star"></i></span>
+                                    </div>
+
+                                </label>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/html/vertical-menu-template/profile.html" class="menu-link">
+                                <label class="list-group-item w-100">
+                                    <div class="text-truncate">내정보
+                                        <span data-favorite="profile" class="fast-link"><i
+                                                class="menu-icon tf-icons bx bxs-star"></i></span>
+                                    </div>
+
+                                </label>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/html/vertical-menu-template/api-integratio.html" class="menu-link">
+                                <label class="list-group-item w-100">
+                                    <div class="text-truncate">API 연동
+                                        <span class="fast-link" data-favorite="api"><i
+                                                class="menu-icon tf-icons bx bxs-star"></i></span>
+                                    </div>
+
+                                </label>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="button-container"></div>
+            </aside>
+            <div class="menu-mobile-toggler d-xl-none rounded-1">
+                <a href="javascript:void(0);"
+                    class="layout-menu-toggle menu-link text-large text-bg-secondary p-2 rounded-1">
+                    <i class="bx bx-menu icon-base"></i>
+                    <i class="bx bx-chevron-right icon-base"></i>
+                </a>
+            </div>
+            <!-- /사이드바 -->
+
+            <!-- 사이드바 제외 본문(헤더포함) -->
+            <div class="layout-page position-relative pb-4">
+                <!-- Navbar -->
+                <nav class="layout-navbar container-fluid navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+                    id="layout-navbar">
+                    <div class="layout-menu-toggle navbar-nav align-items-xl-center me-4 me-xl-0 d-xl-none">
+                        <a class="nav-item nav-link px-0 me-xl-6" href="javascript:void(0)">
+                            <i class="bx bx-menu bx-md"></i>
+                        </a>
+                    </div>
+
+                    <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+                        <!-- 검색영역 -->
+                        <div class="navbar-nav align-items-center">
+                            <div class="nav-item d-flex align-items-center">
+                                <i class="bx bx-search bx-md"></i>
+                                <input type="text" class="form-control border-0 shadow-none ps-1 ps-sm-2"
+                                    placeholder="검색어를 입력해주세요" aria-label="검색어를 입력해주세요" />
+                            </div>
+                        </div>
+                        <!-- /검색영역 -->
+                        <ul class="navbar-nav flex-row align-items-center ms-auto">
+                            <div class="me-2 d-none d-lg-block"><button class="btn btn-outline-secondary btn-sm"
+                                    id="fullscreen-toggle"><i class="icon-base bx bx-fullscreen me-1"></i>전체화면</button>
+                            </div>
+                            <li><span class="d-none d-md-inline-block mx-2 text-secondary">|</span></li>
+                            <li><a class="text-black px-2" href="">가이드</a></li>
+                            <li><span class="d-none d-md-inline-block mx-2 text-secondary">|</span></li>
+                            <li class="nav-item dropdown-language dropdown">
+                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="icon-base bx bx-globe icon-md me-1"></i> <span
+                                        class="d-none d-sm-inline-block" data-i18n="Lang">KR 한국어</span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <a class="dropdown-item  font-button active" href="javascript:void(0);"
+                                            data-language="jp" id="btn-ja">
+                                            <span>JP 일본어</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" font-button href="javascript:void(0);"
+                                            data-language="kr" id="btn-ko">
+                                            <span>KR 한국어</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" font-button href="javascript:void(0);"
+                                            data-language="en" id="btn-en">
+                                            <span>EN 영어</span>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </li>
+                            <li><span class="d-none d-md-inline-block mx-2 text-secondary">|</span></li>
+                            <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
+                                    data-bs-toggle="dropdown">
+                                    홍길동(TS14215)
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 me-3">
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="mb-0">홍길동</h6>
+                                                    <small class="text-muted">TS14215</small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-divider my-1"></div>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="bx bx-md me-3"></i><span>내정보</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-divider my-1"></div>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="javascript:void(0);"><span>로그아웃</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><span class="d-none d-md-inline-block mx-2 text-secondary">|</span></li>
+                            <li class="d-none d-md-inline-block nav-item">
+                                <a href="javascript:void(0)" class="text-black ps-2">로그아웃
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- / Navbar -->
+
+                <!-- Content wrapper -->
+                <div class="content-wrapper overflow-auto">
+                    <!-- Content -->
+
+                    <div class="container-fluid navbar-expand-xl flex-grow-1 container-p-y">
+                        <div class="row">
+                            <div class="col-12 d-flex text-end-center mb-4">
+                                <div class="favorite-btn-wrapper">
+                                </div>
+                            </div>
+                            <div class="col-12 mt-4 page-title-wrapper">
+                                <div class="card" style="background: none; box-shadow: none">
+                                    <div class="card-header p-0">
+                                        <h4 class="w-auto fw-bold pt-0 pb-0 p-0 ps-4 mb-0 me-4"
+                                            style="border-left: 5px solid navy; line-height: 1.5rem; border-radius: 0; width: 10rem !important;">
+                                            배송등록 <i class="menu-icon tf-icons bx bxs-star" style="color: gold;"></i>
+                                        </h4>
+                                        <div>
+                                            <ul class="nav nav-tabs w-auto" role="tablist"
+                                                style="background: none; box-shadow: none">
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link active" data-bs-toggle="tab"
+                                                        data-bs-target="#form-tabs-personal" role="tab"
+                                                        aria-selected="true">
+                                                        수기 등록
+                                                    </button>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link" data-bs-toggle="tab"
+                                                        data-bs-target="#form-tabs-account" role="tab"
+                                                        aria-selected="false" tabindex="-1">
+                                                        자동 등록
+                                                    </button>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link" data-bs-toggle="tab"
+                                                        data-bs-target="#form-tabs-social" role="tab"
+                                                        aria-selected="false" tabindex="-1">
+                                                        메뉴얼
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <!-- <h6 class="mt-4"></h6> -->
+                            <div class="card mb-6" style="background: none; box-shadow: none">
+                                <div class="card-header p-0 nav-align-top">
+
+                                </div>
+
+                                <div class="tab-content mt-2 p-2 bx-border-radius">
+                                    <div class="tab-pane fade active show" id="form-tabs-personal" role="tabpanel">
+                                        <form>
+                                            <div class="row bg-white" style="border-radius: 0.375rem">
+                                                <div class="col-8 col-md-5 col-lg-4 col-xl-3 py-3">
+                                                    <div class="position-relative">
+                                                        <select id="select2Basic"
+                                                            class="select2 form-select select2-hidden-accessible shipping-register-sample-country"
+                                                            data-allow-clear="true" data-select2-id="select2Basic"
+                                                            tabindex="-1" aria-hidden="true">
+                                                            <option value="none" data-select2-id="2">국가 선택</option>
+                                                            <option value="japan-qoo10">일본(Japan) >> Qoo10</option>
+                                                            <option value="japan-amazon">일본(Japan) >> Amazon
+                                                            </option>
+                                                            <option value="cojapan-rakuten">일본(Japan) >> Rakuten
+                                                            </option>
+                                                            <option value="japan-buyma">일본(Japan) >> Buyma</option>
+                                                            <option value="japan-yahoo">일본(Japan) >> Yahoo</option>
+                                                            <option value="japan-exm">일본(Japan) >> EXM</option>
+                                                            <option value="japan-exm-courier">일본(Japan) >> EXM(택배번호)
+                                                            </option>
+                                                            <option value="united-states">미국(United States)</option>
+                                                            <option value="indonesia">인도네시아(Indonesia)</option>
+                                                            <option value="malaysia">말레이시아(Malaysia)</option>
+                                                            <option value="singapore">싱가포르(Singapore)</option>
+                                                            <option value="philippines">필리핀(Philippines)</option>
+                                                            <option value="vietnam">베트남(Vietnam)</option>
+                                                            <option value="thailand">태국(Thailand)</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col py-3">
+                                                    <a class="" href="#" id="sampleDownloadLink"
+                                                        style="text-decoration: underline; vertical-align: bottom; line-height: 2.3rem">샘플다운받기</a>
+                                                </div>
+
+                                                <div class="col-12 py-3"><input class="form-control" type="file" />
+                                                </div>
+                                                <div class="col-auto ms-auto py-3 text-end" style="text-align: right">
+                                                    <button type="submit" class="btn btn-primary">등록</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <div class="row bg-white mt-4 box-shape">
+                                            <div class="col-12">
+                                                <!-- Select -->
+                                                <div class="">
+                                                    <!-- <h5 class="card-header pb-0 text-md-start text-center">배송등록</h5> -->
+
+                                                    <div
+                                                        class="card-datatable dataTable_select text-nowrap overflow-auto">
+                                                        <table
+                                                            class="dt-select-table dt-shipping-register-hand table table-bordered table-responsive">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th></th>
+                                                                    <th>No.</th>
+                                                                    <th>장바구니 번호</th>
+                                                                    <th>패킹번호</th>
+                                                                    <th>주문 등록일</th>
+                                                                    <th>상품명</th>
+                                                                    <th>상품명(KR)</th>
+                                                                    <th>옵션코드</th>
+                                                                    <th>옵션정보</th>
+                                                                    <th>통화</th>
+                                                                    <th>수량</th>
+                                                                    <th>총판매가</th>
+                                                                    <th>상품코드</th>
+                                                                </tr>
+                                                            </thead>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <!--/ Select -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade " id="form-tabs-account" role="tabpanel">
+                                        <div class="bg-white p-4 box-shape">
+                                            <form>
+                                                <div class="row border-bottom gx-0 border-top">
+                                                    <label for="shoppingMall"
+                                                        class="col-sm-2 col-form-label text-center"
+                                                        style="background: azure; line-height: 2rem;">쇼핑몰</label>
+                                                    <div class="w-auto ps-4 py-2">
+                                                        <select id="shoppingMall" class="form-select w-auto ">
+                                                            <option value="none" data-select2-id="2">쇼핑몰</option>
+                                                            <option value="qoo10 jp">Qoo10 JP</option>
+                                                            <option value="rakuten jp">Rakuten JP</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row border-bottom gx-0">
+                                                    <label for="userId" class="col-sm-2 col-form-label text-center"
+                                                        style="background: azure; line-height: 2rem;">QSM ID</label>
+                                                    <div class="w-auto ps-4 py-2">
+                                                        <select id="userId" class="form-select">
+                                                            <option value="id_01">ID_01</option>
+                                                            <option value="id_02">ID_02</option>
+                                                            <option value="id_02">ALL</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row border-bottom gx-0">
+                                                    <label for="shippingStatus"
+                                                        class="col-sm-2 col-form-label text-center"
+                                                        style="background: azure; line-height: 2rem;">배송현황</label>
+                                                    <div class="w-auto ps-4 py-2">
+                                                        <select id="shippingStatus" class="form-select">
+                                                            <option value="status1">배송중</option>
+                                                            <option value="status2">배송완료</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row border-bottom gx-0">
+                                                    <label for="startDate" class="col-sm-2 col-form-label text-center"
+                                                        style="background: azure; line-height: 2rem;">날짜 유형</label>
+                                                    <div class="w-auto ps-4 py-2">
+                                                        <select id="dateType" class="form-select">
+                                                            <option value="date1">주문일</option>
+                                                            <option value="date2">결제일</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="w-auto ps-4 py-2">
+                                                        <input type="date" id="startDate" class="form-control" />
+                                                    </div>
+                                                    <label for="endDate" class="w-auto col-form-label ps-4"
+                                                        style="line-height: 2rem;">~</label>
+                                                    <div class="w-auto ps-4 py-2">
+                                                        <input type="date" id="endDate" class="form-control" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex justify-content-end mt-4">
+                                                    <button type="submit" class="btn btn-primary">주문 수집</button>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <div class="row bg-white mt-4 gx-0 px-4 box-shape">
+                                            <div class="col-12">
+                                                <div class="">
+                                                    <!-- <h5 class="card-header pb-0 text-md-start text-center">배송등록</h5> -->
+
+                                                    <div
+                                                        class="card-datatable dataTable_select text-nowrap overflow-auto">
+                                                        <table
+                                                            class="dt-select-table dt-shipping-register-auto table table-bordered table-responsive">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th></th>
+                                                                    <th>No.</th>
+                                                                    <th>장바구니 번호</th>
+                                                                    <th>패킹번호</th>
+                                                                    <th>주문 등록일</th>
+                                                                    <th>상품명</th>
+                                                                    <th>상품명(KR)</th>
+                                                                    <th>옵션코드</th>
+                                                                    <th>옵션정보</th>
+                                                                    <th>통화</th>
+                                                                    <th>수량</th>
+                                                                    <th>총판매가</th>
+                                                                    <th>상품코드</th>
+                                                                </tr>
+                                                            </thead>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="form-tabs-social" role="tabpanel">
+                                        <div class="row">
+                                            <div class="col-12 col-lg-6 col-xxl-4 mt-3 ">
+                                                <a href="https://exm.exmate.net/seller/api/list">
+                                                    <div class="card h-100" style="background-image: url('assets/img/customizer/banner-background.png');    background-repeat: no-repeat;
+                            background-size: cover;
+                            background-position: center;">
+                                                        <div class="card-body">
+                                                            <h2 class="text-white pt-4 mt-4 text-end fw-bold"><i
+                                                                    class="icon-base bx bx-link icon-lg me-2 mb-2"
+                                                                    style="font-size: 2.5rem !important;
+                                block-size: 2.5rem !important;
+                                inline-size: 2.5rem !important;
+                            "></i>배송 등록 방법</h2>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col-12 col-lg-6 col-xxl-4 mt-3 ">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h6 class="fw-bold">[Qoo10 JP 주문수집 API 이용안내]</h6>
+                                                        <div>
+                                                            1.
+                                                            <a href="https://exm.exmate.net/seller/api/list">Mypage
+                                                                > API 연동 메뉴에서 Qoo10 정보 설정</a>
+                                                            <br />
+                                                            2. 오른쪽 화면에서 날짜설정후 [주문수집하기] 버튼 클릭 <br />
+                                                            3. 하단에 리스트 선택후 [저장] 버튼 눌러서 최종 등록
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class=" col-12 col-lg-6 col-xxl-4 mt-3">
+
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h6 class="fw-bold">[Rakuten 주문수집 API 이용안내]</h6>
+                                                        <div>
+                                                            1.
+                                                            <a href="https://exm.exmate.net/seller/api/list">
+                                                                Mypage > API 연동 메뉴에서 Rakuten 정보 설정
+                                                            </a>
+                                                            <br />
+                                                            2. 오른쪽 화면에서 날짜설정후 [주문수집하기] 버튼 클릭 <br />
+                                                            3. 하단에 리스트 선택후 [저장] 버튼 눌러서 최종 등록
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 국가를 선택해주세요 - 모달 -->
+                                <div class="modal fade" id="countryModal" tabindex="-1"
+                                    aria-labelledby="countryModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="countryModalLabel">알림</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                국가를 선택해주세요!
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">닫기</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="content-footer footer bg-footer-theme position-absolute bottom-0 w-100 mt-4"
+                style="background: #d4ded6;">
+                <div class="">
+                    <div class=" footer-container d-flex align-items-center py-4 flex-md-row flex-column">
+                        <div class="text-body w-100 text-center">
+                            Copyright © 2023
+                            <a href="https://exmate.net/" target="_blank" class="footer-link">eXmate.</a>
+                            All rights reserved
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- Footer -->
+        </div>
+        <!-- / Content -->
+
+
+        <!-- / Footer -->
+
+        <div class="content-backdrop fade"></div>
+    </div>
+    <!-- Content wrapper -->
+    </div>
+    <!-- / Layout page -->
+    </div>
+
+    <!-- Overlay -->
+    <div class="layout-overlay layout-menu-toggle"></div>
+
+    <!-- Drag Target Area To SlideIn Menu On Small Screens -->
+    <div class="drag-target"></div>
+    </div>
+    <!-- / Layout wrapper -->
+
+    <!-- Core JS -->
+    <script src="assets/vendor/js/theme.js"></script>
+
+    <!-- Vendors JS -->
+    <script src="assets/vendor/libs/apex-charts/apexcharts.js"></script>
+    <script src="assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
+    <!-- Main JS -->
+
+    <script src="assets/js/main.js"></script>
+
+    <!-- Page JS -->
+    <script src="assets/js/custom/tables-datatables-extensions.js"></script>
+</body>
+
+</html>
