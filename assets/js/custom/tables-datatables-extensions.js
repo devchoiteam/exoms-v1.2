@@ -967,4 +967,223 @@ document.addEventListener('DOMContentLoaded', function (e) {
       });
     }, 100);
   }
+
+  const dt_daily_inbound_empty_table = document.querySelector('.dt-daily-inbound-empty');
+  let dt_daily_inbound_empty;
+
+  if (dt_daily_inbound_empty_table) {
+    dt_daily_inbound_empty = new DataTable(dt_daily_inbound_empty_table, {
+      ajax: assetsPath + 'json/table-datatable.json',
+      columns: [
+        { data: 'id' },
+        {
+          data: 'No',
+          render: function (data, type, row) {
+            return `<a href="javascript:void(0);" class="title-link" data-id="${row.id}">${row.city}</a>`;
+          }
+        },
+        { data: 'shopping_cart' },
+        { data: 'packing_no' }
+      ],
+      columnDefs: [
+        {
+          defaultContent: '-',
+          targets: '_all'
+        }
+      ],
+      order: [[1, 'desc']],
+      layout: {
+        bottomStart: {
+          rowClass: 'row mx-3 my-0 justify-content-between',
+          features: [
+            {
+              pageLength: {
+                menu: [10, 25, 50, 100],
+                text: '_MENU_개씩 보기'
+              }
+            }
+          ]
+        },
+
+        bottomEnd: {
+          paging: {
+            firstLast: false
+          }
+        }
+      },
+      destroy: true,
+      language: {
+        emptyTable: '데이터가 없습니다.',
+        zeroRecords: '검색된 결과가 없습니다.',
+        lengthMenu: '페이지당 _MENU_ 개씩 보기',
+        info: '_TOTAL_개의 항목 중 _START_에서 _END_까지 표시',
+        infoEmpty: '항목이 없습니다.',
+        infoFiltered: '(총 _MAX_개 항목 중 필터링됨)', // 🔹 검색 결과 문구 변경
+        search: '검색: ',
+        paginate: {
+          next: '<i class="icon-base bx bx-chevron-right scaleX-n1-rtl icon-sm"></i>',
+          previous: '<i class="icon-base bx bx-chevron-left scaleX-n1-rtl icon-sm"></i>'
+        }
+      },
+      select: {
+        // Select style
+        style: 'multi'
+      },
+      searching: false,
+      lengthChange: false
+    });
+  }
+
+  const dt_daily_inbound_filled_table = document.querySelector('.dt-daily-inbound-filled');
+  let dt_daily_inbound_filled;
+
+  if (dt_daily_inbound_filled_table) {
+    dt_daily_inbound_filled = new DataTable(dt_daily_inbound_filled_table, {
+      ajax: assetsPath + 'json/table-datatable.json',
+      columns: [
+        { data: 'id' },
+        {
+          data: 'No',
+          render: function (data, type, row) {
+            return `<a href="javascript:void(0);" class="title-link" data-id="${row.id}">${row.city}</a>`;
+          }
+        },
+        { data: 'shopping_cart' },
+        { data: 'packing_no' }
+      ],
+      columnDefs: [
+        {
+          defaultContent: '-',
+          targets: '_all'
+        }
+      ],
+      order: [[1, 'desc']],
+      layout: {
+        bottomStart: {
+          rowClass: 'row mx-3 my-0 justify-content-between',
+          features: [
+            {
+              pageLength: {
+                menu: [10, 25, 50, 100],
+                text: '_MENU_개씩 보기'
+              }
+            }
+          ]
+        },
+
+        bottomEnd: {
+          paging: {
+            firstLast: false
+          }
+        }
+      },
+      destroy: true,
+      language: {
+        emptyTable: '데이터가 없습니다.',
+        zeroRecords: '검색된 결과가 없습니다.',
+        lengthMenu: '페이지당 _MENU_ 개씩 보기',
+        info: '_TOTAL_개의 항목 중 _START_에서 _END_까지 표시',
+        infoEmpty: '항목이 없습니다.',
+        infoFiltered: '(총 _MAX_개 항목 중 필터링됨)', // 🔹 검색 결과 문구 변경
+        search: '검색: ',
+        paginate: {
+          next: '<i class="icon-base bx bx-chevron-right scaleX-n1-rtl icon-sm"></i>',
+          previous: '<i class="icon-base bx bx-chevron-left scaleX-n1-rtl icon-sm"></i>'
+        }
+      },
+      language: {
+        paginate: {
+          next: '<i class="icon-base bx bx-chevron-right scaleX-n1-rtl icon-sm"></i>',
+          previous: '<i class="icon-base bx bx-chevron-left scaleX-n1-rtl icon-sm"></i>'
+        }
+      },
+      select: {
+        // Select style
+        style: 'multi'
+      },
+      searching: false,
+      lengthChange: false
+    });
+  }
+
+  const dt_daily_inbound_list_table = document.querySelector('.dt-daily-inbound-list');
+  let dt_daily_inbound_list;
+
+  if (dt_daily_inbound_list_table) {
+    dt_daily_inbound_list = new DataTable(dt_daily_inbound_list_table, {
+      ajax: assetsPath + 'json/table-datatable.json',
+      columns: [
+        { data: 'id', orderable: false, render: DataTable.render.select() },
+        { data: 'No' },
+        { data: 'shopping_cart' },
+        { data: 'packing_no' },
+        { data: 'city' },
+        { data: 'order_date' },
+        { data: 'product_name' },
+        { data: 'product_name_kr' },
+        { data: 'option_code' },
+        { data: 'option_info' },
+        { data: 'currency' },
+        { data: 'quantity' },
+        { data: 'total_selling_price' }
+      ],
+      columnDefs: [
+        {
+          // For Checkboxes
+          targets: 0,
+          searchable: false,
+          orderable: false,
+          render: function () {
+            return '<input type="checkbox" class="dt-checkboxes form-check-input">';
+          },
+          checkboxes: {
+            selectRow: true,
+            selectAllRender: '<input type="checkbox" class="form-check-input">'
+          }
+        },
+        {
+          defaultContent: '-',
+          targets: '_all'
+        }
+      ],
+      order: [[1, 'desc']],
+      layout: {
+        bottomStart: {
+          rowClass: 'row mx-3 my-0 justify-content-between',
+          features: [
+            {
+              pageLength: {
+                menu: [10, 25, 50, 100],
+                text: '_MENU_개씩 보기'
+              }
+            }
+          ]
+        },
+        topEnd: {
+          buttons: [{ text: '다운로드', className: 'btn btn-outline-success table-download-btn' }]
+        },
+        topStart: {
+          info: {
+            text: '검색 건수: _TOTAL_건'
+          }
+        },
+        bottomEnd: {
+          paging: {
+            firstLast: false
+          }
+        }
+      },
+      language: {
+        paginate: {
+          next: '<i class="icon-base bx bx-chevron-right scaleX-n1-rtl icon-sm"></i>',
+          previous: '<i class="icon-base bx bx-chevron-left scaleX-n1-rtl icon-sm"></i>'
+        }
+      },
+      searching: false,
+      select: {
+        // Select style
+        style: 'multi'
+      }
+    });
+  }
 });
