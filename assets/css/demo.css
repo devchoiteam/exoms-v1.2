@@ -141,6 +141,12 @@
   --bs-btn-disabled-border-color: #696cff;
 }
 
+/* 공지사항 > 테이블 */
+#notice-table_wrapper .dt-search,
+#notice-table_wrapper .dt-info {
+  display: none !important;
+}
+
 /* 사이드바 */
 .main-sidebar .app-brand {
   background: #223eac;
