@@ -76,9 +76,7 @@
             "salary": "$17803.80",
             "age": "61",
             "experience": "1 Year",
-            "status": 1,
-            "shopping_cart": "감사인사",
-            "packing_no": "감사인사"
+            "status": 1
         },
         {
             "id": 7,
@@ -1299,8 +1297,8 @@
             "start_date": "04/15/2021",
             "salary": "$24973.48",
             "age": "41",
-            "experience": "7 Years",
-            "status": 2
+            "shopping_cart": "감사인사",
+            "packing_no": "감사인사"
         }
     ]
 }

@@ -109,11 +109,9 @@ document.addEventListener('DOMContentLoaded', function () {
     item.addEventListener('click', event => {
       event.preventDefault();
       window.Helpers.toggleCollapsed();
-      console.log('is small: ' + Helpers.isSmallScreen());
 
       if (config.enableMenuLocalStorage && !window.Helpers.isSmallScreen()) {
         try {
-          console.log('window.Helpers.isCollapsed: ' + window.Helpers.isCollapsed());
           localStorage.setItem(
             'templateCustomizer-' + templateName + '--LayoutCollapsed',
             String(window.Helpers.isCollapsed())
@@ -882,7 +880,6 @@ document.addEventListener('DOMContentLoaded', () => {
   buttons.forEach(button => {
     button.addEventListener('click', () => {
       const fontKey = button.getAttribute('data-language');
-      console.log(fontKey);
 
       if (fontMap[fontKey]) {
         document.body.style.fontFamily = `'${fontMap[fontKey]}', sans-serif`;
@@ -890,7 +887,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-  console.log(savedFont);
   if (savedFont && fontMap[savedFont]) {
     document.querySelector('.font-button[data-language="' + savedFont + '"').click();
   }

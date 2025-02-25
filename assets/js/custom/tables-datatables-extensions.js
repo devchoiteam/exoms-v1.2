@@ -832,7 +832,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
     });
   }
 
-  const dt_notice_list_table = document.querySelector('.dt-shipping-register-hand');
+  const dt_notice_list_table = document.querySelector('.dt-notice-list');
   let dt_notice_list;
 
   if (dt_notice_list_table) {
@@ -866,30 +866,6 @@ document.addEventListener('DOMContentLoaded', function (e) {
             selectRow: true,
             selectAllRender: '<input type="checkbox" class="form-check-input">'
           }
-          // },
-          // {
-          //   // Label
-          //   targets: -1,
-          //   render: function (data, type, full, meta) {
-          //     const statusNumber = full.status;
-          //     const statuses = {
-          //       1: { title: 'Current', class: 'bg-label-primary' },
-          //       2: { title: 'Professional', class: 'bg-label-success' },
-          //       3: { title: 'Rejected', class: 'bg-label-danger' },
-          //       4: { title: 'Resigned', class: 'bg-label-warning' },
-          //       5: { title: 'Applied', class: 'bg-label-info' }
-          //     };
-
-          //     if (typeof statuses[statusNumber] === 'undefined') {
-          //       return data;
-          //     }
-
-          //     return `
-          //       <span class="badge ${statuses[statusNumber].class}">
-          //         ${statuses[statusNumber].title}
-          //       </span>
-          //     `;
-          //   }
         },
         {
           defaultContent: '-',
@@ -931,7 +907,15 @@ document.addEventListener('DOMContentLoaded', function (e) {
           }
         }
       },
+      destroy: true,
       language: {
+        emptyTable: '데이터가 없습니다.',
+        zeroRecords: '검색된 결과가 없습니다.',
+        lengthMenu: '페이지당 _MENU_ 개씩 보기',
+        info: '_TOTAL_개의 항목 중 _START_에서 _END_까지 표시',
+        infoEmpty: '항목이 없습니다.',
+        infoFiltered: '(총 _MAX_개 항목 중 필터링됨)', // 🔹 검색 결과 문구 변경
+        search: '검색: ',
         paginate: {
           next: '<i class="icon-base bx bx-chevron-right scaleX-n1-rtl icon-sm"></i>',
           previous: '<i class="icon-base bx bx-chevron-left scaleX-n1-rtl icon-sm"></i>'
@@ -944,53 +928,115 @@ document.addEventListener('DOMContentLoaded', function (e) {
     });
 
     // ✅ 공지사항 > 테이블 분류 검색 필터
-const filterButtons = document.querySelectorAll(".table-filter-btn");
+    const filterButtons = document.querySelectorAll('.table-filter-btn');
 
-// 버튼 클릭 이벤트 추가
-filterButtons.forEach(button => {
-    button.addEventListener("click", function () {
-        let filterValue = this.getAttribute("data-filter");
+    // 버튼 클릭 이벤트 추가
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        let filterValue = this.getAttribute('data-filter');
 
         // 모든 버튼 스타일 초기화
         filterButtons.forEach(btn => {
-            btn.classList.remove("btn-primary", "active");
-            btn.classList.add("btn-outline-primary");
+          btn.classList.remove('btn-primary', 'active');
+          btn.classList.add('btn-outline-primary');
         });
 
         // 클릭한 버튼 스타일 변경
-        this.classList.remove("btn-outline-primary");
-        this.classList.add("btn-primary", "active");
+        this.classList.remove('btn-outline-primary');
+        this.classList.add('btn-primary', 'active');
 
         // 테이블 필터링 적용
-        if (filterValue === "") {
-            dt_notice_list.search("").draw(); // 전체 보기
+        if (filterValue === '') {
+          dt_notice_list.search('').draw(); // 전체 보기
         } else {
-            dt_notice_list.search(filterValue).draw(); // 선택한 분류로 필터 적용
-        }
-    });
-});
-
-  // Filter form control to default size
-  // ? setTimeout used for multilingual table initialization
-  setTimeout(() => {
-    const elementsToModify = [
-      { selector: '.dt-search .form-control', classToRemove: 'form-control-sm', classToAdd: 'ms-4' },
-      { selector: '.dt-length .form-select', classToRemove: 'form-select-sm' },
-      { selector: '.dt-layout-table', classToRemove: 'row mt-2' },
-      { selector: '.dt-layout-end', classToAdd: 'mt-0' },
-      { selector: '.dt-layout-end .dt-search', classToAdd: 'mt-0 mt-md-6' }
-    ];
-
-    // Delete record
-    elementsToModify.forEach(({ selector, classToRemove, classToAdd }) => {
-      document.querySelectorAll(selector).forEach(element => {
-        if (classToRemove) {
-          classToRemove.split(' ').forEach(className => element.classList.remove(className));
-        }
-        if (classToAdd) {
-          classToAdd.split(' ').forEach(className => element.classList.add(className));
+          dt_notice_list.search(filterValue).draw(); // 선택한 분류로 필터 적용
         }
       });
     });
-  }, 100);
+
+    // Filter form control to default size
+    // ? setTimeout used for multilingual table initialization
+    setTimeout(() => {
+      const elementsToModify = [
+        { selector: '.dt-search .form-control', classToRemove: 'form-control-sm', classToAdd: 'ms-4' },
+        { selector: '.dt-length .form-select', classToRemove: 'form-select-sm' },
+        { selector: '.dt-layout-table', classToRemove: 'row mt-2' },
+        { selector: '.dt-layout-end', classToAdd: 'mt-0' },
+        { selector: '.dt-layout-end .dt-search', classToAdd: 'mt-0 mt-md-6' }
+      ];
+
+      // Delete record
+      elementsToModify.forEach(({ selector, classToRemove, classToAdd }) => {
+        document.querySelectorAll(selector).forEach(element => {
+          if (classToRemove) {
+            classToRemove.split(' ').forEach(className => element.classList.remove(className));
+          }
+          if (classToAdd) {
+            classToAdd.split(' ').forEach(className => element.classList.add(className));
+          }
+        });
+      });
+
+      // 로컬스토리지에서 '그만보기' 데이터 확인
+      const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+      if (!localStorage.getItem('hideNotice_' + today)) {
+        console.log('공지사항을 표시합니다.');
+      }
+
+      const tableBody = document.querySelector('.dt-notice-list tbody');
+      const modal = document.getElementById('noticeModal');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalContent = document.getElementById('modalContent');
+      const hideNoticeCheckbox = document.getElementById('hideNotice');
+      const closeModalButton = document.getElementById('closeModal');
+
+      // 🔹 테이블 3번째 열 (city) 클릭 시 모달 표시
+      tableBody.addEventListener('click', function (event) {
+        let target = event.target;
+
+        // td 요소인지 확인하고, 부모 row(tr)의 모든 td 가져오기
+        if (target.tagName === 'TD') {
+          let row = target.closest('tr'); // 클릭된 td의 부모 tr 찾기
+          let cells = row.cells;
+
+          // 3번째 열 (인덱스 2) 클릭 시
+          if (cells[2] === target) {
+            // 제목과 내용을 직접 가져옴
+            let title = cells[2].innerText || ''; // 제목
+            let content = cells[3].innerText || ''; // 내용 (다른 열에 내용이 있을 경우 조정)
+
+            if (title && content) {
+              modalTitle.textContent = title; // 제목 표시
+              modalContent.textContent = content; // 내용 표시
+              hideNoticeCheckbox.checked = false; // 체크박스 초기화
+
+              // 모달의 aria-hidden 속성 처리
+              const modalElement = document.getElementById('noticeModal');
+              modalElement.setAttribute('aria-hidden', 'false'); // aria-hidden="false"
+
+              // Bootstrap 5 모달을 열기
+              const myModal = new bootstrap.Modal(modalElement);
+              myModal.show(); // 모달 보이기
+            }
+          }
+        }
+      });
+
+      // 🔹 닫기 버튼 클릭 시 모달 닫기
+      closeModalButton.addEventListener('click', function () {
+        const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+        if (hideNoticeCheckbox.checked) {
+          localStorage.setItem('hideNotice_' + today, 'true');
+        }
+        modal.style.display = 'none';
+      });
+
+      // 🔹 모달 바깥 영역 클릭 시 닫기
+      window.addEventListener('click', function (event) {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    }, 100);
+  }
 });

@@ -1024,7 +1024,7 @@
                                         </div>
                                         <div class="row bg-white mt-4 box-shape">
                                             <div class="col-12">
-                                                <!-- Select -->
+
                                                 <div class="">
                                                     <div
                                                         class="card-datatable dataTable_select text-nowrap overflow-auto">
@@ -1048,9 +1048,10 @@
                                                                 </tr>
                                                             </thead>
                                                         </table>
+
+
                                                     </div>
                                                 </div>
-                                                <!--/ Select -->
                                             </div>
                                         </div>
                                     </div>
@@ -1224,6 +1225,30 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 🔹 공지사항 모달 -->
+            <div class="modal fade" id="noticeModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-sm modal-upload-success">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">공지사항</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <h5 class="modal-title" id="modalTitle"></h5>
+                            <p id="modalContent">내용이 여기에 표시됩니다.</p>
+
+                        </div>
+                        <div class="modal-footer">
+                            <div class="d-flex justify-content-start">
+                                <label for="hideNotice">그만보기(당일) </label>
+                                <input type="checkbox" id="hideNotice">
+                            </div>
+                            <button type="button" class="btn btn-primary" id="closeModal"
+                                data-bs-dismiss="modal">확인</button>
                         </div>
                     </div>
                 </div>
