@@ -1,0 +1,850 @@
+{
+    "1년": {
+        "ko": "1년",
+        "ja": "1年",
+        "en": "1 Year"
+    },
+    "API 전송일": {
+        "ko": "API 전송일",
+        "ja": "API送信日",
+        "en": "API Transmission Date"
+    },
+    "City": {
+        "ko": "City",
+        "ja": "市",
+        "en": "City"
+    },
+    "EDI Information": {
+        "ko": "EDI Information",
+        "ja": "EDI情報",
+        "en": "EDI Information"
+    },
+    "EXM No": {
+        "ko": "EXM No",
+        "ja": "EXM番号",
+        "en": "EXM No"
+    },
+    "HP": {
+        "ko": "HP",
+        "ja": "HP",
+        "en": "HP"
+    },
+    "ID & Password": {
+        "ko": "ID & Password",
+        "ja": "IDとパスワード",
+        "en": "ID & Password"
+    },
+    "market": {
+        "ko": "market",
+        "ja": "マーケット",
+        "en": "Market"
+    },
+    "Market API Send": {
+        "ko": "Market API Send",
+        "ja": "マーケットAPI送信",
+        "en": "Market API Send"
+    },
+    "Size": {
+        "ko": "Size",
+        "ja": "サイズ",
+        "en": "Size"
+    },
+    "State": {
+        "ko": "State",
+        "ja": "状態",
+        "en": "State"
+    },
+    "Summary": {
+        "ko": "Summary",
+        "ja": "概要",
+        "en": "Summary"
+    },
+    "TEL / HP": {
+        "ko": "TEL / HP",
+        "ja": "TEL / HP",
+        "en": "TEL / HP"
+    },
+    "TEL.": {
+        "ko": "TEL.",
+        "ja": "TEL.",
+        "en": "TEL."
+    },
+    "Upload": {
+        "ko": "Upload",
+        "ja": "アップロード",
+        "en": "Upload"
+    }
+}
+
+{
+    "검색": {
+        "ko": "검색",
+        "ja": "検索",
+        "en": "Search"
+    },
+    "결제 일": {
+        "ko": "결제 일",
+        "ja": "決済日",
+        "en": "Payment Date"
+    },
+    "결제일": {
+        "ko": "결제일",
+        "ja": "決済日",
+        "en": "Payment Date"
+    },
+    "계산서 이메일": {
+        "ko": "계산서 이메일",
+        "ja": "請求書メール",
+        "en": "Invoice Email"
+    },
+    "고객안내 동의일": {
+        "ko": "고객안내 동의일",
+        "ja": "顧客案内同意日",
+        "en": "Customer Consent Date"
+    },
+    "구매자부담조건(착불)": {
+        "ko": "구매자부담조건(착불)",
+        "ja": "購入者負担条件(着払い)",
+        "en": "Buyer's Payment (Cash on Delivery)"
+    },
+    "기 등록된 장바구니 번호 를 입력 후 엔터": {
+        "ko": "기 등록된 장바구니 번호 를 입력 후 엔터",
+        "ja": "既に登録されたカート番号を入力してエンター",
+        "en": "Enter Registered Cart Number and Press Enter"
+    },
+    "날짜 유형": {
+        "ko": "날짜 유형",
+        "ja": "日付タイプ",
+        "en": "Date Type"
+    },
+    "내림차순": {
+        "ko": "내림차순",
+        "ja": "降順",
+        "en": "Descending Order"
+    },
+    "다운로드": {
+        "ko": "다운로드",
+        "ja": "ダウンロード",
+        "en": "Download"
+    },
+    "담당자": {
+        "ko": "담당자",
+        "ja": "担当者",
+        "en": "Person in Charge"
+    },
+    "당월": {
+        "ko": "당월",
+        "ja": "当月",
+        "en": "Current Month"
+    },
+    "대표번호": {
+        "ko": "대표번호",
+        "ja": "代表番号",
+        "en": "Main Phone Number"
+    },
+    "대표자": {
+        "ko": "대표자",
+        "ja": "代表者",
+        "en": "Representative"
+    },
+    "도메일": {
+        "ko": "도메일",
+        "ja": "メール",
+        "en": "Email"
+    }
+}
+
+{
+    "도착국가": {
+        "ko": "도착국가",
+        "ja": "到着国",
+        "en": "Destination Country"
+    },
+    "도착국가 / 우편번호": {
+        "ko": "도착국가 / 우편번호",
+        "ja": "到着国 / 郵便番号",
+        "en": "Destination Country / Postal Code"
+    },
+    "등록": {
+        "ko": "등록",
+        "ja": "登録",
+        "en": "Register"
+    },
+    "등록 순서": {
+        "ko": "등록 순서",
+        "ja": "登録順序",
+        "en": "Registration Order"
+    },
+    "등록관리": {
+        "ko": "등록관리",
+        "ja": "登録管理",
+        "en": "Registration Management"
+    },
+    "등록일": {
+        "ko": "등록일",
+        "ja": "登録日",
+        "en": "Registration Date"
+    },
+    "등록일 기준": {
+        "ko": "등록일 기준",
+        "ja": "登録日基準",
+        "en": "Based on Registration Date"
+    },
+    "등록자": {
+        "ko": "등록자",
+        "ja": "登録者",
+        "en": "Registrant"
+    },
+    "로그인ID": {
+        "ko": "로그인ID",
+        "ja": "ログインID",
+        "en": "Login ID"
+    },
+    "마지막 수정일": {
+        "ko": "마지막 수정일",
+        "ja": "最終更新日",
+        "en": "Last Modified Date"
+    },
+    "멀티ID 체크": {
+        "ko": "멀티ID 체크",
+        "ja": "マルチIDチェック",
+        "en": "Multi-ID Check"
+    },
+    "메뉴얼": {
+        "ko": "메뉴얼",
+        "ja": "マニュアル",
+        "en": "Manual"
+    },
+    "메모": {
+        "ko": "메모",
+        "ja": "メモ",
+        "en": "Memo"
+    },
+    "목록관리": {
+        "ko": "목록관리",
+        "ja": "リスト管理",
+        "en": "List Management"
+    },
+    "미입고": {
+        "ko": "미입고",
+        "ja": "未入庫",
+        "en": "Not Received"
+    }
+}
+
+{
+    "반송 송장번호": {
+        "ko": "반송 송장번호",
+        "ja": "返送伝票番号",
+        "en": "Return Tracking Number"
+    },
+    "반송보관": {
+        "ko": "반송보관",
+        "ja": "返送保管",
+        "en": "Return Storage"
+    },
+    "반송원인": {
+        "ko": "반송원인",
+        "ja": "返送原因",
+        "en": "Return Reason"
+    },
+    "반송일": {
+        "ko": "반송일",
+        "ja": "返送日",
+        "en": "Return Date"
+    },
+    "발송목록": {
+        "ko": "발송목록",
+        "ja": "発送リスト",
+        "en": "Shipping List"
+    },
+    "발송자부담조건(신용)": {
+        "ko": "발송자부담조건(신용)",
+        "ja": "発送者負担条件(信用)",
+        "en": "Sender's Payment (Credit)"
+    },
+    "배송 완료 일": {
+        "ko": "배송 완료 일",
+        "ja": "配送完了日",
+        "en": "Delivery Completion Date"
+    },
+    "배송 준비": {
+        "ko": "배송 준비",
+        "ja": "配送準備",
+        "en": "Preparing Delivery"
+    },
+    "배송등록": {
+        "ko": "배송등록",
+        "ja": "配送登録",
+        "en": "Delivery Registration"
+    },
+    "배송현황": {
+        "ko": "배송현황",
+        "ja": "配送状況",
+        "en": "Delivery Status"
+    },
+    "배송형태": {
+        "ko": "배송형태",
+        "ja": "配送形態",
+        "en": "Delivery Type"
+    },
+    "복원": {
+        "ko": "복원",
+        "ja": "復元",
+        "en": "Restore"
+    },
+    "비밀번호 수정": {
+        "ko": "비밀번호 수정",
+        "ja": "パスワード修正",
+        "en": "Password Modification"
+    },
+    "사업자 등록증": {
+        "ko": "사업자 등록증",
+        "ja": "事業者登録証",
+        "en": "Business Registration Certificate"
+    },
+    "사업자번호": {
+        "ko": "사업자번호",
+        "ja": "事業者番号",
+        "en": "Business Registration Number"
+    }
+}
+{
+    "사은품": {
+        "ko": "사은품",
+        "ja": "景品",
+        "en": "Free Gift"
+    },
+    "사은품 관리": {
+        "ko": "사은품 관리",
+        "ja": "景品管理",
+        "en": "Free Gift Management"
+    },
+    "사은품 추가": {
+        "ko": "사은품 추가",
+        "ja": "景品追加",
+        "en": "Add Free Gift"
+    },
+    "사은품개수": {
+        "ko": "사은품개수",
+        "ja": "景品数",
+        "en": "Number of Free Gifts"
+    },
+    "삭제": {
+        "ko": "삭제",
+        "ja": "削除",
+        "en": "Delete"
+    },
+    "삭제목록": {
+        "ko": "삭제목록",
+        "ja": "削除リスト",
+        "en": "Deletion List"
+    },
+    "삭제일": {
+        "ko": "삭제일",
+        "ja": "削除日",
+        "en": "Deletion Date"
+    },
+    "상태값": {
+        "ko": "상태값",
+        "ja": "状態値",
+        "en": "Status Value"
+    },
+    "상품명": {
+        "ko": "상품명",
+        "ja": "商品名",
+        "en": "Product Name"
+    },
+    "상품명(KR)": {
+        "ko": "상품명(KR)",
+        "ja": "商品名(KR)",
+        "en": "Product Name(KR)"
+    },
+    "상품코드": {
+        "ko": "상품코드",
+        "ja": "商品コード",
+        "en": "Product Code"
+    },
+    "생성일자": {
+        "ko": "생성일자",
+        "ja": "作成日",
+        "en": "Creation Date"
+    },
+    "샤방넷 형식": {
+        "ko": "샤방넷 형식",
+        "ja": "シャバンネット形式",
+        "en": "Shabangnet Format"
+    },
+    "센터 입고 일": {
+        "ko": "센터 입고 일",
+        "ja": "センター入庫日",
+        "en": "Center Receipt Date"
+    },
+    "송장번호 전송": {
+        "ko": "송장번호 전송",
+        "ja": "送り状番号送信",
+        "en": "Tracking Number Transmission"
+    }
+}
+{
+    "쇼핑몰&플랫폼": {
+        "ko": "쇼핑몰&플랫폼",
+        "ja": "ショッピングモール&プラットフォーム",
+        "en": "Shopping Mall & Platform"
+    },
+    "수기등록": {
+        "ko": "수기등록",
+        "ja": "手動登録",
+        "en": "Manual Registration"
+    },
+    "수량": {
+        "ko": "수량",
+        "ja": "数量",
+        "en": "Quantity"
+    },
+    "수입 통관 일": {
+        "ko": "수입 통관 일",
+        "ja": "輸入通関日",
+        "en": "Import Customs Clearance Date"
+    },
+    "수취인 정보": {
+        "ko": "수취인 정보",
+        "ja": "受取人情報",
+        "en": "Recipient Information"
+    },
+    "수취인명": {
+        "ko": "수취인명",
+        "ja": "受取人名",
+        "en": "Recipient Name"
+    },
+    "수취인명 (현지어 / 후리가나)": {
+        "ko": "수취인명 (현지어 / 후리가나)",
+        "ja": "受取人名 (現地語 / フリガナ)",
+        "en": "Recipient Name (Local Language / Furigana)"
+    },
+    "시작일": {
+        "ko": "시작일",
+        "ja": "開始日",
+        "en": "Start Date"
+    },
+    "신규 장바구니 번호를 등록하세요.": {
+        "ko": "신규 장바구니 번호를 등록하세요.",
+        "ja": "新規カート番号を登録してください。",
+        "en": "Please Register New Cart Number"
+    },
+    "신규 주문": {
+        "ko": "신규 주문",
+        "ja": "新規注文",
+        "en": "New Order"
+    },
+    "업로드 날짜": {
+        "ko": "업로드 날짜",
+        "ja": "アップロード日付",
+        "en": "Upload Date"
+    },
+    "업로드 일": {
+        "ko": "업로드 일",
+        "ja": "アップロード日",
+        "en": "Upload Date"
+    },
+    "업종": {
+        "ko": "업종",
+        "ja": "業種",
+        "en": "Business Type"
+    },
+    "업태": {
+        "ko": "업태",
+        "ja": "業態",
+        "en": "Business Category"
+    },
+    "에이전트": {
+        "ko": "에이전트",
+        "ja": "エージェント",
+        "en": "Agent"
+    }
+}
+{
+    "엑셀 다운로드": {
+        "ko": "엑셀 다운로드",
+        "ja": "エクセルダウンロード",
+        "en": "Excel Download"
+    },
+    "연결상태": {
+        "ko": "연결상태",
+        "ja": "接続状態",
+        "en": "Connection Status"
+    },
+    "오늘": {
+        "ko": "오늘",
+        "ja": "今日",
+        "en": "Today"
+    },
+    "오름차순": {
+        "ko": "오름차순",
+        "ja": "昇順",
+        "en": "Ascending Order"
+    },
+    "옵션정보": {
+        "ko": "옵션정보",
+        "ja": "オプション情報",
+        "en": "Option Information"
+    },
+    "옵션코드": {
+        "ko": "옵션코드",
+        "ja": "オプションコード",
+        "en": "Option Code"
+    },
+    "옵션코드별 다운로드": {
+        "ko": "옵션코드별 다운로드",
+        "ja": "オプションコード別ダウンロード",
+        "en": "Download by Option Code"
+    },
+    "용지선택": {
+        "ko": "용지선택",
+        "ja": "用紙選択",
+        "en": "Paper Selection"
+    },
+    "우편번호": {
+        "ko": "우편번호",
+        "ja": "郵便番号",
+        "en": "Postal Code"
+    },
+    "운송장 개수": {
+        "ko": "운송장 개수",
+        "ja": "送り状数",
+        "en": "Number of Waybills"
+    },
+    "운송장 출력": {
+        "ko": "운송장 출력",
+        "ja": "送り状出力",
+        "en": "Print Waybill"
+    },
+    "운송장번호": {
+        "ko": "운송장번호",
+        "ja": "送り状番号",
+        "en": "Tracking Number"
+    },
+    "이름": {
+        "ko": "이름",
+        "ja": "名前",
+        "en": "Name"
+    },
+    "인증": {
+        "ko": "인증",
+        "ja": "認証",
+        "en": "Authentication"
+    },
+    "인증 만료일": {
+        "ko": "인증 만료일",
+        "ja": "認証満了日",
+        "en": "Authentication Expiry Date"
+    }
+}
+{
+    "일괄등록": {
+        "ko": "일괄등록",
+        "ja": "一括登録",
+        "en": "Bulk Registration"
+    },
+    "일자": {
+        "ko": "일자",
+        "ja": "日付",
+        "en": "Date"
+    },
+    "입고": {
+        "ko": "입고",
+        "ja": "入庫",
+        "en": "Receipt"
+    },
+    "자동등록": {
+        "ko": "자동등록",
+        "ja": "自動登録",
+        "en": "Auto Registration"
+    },
+    "장바구니 번호": {
+        "ko": "장바구니 번호",
+        "ja": "カート番号",
+        "en": "Cart Number"
+    },
+    "재발송 취소": {
+        "ko": "재발송 취소",
+        "ja": "再送信キャンセル",
+        "en": "Cancel Resend"
+    },
+    "재배송 수취인명": {
+        "ko": "재배송 수취인명",
+        "ja": "再配送受取人名",
+        "en": "Redelivery Recipient Name"
+    },
+    "재배송 연락처": {
+        "ko": "재배송 연락처",
+        "ja": "再配送連絡先",
+        "en": "Redelivery Contact"
+    },
+    "재배송 주소": {
+        "ko": "재배송 주소",
+        "ja": "再配送住所",
+        "en": "Redelivery Address"
+    },
+    "재배송 택배번호": {
+        "ko": "재배송 택배번호",
+        "ja": "再配送配送番号",
+        "en": "Redelivery Tracking Number"
+    },
+    "재배송신청일": {
+        "ko": "재배송신청일",
+        "ja": "再配送申請日",
+        "en": "Redelivery Request Date"
+    },
+    "재배송일": {
+        "ko": "재배송일",
+        "ja": "再配送日",
+        "en": "Redelivery Date"
+    },
+    "재배송지불조건(미 선택 경우 기본 착불 진행)": {
+        "ko": "재배송지불조건(미 선택 경우 기본 착불 진행)",
+        "ja": "再配送支払条件(未選択の場合、基本着払い進行)",
+        "en": "Redelivery Payment Terms (Default COD if Not Selected)"
+    },
+    "저장": {
+        "ko": "저장",
+        "ja": "保存",
+        "en": "Save"
+    },
+    "전월": {
+        "ko": "전월",
+        "ja": "前月",
+        "en": "Previous Month"
+    }
+}
+{
+    "접수": {
+        "ko": "접수",
+        "ja": "受付",
+        "en": "Reception"
+    },
+    "접수취소": {
+        "ko": "접수취소",
+        "ja": "受付キャンセル",
+        "en": "Cancel Reception"
+    },
+    "조회": {
+        "ko": "조회",
+        "ja": "照会",
+        "en": "Search"
+    },
+    "종료일": {
+        "ko": "종료일",
+        "ja": "終了日",
+        "en": "End Date"
+    },
+    "주문 날짜": {
+        "ko": "주문 날짜",
+        "ja": "注文日付",
+        "en": "Order Date"
+    },
+    "주문 등록 일": {
+        "ko": "주문 등록 일",
+        "ja": "注文登録日",
+        "en": "Order Registration Date"
+    },
+    "주문 수집": {
+        "ko": "주문 수집",
+        "ja": "注文収集",
+        "en": "Order Collection"
+    },
+    "주문번호": {
+        "ko": "주문번호",
+        "ja": "注文番号",
+        "en": "Order Number"
+    },
+    "주문정보": {
+        "ko": "주문정보",
+        "ja": "注文情報",
+        "en": "Order Information"
+    },
+    "주소": {
+        "ko": "주소",
+        "ja": "住所",
+        "en": "Address"
+    },
+    "주소(현지어)": {
+        "ko": "주소(현지어)",
+        "ja": "住所(現地語)",
+        "en": "Address(Local Language)"
+    },
+    "처리상황": {
+        "ko": "처리상황",
+        "ja": "処理状況",
+        "en": "Processing Status"
+    },
+    "청구서 이메일": {
+        "ko": "청구서 이메일",
+        "ja": "請求書メール",
+        "en": "Invoice Email"
+    },
+    "초기화": {
+        "ko": "초기화",
+        "ja": "初期化",
+        "en": "Reset"
+    },
+    "총판매가": {
+        "ko": "총판매가",
+        "ja": "総販売価格",
+        "en": "Total Sales Price"
+    }
+}
+{
+    "출력순서 (1)": {
+        "ko": "출력순서 (1)",
+        "ja": "出力順序 (1)",
+        "en": "Print Order (1)"
+    },
+    "출력순서 (2)": {
+        "ko": "출력순서 (2)",
+        "ja": "出力順序 (2)",
+        "en": "Print Order (2)"
+    },
+    "택배 접수 일": {
+        "ko": "택배 접수 일",
+        "ja": "配送受付日",
+        "en": "Delivery Reception Date"
+    },
+    "택배번호": {
+        "ko": "택배번호",
+        "ja": "配送番号",
+        "en": "Tracking Number"
+    },
+    "택배비": {
+        "ko": "택배비",
+        "ja": "配送料",
+        "en": "Shipping Fee"
+    },
+    "택배사": {
+        "ko": "택배사",
+        "ja": "配送会社",
+        "en": "Courier Company"
+    },
+    "택배사 / 판매사이트": {
+        "ko": "택배사 / 판매사이트",
+        "ja": "配送会社 / 販売サイト",
+        "en": "Courier / Sales Site"
+    },
+    "통관고유부호": {
+        "ko": "통관고유부호",
+        "ja": "通関固有符号",
+        "en": "Customs Clearance Code"
+    },
+    "통장사본": {
+        "ko": "통장사본",
+        "ja": "通帳コピー",
+        "en": "Bank Account Copy"
+    },
+    "통화": {
+        "ko": "통화",
+        "ja": "通貨",
+        "en": "Currency"
+    },
+    "판매사이트": {
+        "ko": "판매사이트",
+        "ja": "販売サイト",
+        "en": "Sales Site"
+    },
+    "패킹 바코드": {
+        "ko": "패킹 바코드",
+        "ja": "パッキングバーコード",
+        "en": "Packing Barcode"
+    },
+    "패킹 리스트": {
+        "ko": "패킹 리스트",
+        "ja": "パッキングリスト",
+        "en": "Packing List"
+    },
+    "프린터횟수": {
+        "ko": "프린터횟수",
+        "ja": "プリンター回数",
+        "en": "Print Count"
+    },
+    "프린트": {
+        "ko": "프린트",
+        "ja": "プリント",
+        "en": "Print"
+    }
+}
+{
+    "픽업희망일시": {
+        "ko": "픽업희망일시",
+        "ja": "集荷希望日時",
+        "en": "Desired Pickup Date/Time"
+    },
+    "한국 출발 일": {
+        "ko": "한국 출발 일",
+        "ja": "韓国出発日",
+        "en": "Korea Departure Date"
+    },
+    "합산금액": {
+        "ko": "합산금액",
+        "ja": "合算金額",
+        "en": "Total Amount"
+    },
+    "합산수량": {
+        "ko": "합산수량",
+        "ja": "合算数量",
+        "en": "Total Quantity"
+    },
+    "합포장": {
+        "ko": "합포장",
+        "ja": "合包装",
+        "en": "Combined Packaging"
+    },
+    "합포장_상품 수량": {
+        "ko": "합포장_상품 수량",
+        "ja": "合包装_商品数量",
+        "en": "Combined Packaging_Product Quantity"
+    },
+    "현지 도착 일": {
+        "ko": "현지 도착 일",
+        "ja": "現地到着日",
+        "en": "Local Arrival Date"
+    },
+    "회사 정보": {
+        "ko": "회사 정보",
+        "ja": "会社情報",
+        "en": "Company Information"
+    },
+    "회사 주소": {
+        "ko": "회사 주소",
+        "ja": "会社住所",
+        "en": "Company Address"
+    },
+    "회사명": {
+        "ko": "회사명",
+        "ja": "会社名",
+        "en": "Company Name"
+    },
+    "회수": {
+        "ko": "회수",
+        "ja": "回収",
+        "en": "Return"
+    },
+    "회수 송장번호": {
+        "ko": "회수 송장번호",
+        "ja": "回収送り状番号",
+        "en": "Return Tracking Number"
+    },
+    "회수신청일": {
+        "ko": "회수신청일",
+        "ja": "回収申請日",
+        "en": "Return Request Date"
+    },
+    "회수일": {
+        "ko": "회수일",
+        "ja": "回収日",
+        "en": "Return Date"
+    },
+    "회원정보관리": {
+        "ko": "회원정보관리",
+        "ja": "会員情報管理",
+        "en": "Member Information Management"
+    }
+}l
