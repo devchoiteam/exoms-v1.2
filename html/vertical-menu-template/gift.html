@@ -267,7 +267,7 @@
                                     </a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="/html/vertical-menu-template/api-integratio.html" class="menu-link">
+                                    <a href="/html/vertical-menu-template/api-integration.html" class="menu-link">
                                         <label class="list-group-item w-100">
                                             <div class="text-truncate">API 연동
                                                 <span data-favorite="api" class="fast-link"><i
@@ -436,7 +436,7 @@
                             </a>
                         </li>
                         <li class="menu-item">
-                            <a href="/html/vertical-menu-template/api-integratio.html" class="menu-link">
+                            <a href="/html/vertical-menu-template/api-integration.html" class="menu-link">
                                 <label class="list-group-item w-100">
                                     <div class="text-truncate">API 연동
                                         <span class="fast-link" data-favorite="api"><i
@@ -771,7 +771,7 @@
                                             </a>
                                         </li>
                                         <li class="menu-item w-100">
-                                            <a href="/html/vertical-menu-template/api-integratio.html"
+                                            <a href="/html/vertical-menu-template/api-integration.html"
                                                 class="menu-link">
                                                 <label class="list-group-item w-100">
                                                     <div class="text-truncate">API 연동
@@ -944,7 +944,7 @@
                                     </a>
                                 </li>
                                 <li class="menu-item w-100">
-                                    <a href="/html/vertical-menu-template/api-integratio.html" class="menu-link">
+                                    <a href="/html/vertical-menu-template/api-integration.html" class="menu-link">
                                         <label class="list-group-item w-100">
                                             <div class="text-truncate">API 연동
                                                 <span class="fast-link" data-favorite="api"><i
@@ -1001,7 +1001,7 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <!-- <h6 class="mt-4"></h6> -->
+
                             <div class="card mb-6" style="background: none; box-shadow: none">
                                 <div class="card-header p-0 nav-align-top">
 
@@ -1010,7 +1010,7 @@
                                 <div class="tab-content mt-2 p-0 bx-border-radius">
                                     <div class="tab-pane fade active show" id="form-tabs-account" role="tabpanel">
                                         <div class="bg-white p-4 box-shape">
-                                            <form>
+                                            <form class="form-multi-search">
                                                 <div class="gx-0 align-items-center">
                                                     <div class="row border-bottom  gx-0">
                                                         <label for="startDate" class="col-2 col-form-label text-center"
@@ -1045,12 +1045,13 @@
                                                     </div>
                                                     <div class="row border-bottom gx-0">
                                                         <label for="startDate" class="col-2 col-form-label text-center"
-                                                            style="background: azure; line-height: 2rem;">검색조건</label>
+                                                            style="background: azure; line-height: 2rem;">검색어</label>
                                                         <div class="w-auto ps-4 py-2 d-flex align-items-center">
                                                             <select id="dateType" class="form-select w-auto me-2">
                                                                 <option value="date1">상품명</option>
                                                                 <option value="date2">운송장번호</option>
-                                                            </select><input type="text" class="form-control"
+                                                            </select><input type="text"
+                                                                class="form-control form-multi-search-data"
                                                                 placeholder="입력 후 엔터">
                                                         </div>
                                                     </div>
@@ -1062,8 +1063,10 @@
                                                             <label class="form-check-label"
                                                                 for="multiSearch">복수검색</label>
                                                         </div>
-                                                        <button type="submit" class="btn btn-primary">검색</button>
-                                                        <button type="submit" class="btn btn-outline-warning">
+                                                        <button type="button"
+                                                            class="btn btn-primary btn-search">검색</button>
+                                                        <button type="button"
+                                                            class="btn btn-outline-warning btn-multi-search-reset">
                                                             <i class="bx bx-refresh me-1"
                                                                 style="font-size: 1.5rem;"></i>
                                                             초기화
@@ -1074,12 +1077,10 @@
 
                                             </form>
                                         </div>
+                                        <div class="bg-white p-4 box-shape multi-badge-wrapper"></div>
                                         <div class=" row bg-white mt-4 box-shape">
                                             <div class="col-12">
-                                                <!-- Select -->
                                                 <div class="">
-                                                    <!-- <h5 class="card-header pb-0 text-md-start text-center">배송등록</h5> -->
-
                                                     <div
                                                         class="card-datatable dataTable_select text-nowrap overflow-auto">
                                                         <table

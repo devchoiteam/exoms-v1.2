@@ -497,7 +497,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
   // --------------------------------------------------------------------
 
   const dt_select_table = document.querySelector(
-    '.dt-select-table:not(.dt-shipping-register-hand, .dt-shipping-register-auto, .dt-daily-inbound-empty, .dt-daily-inbound-filled, .dt-daily-inbound-list)'
+    '.dt-select-table:not(.dt-shipping-register-hand, .dt-shipping-register-auto, .dt-daily-inbound-empty, .dt-daily-inbound-filled, .dt-daily-inbound-list, .dt-shipment-list-summary, .dt-shipment-list-manage)'
   );
   let dt_select;
   if (dt_select_table) {
@@ -531,30 +531,6 @@ document.addEventListener('DOMContentLoaded', function (e) {
             selectRow: true,
             selectAllRender: '<input type="checkbox" class="form-check-input">'
           }
-          // },
-          // {
-          //   // Label
-          //   targets: -1,
-          //   render: function (data, type, full, meta) {
-          //     const statusNumber = full.status;
-          //     const statuses = {
-          //       1: { title: 'Current', class: 'bg-label-primary' },
-          //       2: { title: 'Professional', class: 'bg-label-success' },
-          //       3: { title: 'Rejected', class: 'bg-label-danger' },
-          //       4: { title: 'Resigned', class: 'bg-label-warning' },
-          //       5: { title: 'Applied', class: 'bg-label-info' }
-          //     };
-
-          //     if (typeof statuses[statusNumber] === 'undefined') {
-          //       return data;
-          //     }
-
-          //     return `
-          //       <span class="badge ${statuses[statusNumber].class}">
-          //         ${statuses[statusNumber].title}
-          //       </span>
-          //     `;
-          //   }
         },
         {
           defaultContent: '-',
@@ -642,30 +618,6 @@ document.addEventListener('DOMContentLoaded', function (e) {
             selectRow: true,
             selectAllRender: '<input type="checkbox" class="form-check-input">'
           }
-          // },
-          // {
-          //   // Label
-          //   targets: -1,
-          //   render: function (data, type, full, meta) {
-          //     const statusNumber = full.status;
-          //     const statuses = {
-          //       1: { title: 'Current', class: 'bg-label-primary' },
-          //       2: { title: 'Professional', class: 'bg-label-success' },
-          //       3: { title: 'Rejected', class: 'bg-label-danger' },
-          //       4: { title: 'Resigned', class: 'bg-label-warning' },
-          //       5: { title: 'Applied', class: 'bg-label-info' }
-          //     };
-
-          //     if (typeof statuses[statusNumber] === 'undefined') {
-          //       return data;
-          //     }
-
-          //     return `
-          //       <span class="badge ${statuses[statusNumber].class}">
-          //         ${statuses[statusNumber].title}
-          //       </span>
-          //     `;
-          //   }
         },
         {
           defaultContent: '-',
@@ -754,30 +706,6 @@ document.addEventListener('DOMContentLoaded', function (e) {
             selectRow: true,
             selectAllRender: '<input type="checkbox" class="form-check-input">'
           }
-          // },
-          // {
-          //   // Label
-          //   targets: -1,
-          //   render: function (data, type, full, meta) {
-          //     const statusNumber = full.status;
-          //     const statuses = {
-          //       1: { title: 'Current', class: 'bg-label-primary' },
-          //       2: { title: 'Professional', class: 'bg-label-success' },
-          //       3: { title: 'Rejected', class: 'bg-label-danger' },
-          //       4: { title: 'Resigned', class: 'bg-label-warning' },
-          //       5: { title: 'Applied', class: 'bg-label-info' }
-          //     };
-
-          //     if (typeof statuses[statusNumber] === 'undefined') {
-          //       return data;
-          //     }
-
-          //     return `
-          //       <span class="badge ${statuses[statusNumber].class}">
-          //         ${statuses[statusNumber].title}
-          //       </span>
-          //     `;
-          //   }
         },
         {
           defaultContent: '-',
@@ -1258,4 +1186,237 @@ document.addEventListener('DOMContentLoaded', function (e) {
       }
     });
   }
+  const dt_shipment_list_summary_table = document.querySelector('.dt-shipment-list-summary');
+  let dt_shipment_list_summary;
+
+  if (dt_shipment_list_summary_table) {
+    dt_shipment_list_summary = new DataTable(dt_shipment_list_summary_table, {
+      ajax: assetsPath + 'json/table-datatable.json',
+      columns: [
+        { data: 'id' },
+        { data: 'No' },
+        { data: 'shopping_cart' },
+        { data: 'packing_no' },
+        { data: 'city' },
+        { data: 'order_date' },
+        { data: 'product_name' },
+        { data: 'product_name_kr' },
+        { data: 'option_code' },
+        { data: 'option_info' },
+        { data: 'currency' },
+        { data: 'quantity' }
+      ],
+      columnDefs: [
+        {
+          defaultContent: '-',
+          targets: '_all'
+        }
+      ],
+      order: [[1, 'desc']],
+      layout: {
+        bottomStart: {
+          rowClass: 'row mx-3 my-0 justify-content-between',
+          features: [
+            {
+              pageLength: {
+                menu: [10, 25, 50, 100],
+                text: '_MENU_개씩 보기'
+              }
+            }
+          ]
+        },
+        topStart: {
+          info: {
+            text: '검색 건수: _TOTAL_건'
+          }
+        },
+        bottomEnd: {
+          paging: {
+            firstLast: false
+          }
+        }
+      },
+      language: {
+        paginate: {
+          next: '<i class="icon-base bx bx-chevron-right scaleX-n1-rtl icon-sm"></i>',
+          previous: '<i class="icon-base bx bx-chevron-left scaleX-n1-rtl icon-sm"></i>'
+        }
+      },
+      select: {
+        style: 'multi'
+      },
+      searching: false,
+      drawCallback: function () {
+        let api = this.api();
+
+        // 기존 tfoot 제거 후 다시 추가
+        $(dt_shipment_list_summary_table).find('tfoot').remove();
+
+        let totalSum = { quantity: 0, total_selling_price: 0 };
+
+        // 데이터 가져와서 합계 계산
+        api
+          .rows({ search: 'applied' })
+          .data()
+          .each(function (row) {
+            totalSum.quantity += parseFloat(row['quantity']) || 0;
+            totalSum.total_selling_price += parseFloat(row['total_selling_price']) || 0;
+          });
+
+        // 합계 행 추가
+        let footerHtml = `
+          <tfoot>
+            <tr class="bg-light fw-bold">
+              <td colspan="3" class="text-center">합계</td>
+              <td>${totalSum.quantity.toLocaleString()}</td>
+              <td>${totalSum.total_selling_price.toLocaleString()}</td>
+              <td>${totalSum.total_selling_price.toLocaleString()}</td>
+              <td>${totalSum.total_selling_price.toLocaleString()}</td>
+              <td>${totalSum.total_selling_price.toLocaleString()}</td>
+              <td>${totalSum.total_selling_price.toLocaleString()}</td>
+              <td>${totalSum.total_selling_price.toLocaleString()}</td>
+              <td>${totalSum.total_selling_price.toLocaleString()}</td>
+              <td>${totalSum.total_selling_price.toLocaleString()}</td>
+            </tr>
+          </tfoot>`;
+
+        // 🟢 `.appendTo()` 사용하여 테이블에 추가
+        $(dt_shipment_list_summary_table).find('thead').after(footerHtml);
+      }
+    });
+  }
+
+  const dt_shipment_list_manage_table = document.querySelector('.dt-shipment-list-manage');
+  let dt_shipment_list_manage;
+
+  if (dt_shipment_list_manage_table) {
+    dt_shipment_list_manage = new DataTable(dt_shipment_list_manage_table, {
+      ajax: assetsPath + 'json/table-datatable.json',
+      columns: [
+        { data: 'id', orderable: false, render: DataTable.render.select() },
+        { data: 'No' },
+        { data: 'shopping_cart' },
+        { data: 'packing_no' },
+        { data: 'city' },
+        { data: 'order_date' },
+        { data: 'product_name' },
+        { data: 'product_name_kr' },
+        { data: 'option_code' },
+        { data: 'option_info' },
+        { data: 'currency' },
+        { data: 'quantity' },
+        { data: 'total_selling_price' },
+        { data: 'total_selling_price' },
+        { data: 'total_selling_price' }
+      ],
+      columnDefs: [
+        {
+          // For Checkboxes
+          targets: 0,
+          searchable: false,
+          orderable: false,
+          render: function () {
+            return '<input type="checkbox" class="dt-checkboxes form-check-input">';
+          },
+          checkboxes: {
+            selectRow: true,
+            selectAllRender: '<input type="checkbox" class="form-check-input">'
+          }
+        },
+        {
+          defaultContent: '-',
+          targets: '_all'
+        }
+      ],
+      order: [[1, 'desc']],
+      layout: {
+        bottomStart: {
+          rowClass: 'row mx-3 my-0 justify-content-between',
+          features: [
+            {
+              pageLength: {
+                menu: [10, 25, 50, 100],
+                text: '_MENU_개씩 보기'
+              }
+            }
+          ]
+        },
+        topEnd: {
+          search: {
+            placeholder: '검색어를 입력해주세요.',
+            text: '_INPUT_'
+          },
+          buttons: [{ text: '다운로드', className: 'btn btn-outline-success table-download-btn' }]
+        },
+        topStart: {
+          info: {
+            text: '검색 건수: _TOTAL_건'
+          }
+        },
+        bottomEnd: {
+          paging: {
+            firstLast: false
+          }
+        }
+      },
+      language: {
+        paginate: {
+          next: '<i class="icon-base bx bx-chevron-right scaleX-n1-rtl icon-sm"></i>',
+          previous: '<i class="icon-base bx bx-chevron-left scaleX-n1-rtl icon-sm"></i>'
+        }
+      },
+      select: {
+        // Select style
+        style: 'multi'
+      },
+      searching: false
+    });
+  }
+  //   document.addEventListener('DOMContentLoaded', function () {
+  // 요소 선택
+  const searchForm = document.querySelector('form.form-multi-search');
+  //   console.log('dff');
+  if (searchForm) {
+    let searchInput = searchForm.querySelector('.form-multi-search-data');
+    let multiSearchCheckbox = document.getElementById('multiSearch');
+    let labelContainer = document.querySelector('.multi-badge-wrapper');
+    let searchButton = searchForm.querySelector('.btn-search'); // 검색 버튼
+    let resetButton = searchForm.querySelector('.btn-multi-search-reset'); // 초기화 버튼
+    // console.log('dfddsf');
+    labelContainer.classList.add('d-flex', 'gap-2', 'flex-wrap', 'mt-3');
+
+    searchButton.addEventListener('click', function (event) {
+      //   console.log('df');
+      event.preventDefault(); // 폼 제출 방지
+      let inputValue = searchInput.value.trim();
+
+      // 복수검색 체크 안 했으면 기존 라벨 삭제 후 종료
+      if (!multiSearchCheckbox.checked) {
+        labelContainer.innerHTML = '';
+        return;
+      }
+
+      if (inputValue) {
+        let label = document.createElement('span');
+        label.classList.add('badge', 'bg-secondary', 'p-2', 'd-flex', 'align-items-center');
+        label.innerHTML = `
+            ${inputValue} 
+            <button type="button" class="btn-close ms-2" aria-label="Remove"></button>
+          `;
+
+        label.querySelector('button').addEventListener('click', function () {
+          label.remove();
+        });
+
+        labelContainer.appendChild(label);
+        searchInput.value = ''; // 입력 필드 초기화
+      }
+    });
+
+    // 초기화 버튼 클릭 시 라벨 삭제
+    resetButton.addEventListener('click', function () {
+      labelContainer.innerHTML = ''; // 모든 라벨 삭제
+    });
+  }
+  //   });
 });
