@@ -965,7 +965,7 @@
                     <!-- Content -->
 
                     <div class="container-fluid navbar-expand-xl flex-grow-1 container-p-y">
-                        <div class="row">
+                        <div class="row gx-0 ">
                             <div class="col-12 d-flex text-end-center mb-4">
                                 <div class="favorite-btn-wrapper">
                                 </div>
@@ -1007,256 +1007,266 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12">
-                            <!-- <h6 class="mt-4"></h6> -->
-                            <div class="card mb-6" style="background: none; box-shadow: none">
-                                <div class="card-header p-0 nav-align-top">
+                        <div class="row gx-0 ">
+                            <div class="col-12">
+                                <!-- <h6 class="mt-4"></h6> -->
+                                <div class="card mb-6" style="background: none; box-shadow: none">
+                                    <div class="card-header p-0 nav-align-top">
 
-                                </div>
-
-                                <div class="tab-content mt-2 p-2 bx-border-radius">
-                                    <div class="tab-pane fade active show" id="form-tabs-personal" role="tabpanel">
-                                        <div class="bg-white p-4 box-shape">
-                                            <form>
-                                                <div class="row border-bottom gx-0 border-top">
-                                                    <label for="shoppingMall" class="col-2 col-form-label text-center"
-                                                        style="background: azure; line-height: 2rem;">입고상태</label>
-                                                    <div class="w-auto ps-4 py-2">
-                                                        <select id="shoppingMall" class="form-select w-auto ">
-                                                            <option value="none" data-select2-id="2">미입고</option>
-                                                            <option value="qoo10 jp">입고</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="row border-bottom gx-0">
-                                                    <label for="startDate" class="col-2 col-form-label text-center"
-                                                        style="background: azure; line-height: 2rem;">날짜 기준</label>
-                                                    <div class="w-auto ps-4 py-2">
-                                                        <select id="dateType" class="form-select">
-                                                            <option value="id_01">등록일 기준</option>
-                                                            <option value="id_02">입고일 기준</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="row border-bottom gx-0">
-                                                    <label for="startDate" class="col-2 col-form-label text-center"
-                                                        style="background: azure; line-height: 2rem;">기간</label>
-
-                                                    <div class="w-auto ps-4 py-2">
-                                                        <input type="date" id="startDate" class="form-control"
-                                                            placeholder="시작일">
-                                                    </div>
-                                                    <label for="endDate" class="w-auto col-form-label ps-4"
-                                                        style="line-height: 2rem;">~</label>
-                                                    <div class="w-auto ps-4 py-2">
-                                                        <input type="date" id="endDate" class="form-control"
-                                                            placeholder="종료일">
-                                                    </div>
-                                                    <!-- 날짜 선택 버튼 -->
-                                                    <div class="w-auto ps-4 py-2 d-flex">
-                                                        <button type="button"
-                                                            class="btn btn-outline-secondary btn-sm me-2"
-                                                            onclick="setDateRange('year')">1년</button>
-                                                        <button type="button"
-                                                            class="btn btn-outline-secondary btn-sm me-2"
-                                                            onclick="setDateRange('prevMonth')">전월</button>
-                                                        <button type="button"
-                                                            class="btn btn-outline-secondary btn-sm me-2"
-                                                            onclick="setDateRange('currentMonth')">당월</button>
-                                                        <button type="button" class="btn btn-outline-secondary btn-sm"
-                                                            onclick="setDateRange('today')">오늘</button>
-                                                    </div>
-                                                </div>
-
-                                                <div class="d-flex justify-content-end align-items-center mt-4 gap-3">
-
-                                                    <button type="submit" class="btn btn-primary">검색</button>
-                                                    <button type="submit" class="btn btn-outline-warning">
-                                                        <i class="bx bx-refresh me-1" style="font-size: 1.5rem;"></i>
-                                                        초기화
-                                                    </button>
-
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="row bg-white mt-4 box-shape">
-                                            <div class="col-12 col-md-6">
-                                                <h5 class="fw-bold">미입고</h5>
-
-                                                <div class="">
-                                                    <div
-                                                        class="card-datatable dataTable_select text-nowrap overflow-auto">
-                                                        <table
-                                                            class="dt-select-table dt-daily-inbound-empty table table-bordered table-responsive">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>일자</th>
-                                                                    <th>상태값</th>
-                                                                    <th>운송장 개수</th>
-                                                                    <th>조회</th>
-                                                                </tr>
-                                                            </thead>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 col-md-6">
-                                                <h5 class="fw-bold">입고</h5>
-                                                <div class="">
-
-                                                    <div
-                                                        class="card-datatable dataTable_select text-nowrap overflow-auto">
-                                                        <table
-                                                            class="dt-select-table dt-daily-inbound-filled table table-bordered table-responsive">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>일자</th>
-                                                                    <th>상태값</th>
-                                                                    <th>운송장 개수</th>
-                                                                    <th>조회</th>
-                                                                </tr>
-                                                            </thead>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
-                                    <div class="tab-pane fade " id="form-tabs-account" role="tabpanel">
-                                        <div class="bg-white p-4 box-shape">
-                                            <form>
-                                                <div class="row border-bottom gx-0 border-top">
-                                                    <label for="shoppingMall" class="col-2 col-form-label text-center"
-                                                        style="background: azure; line-height: 2rem;">입고상태</label>
-                                                    <div class="w-auto ps-4 py-2">
-                                                        <select id="shoppingMall" class="form-select w-auto ">
-                                                            <option value="none" data-select2-id="2">미입고</option>
-                                                            <option value="qoo10 jp">입고</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="row border-bottom gx-0">
-                                                    <label for="startDate" class="col-2 col-form-label text-center"
-                                                        style="background: azure; line-height: 2rem;">날짜 기준</label>
-                                                    <div class="w-auto ps-4 py-2">
-                                                        <select id="dateType" class="form-select">
-                                                            <option value="id_01">등록일 기준</option>
-                                                            <option value="id_02">입고일 기준</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="row border-bottom gx-0">
-                                                    <label for="startDate" class="col-2 col-form-label text-center"
-                                                        style="background: azure; line-height: 2rem;">기간</label>
 
-                                                    <div class="w-auto ps-4 py-2">
-                                                        <input type="date" id="startDate" class="form-control"
-                                                            placeholder="시작일">
+                                    <div class="tab-content mt-2 p-2 bx-border-radius">
+                                        <div class="tab-pane fade active show" id="form-tabs-personal" role="tabpanel">
+                                            <div class="bg-white p-4 box-shape ">
+                                                <form>
+                                                    <div class="row border-bottom gx-0 border-top">
+                                                        <label for="shoppingMall"
+                                                            class="col-2 col-form-label text-center"
+                                                            style="background: azure; line-height: 2rem;">입고상태</label>
+                                                        <div class="w-auto ps-4 py-2">
+                                                            <select id="shoppingMall" class="form-select w-auto ">
+                                                                <option value="none" data-select2-id="2">미입고</option>
+                                                                <option value="qoo10 jp">입고</option>
+                                                            </select>
+                                                        </div>
                                                     </div>
-                                                    <label for="endDate" class="w-auto col-form-label ps-4"
-                                                        style="line-height: 2rem;">~</label>
-                                                    <div class="w-auto ps-4 py-2">
-                                                        <input type="date" id="endDate" class="form-control"
-                                                            placeholder="종료일">
+                                                    <div class="row border-bottom gx-0">
+                                                        <label for="startDate" class="col-2 col-form-label text-center"
+                                                            style="background: azure; line-height: 2rem;">날짜 기준</label>
+                                                        <div class="w-auto ps-4 py-2">
+                                                            <select id="dateType" class="form-select">
+                                                                <option value="id_01">등록일 기준</option>
+                                                                <option value="id_02">입고일 기준</option>
+                                                            </select>
+                                                        </div>
                                                     </div>
-                                                    <!-- 날짜 선택 버튼 -->
-                                                    <div class="w-auto ps-4 py-2 d-flex">
-                                                        <button type="button"
-                                                            class="btn btn-outline-secondary btn-sm me-2"
-                                                            onclick="setDateRange('year')">1년</button>
-                                                        <button type="button"
-                                                            class="btn btn-outline-secondary btn-sm me-2"
-                                                            onclick="setDateRange('prevMonth')">전월</button>
-                                                        <button type="button"
-                                                            class="btn btn-outline-secondary btn-sm me-2"
-                                                            onclick="setDateRange('currentMonth')">당월</button>
-                                                        <button type="button" class="btn btn-outline-secondary btn-sm"
-                                                            onclick="setDateRange('today')">오늘</button>
+                                                    <div class="row border-bottom gx-0">
+                                                        <label for="startDate" class="col-2 col-form-label text-center"
+                                                            style="background: azure; line-height: 2rem;">기간</label>
+
+                                                        <div class="w-auto ps-4 py-2">
+                                                            <input type="date" id="startDate" class="form-control"
+                                                                placeholder="시작일">
+                                                        </div>
+                                                        <label for="endDate" class="w-auto col-form-label ps-4"
+                                                            style="line-height: 2rem;">~</label>
+                                                        <div class="w-auto ps-4 py-2">
+                                                            <input type="date" id="endDate" class="form-control"
+                                                                placeholder="종료일">
+                                                        </div>
+                                                        <!-- 날짜 선택 버튼 -->
+                                                        <div class="w-auto ps-4 py-2 d-flex">
+                                                            <button type="button"
+                                                                class="btn btn-outline-secondary btn-sm me-2"
+                                                                onclick="setDateRange('year')">1년</button>
+                                                            <button type="button"
+                                                                class="btn btn-outline-secondary btn-sm me-2"
+                                                                onclick="setDateRange('prevMonth')">전월</button>
+                                                            <button type="button"
+                                                                class="btn btn-outline-secondary btn-sm me-2"
+                                                                onclick="setDateRange('currentMonth')">당월</button>
+                                                            <button type="button"
+                                                                class="btn btn-outline-secondary btn-sm"
+                                                                onclick="setDateRange('today')">오늘</button>
+                                                        </div>
                                                     </div>
-                                                </div>
-
-                                                <div class="d-flex justify-content-end align-items-center mt-4 gap-3">
-
-                                                    <button type="submit" class="btn btn-primary">검색</button>
-                                                    <button type="submit" class="btn btn-outline-warning">
-                                                        <i class="bx bx-refresh me-1" style="font-size: 1.5rem;"></i>
-                                                        초기화
-                                                    </button>
-
-                                                </div>
-                                            </form>
-                                        </div>
-
-                                        <div class="row bg-white mt-4 gx-0 px-4 box-shape">
-                                            <div class="col-12">
-                                                <div class="">
-                                                    <!-- <h5 class="card-header pb-0 text-md-start text-center">배송등록</h5> -->
 
                                                     <div
-                                                        class="card-datatable dataTable_select text-nowrap overflow-auto">
-                                                        <table
-                                                            class="dt-select-table dt-daily-inbound-list table table-bordered table-responsive">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th></th>
-                                                                    <th>No.</th>
-                                                                    <th>장바구니 번호</th>
-                                                                    <th>패킹번호</th>
-                                                                    <th>주문 등록일</th>
-                                                                    <th>상품명</th>
-                                                                    <th>상품명(KR)</th>
-                                                                    <th>옵션코드</th>
-                                                                    <th>옵션정보</th>
-                                                                    <th>통화</th>
-                                                                    <th>수량</th>
-                                                                    <th>총판매가</th>
-                                                                    <th>상품코드</th>
-                                                                </tr>
-                                                            </thead>
-                                                        </table>
+                                                        class="d-flex justify-content-end align-items-center mt-4 gap-3">
+
+                                                        <button type="submit" class="btn btn-primary">검색</button>
+                                                        <button type="submit" class="btn btn-outline-warning">
+                                                            <i class="bx bx-refresh me-1"
+                                                                style="font-size: 1.5rem;"></i>
+                                                            초기화
+                                                        </button>
+
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="row  mt-4  gx-0">
+                                                <div class="col-12 col-lg-6  bg-white box-shape  p-4">
+                                                    <h5 class="fw-bold">미입고</h5>
+
+                                                    <div class="">
+                                                        <div
+                                                            class="card-datatable dataTable_select text-nowrap overflow-auto">
+                                                            <table
+                                                                class="dt-select-table dt-daily-inbound-empty w-100 table table-bordered table-responsive">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>일자</th>
+                                                                        <th>상태값</th>
+                                                                        <th>운송장 개수</th>
+                                                                        <th>조회</th>
+                                                                    </tr>
+                                                                </thead>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-6 bg-white box-shape   p-4">
+                                                    <h5 class="fw-bold">입고</h5>
+                                                    <div class="">
+
+                                                        <div
+                                                            class="card-datatable dataTable_select text-nowrap overflow-auto">
+                                                            <table
+                                                                class="dt-select-table dt-daily-inbound-filled table table-bordered table-responsive">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>일자</th>
+                                                                        <th>상태값</th>
+                                                                        <th>운송장 개수</th>
+                                                                        <th>조회</th>
+                                                                    </tr>
+                                                                </thead>
+                                                            </table>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="form-tabs-social" role="tabpanel">
-                                        <div class="row">
-                                            <div class="col-12 col-lg-6 col-xxl-4 mt-3 ">
-                                                <a href="https://exm.exmate.net/seller/api/list">
-                                                    <div class="card h-100" style="background-image: url('../../assets/img/customizer/banner-background.png');    background-repeat: no-repeat;
+                                        <div class="tab-pane fade " id="form-tabs-account" role="tabpanel">
+                                            <div class="bg-white p-4 box-shape">
+                                                <form>
+                                                    <div class="row border-bottom gx-0 border-top">
+                                                        <label for="shoppingMall"
+                                                            class="col-2 col-form-label text-center"
+                                                            style="background: azure; line-height: 2rem;">입고상태</label>
+                                                        <div class="w-auto ps-4 py-2">
+                                                            <select id="shoppingMall" class="form-select w-auto ">
+                                                                <option value="none" data-select2-id="2">미입고</option>
+                                                                <option value="qoo10 jp">입고</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row border-bottom gx-0">
+                                                        <label for="startDate" class="col-2 col-form-label text-center"
+                                                            style="background: azure; line-height: 2rem;">날짜 기준</label>
+                                                        <div class="w-auto ps-4 py-2">
+                                                            <select id="dateType" class="form-select">
+                                                                <option value="id_01">등록일 기준</option>
+                                                                <option value="id_02">입고일 기준</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row border-bottom gx-0">
+                                                        <label for="startDate" class="col-2 col-form-label text-center"
+                                                            style="background: azure; line-height: 2rem;">기간</label>
+
+                                                        <div class="w-auto ps-4 py-2">
+                                                            <input type="date" id="startDate" class="form-control"
+                                                                placeholder="시작일">
+                                                        </div>
+                                                        <label for="endDate" class="w-auto col-form-label ps-4"
+                                                            style="line-height: 2rem;">~</label>
+                                                        <div class="w-auto ps-4 py-2">
+                                                            <input type="date" id="endDate" class="form-control"
+                                                                placeholder="종료일">
+                                                        </div>
+                                                        <!-- 날짜 선택 버튼 -->
+                                                        <div class="w-auto ps-4 py-2 d-flex">
+                                                            <button type="button"
+                                                                class="btn btn-outline-secondary btn-sm me-2"
+                                                                onclick="setDateRange('year')">1년</button>
+                                                            <button type="button"
+                                                                class="btn btn-outline-secondary btn-sm me-2"
+                                                                onclick="setDateRange('prevMonth')">전월</button>
+                                                            <button type="button"
+                                                                class="btn btn-outline-secondary btn-sm me-2"
+                                                                onclick="setDateRange('currentMonth')">당월</button>
+                                                            <button type="button"
+                                                                class="btn btn-outline-secondary btn-sm"
+                                                                onclick="setDateRange('today')">오늘</button>
+                                                        </div>
+                                                    </div>
+
+                                                    <div
+                                                        class="d-flex justify-content-end align-items-center mt-4 gap-3">
+
+                                                        <button type="submit" class="btn btn-primary">검색</button>
+                                                        <button type="submit" class="btn btn-outline-warning">
+                                                            <i class="bx bx-refresh me-1"
+                                                                style="font-size: 1.5rem;"></i>
+                                                            초기화
+                                                        </button>
+
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                            <div class="row bg-white mt-4 gx-0 px-4 box-shape gx-0">
+                                                <div class="col-12">
+                                                    <div class="">
+                                                        <!-- <h5 class="card-header pb-0 text-md-start text-center">배송등록</h5> -->
+
+                                                        <div
+                                                            class="card-datatable dataTable_select text-nowrap overflow-auto">
+                                                            <table
+                                                                class="dt-select-table dt-daily-inbound-list table table-bordered table-responsive">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th></th>
+                                                                        <th>No.</th>
+                                                                        <th>장바구니 번호</th>
+                                                                        <th>패킹번호</th>
+                                                                        <th>주문 등록일</th>
+                                                                        <th>상품명</th>
+                                                                        <th>상품명(KR)</th>
+                                                                        <th>옵션코드</th>
+                                                                        <th>옵션정보</th>
+                                                                        <th>통화</th>
+                                                                        <th>수량</th>
+                                                                        <th>총판매가</th>
+                                                                        <th>상품코드</th>
+                                                                    </tr>
+                                                                </thead>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="form-tabs-social" role="tabpanel">
+                                            <div class="row">
+                                                <div class="col-12 col-lg-6 col-xxl-4 mt-3 ">
+                                                    <a href="https://exm.exmate.net/seller/api/list">
+                                                        <div class="card h-100" style="background-image: url('../../assets/img/customizer/banner-background.png');    background-repeat: no-repeat;
                             background-size: cover;
                             background-position: center;">
-                                                        <div class="card-body">
-                                                            <h2 class="text-white pt-4 mt-4 text-end fw-bold"><i
-                                                                    class="icon-base bx bx-link icon-lg me-2 mb-2"
-                                                                    style="font-size: 2.5rem !important;
+                                                            <div class="card-body">
+                                                                <h2 class="text-white pt-4 mt-4 text-end fw-bold"><i
+                                                                        class="icon-base bx bx-link icon-lg me-2 mb-2"
+                                                                        style="font-size: 2.5rem !important;
                                 block-size: 2.5rem !important;
                                 inline-size: 2.5rem !important;
                             "></i>입고 방법</h2>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </a>
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <!-- 국가를 선택해주세요 - 모달 -->
-                                <div class="modal fade" id="countryModal" tabindex="-1"
-                                    aria-labelledby="countryModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="countryModalLabel">알림</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                국가를 선택해주세요!
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">닫기</button>
+                                    <!-- 국가를 선택해주세요 - 모달 -->
+                                    <div class="modal fade" id="countryModal" tabindex="-1"
+                                        aria-labelledby="countryModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="countryModalLabel">알림</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    국가를 선택해주세요!
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">닫기</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
