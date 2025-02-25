@@ -1126,3 +1126,33 @@ document.addEventListener('DOMContentLoaded', function () {
     sidebar.show();
   });
 });
+
+// 회수 화면 > 시작일과 종료일 자동 변경
+function setDateRange(rangeType) {
+  let startDate = document.getElementById('startDate');
+  let endDate = document.getElementById('endDate');
+  let today = new Date();
+  let start, end;
+
+  switch (rangeType) {
+    case 'year':
+      start = new Date(today.getFullYear() - 1, today.getMonth(), today.getDate());
+      end = today;
+      break;
+    case 'prevMonth':
+      start = new Date(today.getFullYear(), today.getMonth() - 1, 1);
+      end = new Date(today.getFullYear(), today.getMonth(), 0); // 전월 마지막 날
+      break;
+    case 'currentMonth':
+      start = new Date(today.getFullYear(), today.getMonth(), 1);
+      end = today;
+      break;
+    case 'today':
+      start = today;
+      end = today;
+      break;
+  }
+
+  startDate.value = start.toISOString().split('T')[0];
+  endDate.value = end.toISOString().split('T')[0];
+}
