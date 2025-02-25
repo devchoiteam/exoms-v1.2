@@ -831,6 +831,145 @@ document.addEventListener('DOMContentLoaded', function (e) {
       }
     });
   }
+
+  const dt_notice_list_table = document.querySelector('.dt-shipping-register-hand');
+  let dt_notice_list;
+
+  if (dt_notice_list_table) {
+    dt_notice_list = new DataTable(dt_notice_list_table, {
+      ajax: assetsPath + 'json/table-datatable.json',
+      columns: [
+        { data: 'id', orderable: false, render: DataTable.render.select() },
+        { data: 'No' },
+        { data: 'shopping_cart' },
+        { data: 'packing_no' },
+        { data: 'city' },
+        { data: 'order_date' },
+        { data: 'product_name' },
+        { data: 'product_name_kr' },
+        { data: 'option_code' },
+        { data: 'option_info' },
+        { data: 'currency' },
+        { data: 'quantity' },
+        { data: 'total_selling_price' }
+      ],
+      columnDefs: [
+        {
+          // For Checkboxes
+          targets: 0,
+          searchable: false,
+          orderable: false,
+          render: function () {
+            return '<input type="checkbox" class="dt-checkboxes form-check-input">';
+          },
+          checkboxes: {
+            selectRow: true,
+            selectAllRender: '<input type="checkbox" class="form-check-input">'
+          }
+          // },
+          // {
+          //   // Label
+          //   targets: -1,
+          //   render: function (data, type, full, meta) {
+          //     const statusNumber = full.status;
+          //     const statuses = {
+          //       1: { title: 'Current', class: 'bg-label-primary' },
+          //       2: { title: 'Professional', class: 'bg-label-success' },
+          //       3: { title: 'Rejected', class: 'bg-label-danger' },
+          //       4: { title: 'Resigned', class: 'bg-label-warning' },
+          //       5: { title: 'Applied', class: 'bg-label-info' }
+          //     };
+
+          //     if (typeof statuses[statusNumber] === 'undefined') {
+          //       return data;
+          //     }
+
+          //     return `
+          //       <span class="badge ${statuses[statusNumber].class}">
+          //         ${statuses[statusNumber].title}
+          //       </span>
+          //     `;
+          //   }
+        },
+        {
+          defaultContent: '-',
+          targets: '_all'
+        }
+      ],
+      order: [[1, 'desc']],
+      layout: {
+        bottomStart: {
+          rowClass: 'row mx-3 my-0 justify-content-between',
+          features: [
+            {
+              pageLength: {
+                menu: [10, 25, 50, 100],
+                text: '_MENU_개씩 보기'
+              }
+            }
+          ]
+        },
+        topEnd: {
+          search: {
+            placeholder: '검색어를 입력해주세요.',
+            text: '_INPUT_'
+          },
+          buttons: [
+            { text: '저장', name: 'primary', className: 'btn btn-outline-primary' },
+            { text: '삭제', className: 'btn btn-outline-danger' },
+            { text: '다운로드', className: 'btn btn-outline-success table-download-btn' }
+          ]
+        },
+        topStart: {
+          info: {
+            text: '검색 건수: _TOTAL_건'
+          }
+        },
+        bottomEnd: {
+          paging: {
+            firstLast: false
+          }
+        }
+      },
+      language: {
+        paginate: {
+          next: '<i class="icon-base bx bx-chevron-right scaleX-n1-rtl icon-sm"></i>',
+          previous: '<i class="icon-base bx bx-chevron-left scaleX-n1-rtl icon-sm"></i>'
+        }
+      },
+      select: {
+        // Select style
+        style: 'multi'
+      }
+    });
+
+    // ✅ 공지사항 > 테이블 분류 검색 필터
+const filterButtons = document.querySelectorAll(".table-filter-btn");
+
+// 버튼 클릭 이벤트 추가
+filterButtons.forEach(button => {
+    button.addEventListener("click", function () {
+        let filterValue = this.getAttribute("data-filter");
+
+        // 모든 버튼 스타일 초기화
+        filterButtons.forEach(btn => {
+            btn.classList.remove("btn-primary", "active");
+            btn.classList.add("btn-outline-primary");
+        });
+
+        // 클릭한 버튼 스타일 변경
+        this.classList.remove("btn-outline-primary");
+        this.classList.add("btn-primary", "active");
+
+        // 테이블 필터링 적용
+        if (filterValue === "") {
+            dt_notice_list.search("").draw(); // 전체 보기
+        } else {
+            dt_notice_list.search(filterValue).draw(); // 선택한 분류로 필터 적용
+        }
+    });
+});
+
   // Filter form control to default size
   // ? setTimeout used for multilingual table initialization
   setTimeout(() => {
