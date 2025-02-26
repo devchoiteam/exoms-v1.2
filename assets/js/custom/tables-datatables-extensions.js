@@ -813,17 +813,6 @@ document.addEventListener('DOMContentLoaded', function (e) {
             }
           ]
         },
-        topEnd: {
-          search: {
-            placeholder: '검색어를 입력해주세요.',
-            text: '_INPUT_'
-          },
-          buttons: [
-            { text: '저장', name: 'primary', className: 'btn btn-outline-primary' },
-            { text: '삭제', className: 'btn btn-outline-danger' },
-            { text: '다운로드', className: 'btn btn-outline-success table-download-btn' }
-          ]
-        },
         topStart: {
           info: {
             text: '검색 건수: _TOTAL_건'
@@ -852,7 +841,8 @@ document.addEventListener('DOMContentLoaded', function (e) {
       select: {
         // Select style
         style: 'multi'
-      }
+      },
+      searching: false
     });
 
     // ✅ 공지사항 > 테이블 분류 검색 필터
