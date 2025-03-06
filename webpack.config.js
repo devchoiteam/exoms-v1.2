@@ -103,7 +103,10 @@ const webpackConfig = {
           }
         }
       })
-    ]
+    ],
+    splitChunks: {
+      chunks: 'all'
+    }
   },
   plugins: [],
 

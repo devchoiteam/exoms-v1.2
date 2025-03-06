@@ -254,3 +254,9 @@ body {
 }
 @media (max-width: 360px) {
 }
+
+/* 테이블 > shift 열선택 강조 */
+.selected-cell {
+  background-color: rgba(0, 123, 255, 0.3); /* 파란색 하이라이트 */
+  border: 1px solid #007bff;
+}

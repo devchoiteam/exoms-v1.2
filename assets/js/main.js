@@ -1049,43 +1049,49 @@ if (searchBtnInTable) {
     });
   });
 }
-console.log('이벤트 바인딩 시ds작');
 
 // 테이블 공통 > Shift 키를 이용한 멀티 체크 기능
 document.addEventListener('DOMContentLoaded', function () {
   let lastChecked = null;
+  let firstSelectedCell = null;
 
   function handleCheckboxClick(e) {
-    console.log('🔍 이벤트 감지됨:', e.target);
-
-    // ✅ 만약 <td>를 클릭한 경우, 내부의 체크박스를 찾아 클릭한 것으로 간주
     let target = e.target;
+
+    // ✅ <thead>의 첫 번째 체크박스 클릭 시 → 모든 체크박스 선택/해제
+    if (target.closest('thead') && target.type === 'checkbox') {
+      let allCheckboxes = document.querySelectorAll(".dt-select-table tbody input[type='checkbox']");
+      allCheckboxes.forEach(checkbox => {
+        checkbox.checked = target.checked;
+        checkbox.closest('tr').classList.toggle('selected', target.checked);
+      });
+      return;
+    }
+
+    // ✅ <td> 클릭 시 내부 체크박스가 있으면 클릭 처리
     if (target.tagName === 'TD') {
       let checkbox = target.querySelector("input[type='checkbox']");
       if (checkbox) {
-        console.log('🎯 <td> 안의 체크박스를 클릭한 것으로 처리:', checkbox);
-        checkbox.click(); // ✅ 강제로 체크박스 클릭 이벤트 실행
-        return; // ✅ 여기서 종료 (체크박스 이벤트가 다시 실행됨)
+        checkbox.click();
+        return;
       }
     }
 
-    // ✅ 클릭된 요소가 체크박스인지 확인
+    // ✅ 체크박스 클릭 시 개별 체크 처리
     if (!target.matches(".dt-select-table tbody input[type='checkbox']")) return;
-
-    console.log('✅ 체크박스 클릭 감지:', target);
 
     if (!lastChecked) {
       lastChecked = target;
       return;
     }
 
+    // ✅ Shift + 클릭 시 여러 개 선택 가능
     if (e.shiftKey) {
       let checkboxes = Array.from(document.querySelectorAll(".dt-select-table tbody input[type='checkbox']"));
       let start = checkboxes.indexOf(lastChecked);
       let end = checkboxes.indexOf(target);
 
       let [min, max] = [Math.min(start, end), Math.max(start, end)];
-
       for (let i = min; i <= max; i++) {
         checkboxes[i].checked = lastChecked.checked;
         checkboxes[i].closest('tr').classList.toggle('selected', lastChecked.checked);
@@ -1096,52 +1102,68 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function handleRowClick(e) {
-    // ✅ 행이 클릭되었을 때, 해당 행의 체크박스를 체크/언체크
     let target = e.target;
-    let row = target.closest('tr'); // 클릭한 행을 찾음
-
+    let row = target.closest('tr');
     if (!row) return;
 
     let checkbox = row.querySelector("input[type='checkbox']");
     if (checkbox) {
-      checkbox.checked = !checkbox.checked; // 체크박스를 토글
-      row.classList.toggle('selected', checkbox.checked); // 행 선택 상태 토글
+      checkbox.checked = !checkbox.checked;
+      row.classList.toggle('selected', checkbox.checked);
+    }
+  }
+
+  function handleCellSelection(e) {
+    let target = e.target;
+
+    // ✅ 첫 번째 셀 선택
+    if (target.tagName === 'TD') {
+      firstSelectedCell = target;
+      console.log('📌 첫 번째 선택한 셀:', firstSelectedCell);
+      return;
+    }
+
+    // ✅ Shift + 클릭 시 같은 열의 모든 셀 선택
+    if (e.shiftKey && firstSelectedCell) {
+      let columnIndex = firstSelectedCell.cellIndex; // ✅ 열 인덱스 가져오기
+      let rows = document.querySelectorAll('.dt-select-table tbody tr');
+
+      let selecting = false;
+      rows.forEach(row => {
+        let cell = row.cells[columnIndex]; // ✅ 동일한 열의 셀 찾기
+        if (cell) {
+          if (cell === firstSelectedCell || cell === target) {
+            selecting = !selecting; // ✅ 시작점과 끝점을 찾음
+          }
+          if (selecting || cell === firstSelectedCell || cell === target) {
+            cell.classList.add('selected-cell'); // ✅ 선택된 셀에 CSS 적용
+          }
+        }
+      });
     }
   }
 
   function addEventListeners() {
-    console.log('📌 이벤트를 document.body에 바인딩');
-
-    // ✅ `passive: false` 추가하여 강제로 이벤트 실행
     document.body.removeEventListener('click', handleCheckboxClick, true);
     document.body.addEventListener('click', handleCheckboxClick, { capture: true, passive: false });
 
-    // ✅ 행 클릭 이벤트 바인딩
     document.body.removeEventListener('click', handleRowClick, true);
     document.body.addEventListener('click', handleRowClick, { capture: true, passive: false });
+
+    document.body.removeEventListener('click', handleCellSelection, true);
+    document.body.addEventListener('click', handleCellSelection, { capture: true, passive: false });
   }
 
-  // ✅ MutationObserver로 테이블과 체크박스 추가 감지
   const observer = new MutationObserver(() => {
     const table = document.querySelector('.dt-select-table tbody');
-    const checkboxes = document.querySelectorAll(".dt-select-table tbody input[type='checkbox']");
-
-    console.log('📌 체크박스 개수:', checkboxes.length);
-
-    if (table && checkboxes.length > 0) {
-      console.log('📌 테이블과 체크박스가 동적으로 생성됨 → 이벤트 적용');
-
-      setTimeout(() => {
-        addEventListeners();
-      }, 500);
-
+    if (table) {
+      setTimeout(addEventListeners, 500);
       observer.disconnect();
     }
   });
 
   observer.observe(document.body, { childList: true, subtree: true });
 
-  // ✅ 페이지가 로딩될 때도 한 번 실행
   setTimeout(addEventListeners, 500);
 });
 

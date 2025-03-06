@@ -138,6 +138,7 @@
     "gulp-useref": "5.0.0",
     "html-loader": "4.2.0",
     "js-beautify": "1.15.1",
+    "parcel": "^2.13.3",
     "prettier": "3.4.2",
     "sass": "1.76.0",
     "sass-loader": "14.0.0",
